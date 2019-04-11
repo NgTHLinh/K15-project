@@ -11,14 +11,14 @@ namespace CRM
 {
     public partial class Home : Form
     {
+
         public Home()
         {
             InitializeComponent();
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
-
+        { 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -123,7 +123,18 @@ namespace CRM
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+        }
 
+        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -139,6 +150,40 @@ namespace CRM
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if(!Char.IsDigit(chr) && chr !=8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ dùng số");
+            }
+        }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
         }
     }
 }

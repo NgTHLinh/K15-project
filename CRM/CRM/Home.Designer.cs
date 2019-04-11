@@ -28,7 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TabControl tabControl2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,21 +81,298 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            tabControl2 = new System.Windows.Forms.TabControl();
+            tabControl2.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tabControl2
+            // 
+            tabControl2.Controls.Add(this.tabPage6);
+            tabControl2.Controls.Add(this.tabPage7);
+            tabControl2.Controls.Add(this.tabPage8);
+            tabControl2.Controls.Add(this.tabPage9);
+            tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tabControl2.ImageList = this.imageList1;
+            tabControl2.Location = new System.Drawing.Point(4, 3);
+            tabControl2.Name = "tabControl2";
+            tabControl2.SelectedIndex = 0;
+            tabControl2.Size = new System.Drawing.Size(824, 140);
+            tabControl2.TabIndex = 1;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.White;
+            this.tabPage6.Controls.Add(this.button5);
+            this.tabPage6.Controls.Add(this.button4);
+            this.tabPage6.ImageIndex = 3;
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(816, 107);
+            this.tabPage6.TabIndex = 0;
+            this.tabPage6.Text = "Trang Chủ";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.ImageIndex = 1;
+            this.button5.ImageList = this.imageList2;
+            this.button5.Location = new System.Drawing.Point(118, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 98);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Log Out";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "home-icon.png");
+            this.imageList2.Images.SetKeyName(1, "LogOut.png");
+            this.imageList2.Images.SetKeyName(2, "Add.png");
+            this.imageList2.Images.SetKeyName(3, "CustomerInfo.png");
+            this.imageList2.Images.SetKeyName(4, "Delete.png");
+            this.imageList2.Images.SetKeyName(5, "Update.png");
+            this.imageList2.Images.SetKeyName(6, "Room.png");
+            this.imageList2.Images.SetKeyName(7, "BillInfo.png");
+            this.imageList2.Images.SetKeyName(8, "Exit.png");
+            this.imageList2.Images.SetKeyName(9, "Modify.png");
+            this.imageList2.Images.SetKeyName(10, "Rent.png");
+            this.imageList2.Images.SetKeyName(11, "HouseInfo.png");
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.ImageIndex = 0;
+            this.button4.ImageList = this.imageList2;
+            this.button4.Location = new System.Drawing.Point(6, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 98);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Home";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.button10);
+            this.tabPage7.Controls.Add(this.button9);
+            this.tabPage7.Controls.Add(this.button8);
+            this.tabPage7.Controls.Add(this.button6);
+            this.tabPage7.Controls.Add(this.button7);
+            this.tabPage7.ImageIndex = 1;
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(816, 107);
+            this.tabPage7.TabIndex = 1;
+            this.tabPage7.Text = "QL Người thuê";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.ImageIndex = 3;
+            this.button10.ImageList = this.imageList2;
+            this.button10.Location = new System.Drawing.Point(459, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(106, 98);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "TT NV";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.UseWaitCursor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button9.ImageIndex = 3;
+            this.button9.ImageList = this.imageList2;
+            this.button9.Location = new System.Drawing.Point(347, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(106, 98);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "TT Khách";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.UseWaitCursor = true;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button8.ImageIndex = 4;
+            this.button8.ImageList = this.imageList2;
+            this.button8.Location = new System.Drawing.Point(231, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(110, 98);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Xóa";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.UseWaitCursor = true;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.ImageIndex = 2;
+            this.button6.ImageList = this.imageList2;
+            this.button6.Location = new System.Drawing.Point(6, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(106, 98);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Thêm";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.UseWaitCursor = true;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.ImageIndex = 5;
+            this.button7.ImageList = this.imageList2;
+            this.button7.Location = new System.Drawing.Point(118, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(106, 98);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Sửa";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.UseWaitCursor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.button13);
+            this.tabPage8.Controls.Add(this.button12);
+            this.tabPage8.Controls.Add(this.button11);
+            this.tabPage8.ImageIndex = 2;
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(816, 107);
+            this.tabPage8.TabIndex = 2;
+            this.tabPage8.Text = "QL Phòng";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            this.tabPage8.Click += new System.EventHandler(this.tabPage8_Click);
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button13.ImageIndex = 11;
+            this.button13.ImageList = this.imageList2;
+            this.button13.Location = new System.Drawing.Point(231, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(106, 98);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "Thông tin";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.UseWaitCursor = true;
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button12.ImageIndex = 8;
+            this.button12.ImageList = this.imageList2;
+            this.button12.Location = new System.Drawing.Point(118, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(106, 98);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "Trả";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.UseWaitCursor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button11.ImageIndex = 10;
+            this.button11.ImageList = this.imageList2;
+            this.button11.Location = new System.Drawing.Point(6, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(106, 98);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Thuê";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.UseWaitCursor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.button15);
+            this.tabPage9.Controls.Add(this.button14);
+            this.tabPage9.ImageIndex = 0;
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(816, 107);
+            this.tabPage9.TabIndex = 3;
+            this.tabPage9.Text = "QL Hóa đơn";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button15.ImageIndex = 9;
+            this.button15.ImageList = this.imageList2;
+            this.button15.Location = new System.Drawing.Point(116, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(106, 98);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "Sửa";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.UseWaitCursor = true;
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button14.ImageIndex = 7;
+            this.button14.ImageList = this.imageList2;
+            this.button14.Location = new System.Drawing.Point(4, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(106, 98);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "Xem HĐ";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.UseWaitCursor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Bill.png");
+            this.imageList1.Images.SetKeyName(1, "people.png");
+            this.imageList1.Images.SetKeyName(2, "Room.png");
+            this.imageList1.Images.SetKeyName(3, "Home.png");
+            this.imageList1.Images.SetKeyName(4, "LogIn.png");
+            this.imageList1.Images.SetKeyName(5, "LogOut.png");
             // 
             // tabControl1
             // 
@@ -84,12 +381,13 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 114);
+            this.tabControl1.Location = new System.Drawing.Point(0, 138);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(828, 349);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage2
@@ -107,7 +405,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(58, 17);
+            this.button3.Location = new System.Drawing.Point(57, 38);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 143);
             this.button3.TabIndex = 3;
@@ -148,21 +446,23 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(101, 212);
+            this.textBox5.Location = new System.Drawing.Point(101, 210);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(200, 22);
             this.textBox5.TabIndex = 12;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(101, 172);
+            this.textBox4.Location = new System.Drawing.Point(101, 170);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(200, 22);
             this.textBox4.TabIndex = 11;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(101, 119);
+            this.textBox3.Location = new System.Drawing.Point(101, 133);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(200, 22);
             this.textBox3.TabIndex = 10;
@@ -177,17 +477,18 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(186, 92);
+            this.checkBox2.Location = new System.Drawing.Point(186, 95);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(48, 21);
             this.checkBox2.TabIndex = 8;
             this.checkBox2.Text = "Nữ";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged_1);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(101, 92);
+            this.checkBox1.Location = new System.Drawing.Point(101, 95);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(59, 21);
             this.checkBox1.TabIndex = 7;
@@ -398,84 +699,22 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(4, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(824, 110);
-            this.tabControl2.TabIndex = 1;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.Silver;
-            this.tabPage6.Controls.Add(this.pictureBox1);
-            this.tabPage6.Controls.Add(this.button4);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(816, 81);
-            this.tabPage6.TabIndex = 0;
-            this.tabPage6.Text = "Trang Chủ";
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(106, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 75);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Trang Chủ";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(816, 81);
-            this.tabPage7.TabIndex = 1;
-            this.tabPage7.Text = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(816, 81);
-            this.tabPage8.TabIndex = 2;
-            this.tabPage8.Text = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 474);
-            this.Controls.Add(this.tabControl2);
+            this.ClientSize = new System.Drawing.Size(831, 498);
+            this.Controls.Add(tabControl2);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
+            tabControl2.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -483,9 +722,6 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,11 +760,23 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
     }
 }
