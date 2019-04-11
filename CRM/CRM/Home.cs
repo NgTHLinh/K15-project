@@ -15,10 +15,18 @@ namespace CRM
         public Home()
         {
             InitializeComponent();
+
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Remove(tabPage5);
+            //tabControl1.Visible = false;
         }
 
         private void Home_Load(object sender, EventArgs e)
         { 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -144,7 +152,7 @@ namespace CRM
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -184,6 +192,21 @@ namespace CRM
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPage2);
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
