@@ -25,7 +25,7 @@ namespace CRM
         }
 
         private void Home_Load(object sender, EventArgs e)
-        { 
+        {
 
         }
 
@@ -71,7 +71,7 @@ namespace CRM
 
         private void button20_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -152,6 +152,15 @@ namespace CRM
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (tabControl1.TabPages.Contains(tabPage12))//tab already present
+            {
+                tabControl1.SelectTab(tabPage12);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage12); // add removed tab
+                tabControl1.SelectTab(tabPage12);    // select by name
+            }
             
         }
 
@@ -162,13 +171,13 @@ namespace CRM
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
-            if(!Char.IsDigit(chr) && chr !=8)
+            if (!Char.IsDigit(chr) && chr != 8)
             {
                 e.Handled = true;
                 MessageBox.Show("Chỉ dùng số");
@@ -201,12 +210,90 @@ namespace CRM
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Add(tabPage2);
+            if (tabControl1.TabPages.Contains(tabPage2))//tab already present
+            {
+                tabControl1.SelectTab(tabPage2);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage2); // add removed tab
+                tabControl1.SelectTab(tabPage2);    // select by name
+            }
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            
+            if (tabControl1.TabPages.Contains(tabPage11))//tab already present
+            {
+                tabControl1.SelectTab(tabPage11);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage11); // add removed tab
+                tabControl1.SelectTab(tabPage11);    // select by name
+            }
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tabPage4))//tab already present
+            {
+                tabControl1.SelectTab(tabPage4);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage4); // add removed tab
+                tabControl1.SelectTab(tabPage4);    // select by name
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tabPage5))//tab already present
+            {
+                tabControl1.SelectTab(tabPage5);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage5); // add removed tab
+                tabControl1.SelectTab(tabPage5);    // select by name
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tabPage10))//tab already present
+            {
+                tabControl1.SelectTab(tabPage10);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage10); // add removed tab
+                tabControl1.SelectTab(tabPage10);    // select by name
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tabPage1))//tab already present
+            {
+                tabControl1.SelectTab(tabPage1);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage1); // add removed tab
+                tabControl1.SelectTab(tabPage1);    // select by name
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
