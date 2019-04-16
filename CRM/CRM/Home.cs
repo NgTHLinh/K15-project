@@ -157,16 +157,16 @@ namespace CRM
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab8))//tab already present
+            if (tabControl1.TabPages.Contains(tab9))//tab already present
             {
-                tabControl1.SelectTab(tab8);  // select by name
+                tabControl1.SelectTab(tab9);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab8); // add removed tab
-                tabControl1.SelectTab(tab8);    // select by name
+                tabControl1.TabPages.Add(tab9); // add removed tab
+                tabControl1.SelectTab(tab9);    // select by name
             }
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace CRM
             Font titlefont = new Font(e.Font.FontFamily, e.Font.Size, FontStyle.Italic);
             if (e.Index >= 0)
             {
-                e.Graphics.DrawString("X", closefont, Brushes.Blue, e.Bounds.Right - 12, e.Bounds.Top + 5);
+                e.Graphics.DrawString("X ", closefont, Brushes.Black, e.Bounds.Right - 12, e.Bounds.Top + 5);
             }
             e.Graphics.DrawString(this.tabControl1.TabPages[e.Index].Text, titlefont, Brushes.Black, e.Bounds.Left, e.Bounds.Top + 5);
 
@@ -335,5 +335,27 @@ namespace CRM
                 }
             }
         }
+
+        private void tab1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tab8))//tab already present
+            {
+                tabControl1.SelectTab(tab8);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tab8); // add removed tab
+                tabControl1.SelectTab(tab8);    // select by name
+            }
+
+
+        }
+
+       
     }
 }
