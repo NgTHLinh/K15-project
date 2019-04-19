@@ -126,11 +126,11 @@
             this.button18 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             tabControl2 = new System.Windows.Forms.TabControl();
             tabControl2.SuspendLayout();
             this.tab1_p.SuspendLayout();
@@ -192,6 +192,7 @@
             this.button17.Text = "Log Out";
             this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // imageList2
             // 
@@ -502,6 +503,7 @@
             this.button16.TabIndex = 9;
             this.button16.Text = "ĐĂNG NHẬP";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // textBox7
             // 
@@ -1339,19 +1341,18 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
-            // label31
+            // label34
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label31.ImageIndex = 2;
-            this.label31.ImageList = this.imageList3;
-            this.label31.Location = new System.Drawing.Point(6, 18);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(126, 17);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "     : CHÚ THÍCH";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label34.AutoSize = true;
+            this.label34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label34.ImageIndex = 0;
+            this.label34.ImageList = this.imageList3;
+            this.label34.Location = new System.Drawing.Point(6, 103);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(117, 17);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "       : Sắp hết HĐ";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // imageList3
             // 
@@ -1361,19 +1362,6 @@
             this.imageList3.Images.SetKeyName(1, "Green.png");
             this.imageList3.Images.SetKeyName(2, "I.png");
             this.imageList3.Images.SetKeyName(3, "Red.png");
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label32.ImageIndex = 3;
-            this.label32.ImageList = this.imageList3;
-            this.label32.Location = new System.Drawing.Point(6, 52);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(124, 17);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "       : Đã có người ";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label33
             // 
@@ -1388,18 +1376,32 @@
             this.label33.Text = "       : Trống";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label34
+            // label32
             // 
-            this.label34.AutoSize = true;
-            this.label34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label34.ImageIndex = 0;
-            this.label34.ImageList = this.imageList3;
-            this.label34.Location = new System.Drawing.Point(6, 103);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(117, 17);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "       : Sắp hết HĐ";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.AutoSize = true;
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label32.ImageIndex = 3;
+            this.label32.ImageList = this.imageList3;
+            this.label32.Location = new System.Drawing.Point(6, 52);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(124, 17);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "       : Đã có người ";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label31.ImageIndex = 2;
+            this.label31.ImageList = this.imageList3;
+            this.label31.Location = new System.Drawing.Point(6, 18);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(126, 17);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "     : CHÚ THÍCH";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Home
             // 
