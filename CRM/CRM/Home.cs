@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -374,6 +376,16 @@ namespace CRM
 
         private void button16_Click(object sender, EventArgs e)
         {
+
+            TaiKhoangEntities log = new TaiKhoangEntities();
+            log.Taikhoan = "asdfg";
+            log.Matkhau = "123";
+            TaiKhoanBUS logbus = new TaiKhoanBUS();
+            DataTable dt = logbus.getTK(log);
+            if (dt.Rows.Count > 0)
+                MessageBox.Show("Welcome to NoWhere !!");
+            else
+                MessageBox.Show("Đăng nhập thất bại !!!");
             //SqlConnection con = new SqlConnection();
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.Open();
@@ -385,8 +397,8 @@ namespace CRM
             //da.Fill(dt);
             //if (dt.Rows.Count > 0)
             //{
-            //    MessageBox.Show("Login sucess Welcome to Homepage http://krishnasinghprogramming.nlogspot.com");
-            //    System.Diagnostics.Process.Start("http://krishnasinghprogramming.blogspot.com");
+            //    MessageBox.Show("Login sucess Welcome to NoWhere !!! ");
+            //    System.Diagnostics.Process.Start("Halolo");
             //}
             //else
             //{

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DAO
 {
-    class DataProvider
+    public class DataProvider
     {
         SQLiteConnection con;//Dùng để kết nối vào cơ sở dữ liệu
         SQLiteDataAdapter da;//Là đối tượng trung gian lấy dữ liệu FIll vào trong các đối tương Data
@@ -15,24 +19,24 @@ namespace DAO
         //khởi tạo kết nối 
         public void conncet()
         {
-            string str = System.IO.Directory.GetCurrentDirectory().ToString() + @"\ScannerData.db";
+            string str = System.IO.Directory.GetCurrentDirectory().ToString() + @"\NCKH_KhoaLong.db";
             //MessageBox.Show(str);
             if (con == null)
                 con = new SQLiteConnection(@"Data Source = " + str);
             // Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = rfid - data; Integrated Security = True; Pooling = False //|DataDirectory|\
             if (con.State == ConnectionState.Closed)
                 con.Open();
-            /* if (con.State == ConnectionState.Open)
-             {
-                 string sql = "SELECT * FROM Account";
-                 da = new SqlDataAdapter(sql, con);
-                 dt = new DataTable();
-                 da.Fill(dt);
-                 MessageBox.Show(dt.Rows.Count.ToString());
-                 disconnect();
-             }
-             else
-                 Console.WriteLine("that bai");*/
+            //if (con.State == ConnectionState.Open)
+            //{
+            //    //string sql = "SELECT * FROM TaiKhoan";
+            //    //da = new SqlDataAdapter(sql, con);
+            //    //dt = new DataTable();
+            //    //da.Fill(dt);
+            //    MessageBox.Show(dt.Rows.Count.ToString());
+            //    disconnect();
+            //}
+            //else
+            //    Console.WriteLine("that bai");
         }
         //đóng kết nối
         public void disconnect()

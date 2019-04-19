@@ -925,7 +925,7 @@
             this.tab9.Padding = new System.Windows.Forms.Padding(3);
             this.tab9.Size = new System.Drawing.Size(820, 321);
             this.tab9.TabIndex = 9;
-            this.tab9.Text = "Home";
+            this.tab9.Text = "Home     ";
             this.tab9.UseVisualStyleBackColor = true;
             // 
             // groupBox4
