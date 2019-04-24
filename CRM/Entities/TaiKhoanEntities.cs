@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    public class TaiKhoangEntities
+    public class TaiKhoanEntities
     {
         private int id;
 
@@ -37,6 +37,8 @@ namespace Entities
             }
         }
 
+
+        private string matkhau;
         public string Matkhau
         {
             get
@@ -50,6 +52,7 @@ namespace Entities
             }
         }
 
+        private string loai;
         public string Loai
         {
             get
@@ -63,16 +66,10 @@ namespace Entities
             }
         }
 
-        
-
-        private string matkhau;
-
-        private string loai;
-
-        public TaiKhoangEntities()
+        public TaiKhoanEntities()
         {
         }
-        public TaiKhoangEntities(int id ,string tdn, string mk, string mkd )
+        public TaiKhoanEntities(int id ,string tdn, string mk, string mkd )
         {
             this.id = id;
             this.taikhoan = tdn;

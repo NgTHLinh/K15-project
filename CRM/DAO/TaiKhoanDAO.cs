@@ -11,7 +11,7 @@ namespace DAO
     {
         public TaiKhoanDAO():base()
         { }
-        public DataTable getTK(TaiKhoangEntities user)
+        public DataTable getTK(TaiKhoanEntities user)
         {
             string sql = "select * from TaiKhoan where TaiKhoan='" + user.Taikhoan + "' and MatKhau='" + user.Matkhau + "'";
 

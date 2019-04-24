@@ -38,6 +38,12 @@ namespace CRM
 
         private void Home_Load(object sender, EventArgs e)
         {
+            //int w = Screen.PrimaryScreen.Bounds.Width;
+            //int h = Screen.PrimaryScreen.Bounds.Height;
+            //this.Location = new Point(0, 0);
+            //this.Size = new Size(w, h);
+
+
         //TODO: This line of code loads data into the 'sTUDENTDataSet.login' table.You can move, or remove it, as needed.  
         //    this.loginTableAdapter.Fill(this.sTUDENTDataSet.login);
         //    SqlConnection con = new SqlConnection("Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True");
@@ -275,14 +281,14 @@ namespace CRM
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab4))//tab already present
+            if (tabControl1.TabPages.Contains(tab2))//tab already present
             {
-                tabControl1.SelectTab(tab4);  // select by name
+                tabControl1.SelectTab(tab2);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab4); // add removed tab
-                tabControl1.SelectTab(tab4);    // select by name
+                tabControl1.TabPages.Add(tab2); // add removed tab
+                tabControl1.SelectTab(tab2);    // select by name
             }
         }
 
@@ -377,7 +383,7 @@ namespace CRM
         private void button16_Click(object sender, EventArgs e)
         {
 
-            TaiKhoangEntities log = new TaiKhoangEntities();
+            TaiKhoanEntities log = new TaiKhoanEntities();
             log.Taikhoan = "asdfg";
             log.Matkhau = "123";
             TaiKhoanBUS logbus = new TaiKhoanBUS();
@@ -386,25 +392,7 @@ namespace CRM
                 MessageBox.Show("Welcome to NoWhere !!");
             else
                 MessageBox.Show("Đăng nhập thất bại !!!");
-            //SqlConnection con = new SqlConnection();
-            //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
-            //con.Open();
-            //string userid = textBox1.Text;
-            //string password = textBox2.Text;
-            //SqlCommand cmd = new SqlCommand("select userid,password from login where userid='" + textBox1.Text + "'and password='" + text            Box2.Text + "'", con);
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //if (dt.Rows.Count > 0)
-            //{
-            //    MessageBox.Show("Login sucess Welcome to NoWhere !!! ");
-            //    System.Diagnostics.Process.Start("Halolo");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid Login please check username and password");
-            //}
-            //con.Close();
+            
         }
     }
 }

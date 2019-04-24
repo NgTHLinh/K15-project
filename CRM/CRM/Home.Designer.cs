@@ -61,6 +61,7 @@
             this.tab4 = new System.Windows.Forms.TabPage();
             this.tab3 = new System.Windows.Forms.TabPage();
             this.tab2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -139,6 +140,7 @@
             this.tab4_p.SuspendLayout();
             this.tab8.SuspendLayout();
             this.tab2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tab1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,6 +152,9 @@
             // 
             // tabControl2
             // 
+            tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            tabControl2.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             tabControl2.Controls.Add(this.tab1_p);
             tabControl2.Controls.Add(this.tab2_p);
             tabControl2.Controls.Add(this.tab3_p);
@@ -160,8 +165,10 @@
             tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new System.Drawing.Size(824, 140);
+            tabControl2.Size = new System.Drawing.Size(824, 150);
+            tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             tabControl2.TabIndex = 1;
+            tabControl2.TabStop = false;
             // 
             // tab1_p
             // 
@@ -170,11 +177,11 @@
             this.tab1_p.Controls.Add(this.button5);
             this.tab1_p.Controls.Add(this.button4);
             this.tab1_p.ImageIndex = 3;
-            this.tab1_p.Location = new System.Drawing.Point(4, 29);
+            this.tab1_p.Location = new System.Drawing.Point(4, 32);
             this.tab1_p.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab1_p.Name = "tab1_p";
             this.tab1_p.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab1_p.Size = new System.Drawing.Size(816, 107);
+            this.tab1_p.Size = new System.Drawing.Size(816, 114);
             this.tab1_p.TabIndex = 0;
             this.tab1_p.Text = "Trang Chủ";
             // 
@@ -251,20 +258,20 @@
             // 
             // tab2_p
             // 
+            this.tab2_p.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tab2_p.Controls.Add(this.button10);
             this.tab2_p.Controls.Add(this.button9);
             this.tab2_p.Controls.Add(this.button8);
             this.tab2_p.Controls.Add(this.button6);
             this.tab2_p.Controls.Add(this.button7);
             this.tab2_p.ImageIndex = 1;
-            this.tab2_p.Location = new System.Drawing.Point(4, 29);
+            this.tab2_p.Location = new System.Drawing.Point(4, 32);
             this.tab2_p.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2_p.Name = "tab2_p";
             this.tab2_p.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab2_p.Size = new System.Drawing.Size(816, 107);
+            this.tab2_p.Size = new System.Drawing.Size(816, 114);
             this.tab2_p.TabIndex = 1;
             this.tab2_p.Text = "QL Người thuê";
-            this.tab2_p.UseVisualStyleBackColor = true;
             this.tab2_p.Click += new System.EventHandler(this.tabPage7_Click);
             // 
             // button10
@@ -352,18 +359,18 @@
             // 
             // tab3_p
             // 
+            this.tab3_p.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tab3_p.Controls.Add(this.button13);
             this.tab3_p.Controls.Add(this.button12);
             this.tab3_p.Controls.Add(this.button11);
             this.tab3_p.ImageIndex = 2;
-            this.tab3_p.Location = new System.Drawing.Point(4, 29);
+            this.tab3_p.Location = new System.Drawing.Point(4, 32);
             this.tab3_p.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab3_p.Name = "tab3_p";
             this.tab3_p.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab3_p.Size = new System.Drawing.Size(816, 107);
+            this.tab3_p.Size = new System.Drawing.Size(816, 114);
             this.tab3_p.TabIndex = 2;
             this.tab3_p.Text = "QL Phòng";
-            this.tab3_p.UseVisualStyleBackColor = true;
             this.tab3_p.Click += new System.EventHandler(this.tabPage8_Click);
             // 
             // button13
@@ -419,17 +426,17 @@
             // 
             // tab4_p
             // 
+            this.tab4_p.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tab4_p.Controls.Add(this.button15);
             this.tab4_p.Controls.Add(this.button14);
             this.tab4_p.ImageIndex = 0;
-            this.tab4_p.Location = new System.Drawing.Point(4, 29);
+            this.tab4_p.Location = new System.Drawing.Point(4, 32);
             this.tab4_p.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab4_p.Name = "tab4_p";
             this.tab4_p.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab4_p.Size = new System.Drawing.Size(816, 107);
+            this.tab4_p.Size = new System.Drawing.Size(816, 114);
             this.tab4_p.TabIndex = 3;
             this.tab4_p.Text = "QL Hóa đơn";
-            this.tab4_p.UseVisualStyleBackColor = true;
             // 
             // button15
             // 
@@ -482,11 +489,11 @@
             this.tab8.Controls.Add(this.label12);
             this.tab8.Controls.Add(this.label11);
             this.tab8.Controls.Add(this.textBox6);
-            this.tab8.Location = new System.Drawing.Point(4, 25);
+            this.tab8.Location = new System.Drawing.Point(4, 28);
             this.tab8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab8.Name = "tab8";
             this.tab8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab8.Size = new System.Drawing.Size(820, 321);
+            this.tab8.Size = new System.Drawing.Size(816, 378);
             this.tab8.TabIndex = 8;
             this.tab8.Text = "Tài Khoản     ";
             this.tab8.UseVisualStyleBackColor = true;
@@ -542,59 +549,73 @@
             // 
             // tab7
             // 
-            this.tab7.Location = new System.Drawing.Point(4, 25);
+            this.tab7.Location = new System.Drawing.Point(4, 28);
             this.tab7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab7.Name = "tab7";
             this.tab7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab7.Size = new System.Drawing.Size(820, 321);
+            this.tab7.Size = new System.Drawing.Size(816, 378);
             this.tab7.TabIndex = 7;
             this.tab7.Text = "TT NV     ";
             this.tab7.UseVisualStyleBackColor = true;
             // 
             // tab6
             // 
-            this.tab6.Location = new System.Drawing.Point(4, 25);
+            this.tab6.Location = new System.Drawing.Point(4, 28);
             this.tab6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab6.Name = "tab6";
             this.tab6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab6.Size = new System.Drawing.Size(820, 321);
+            this.tab6.Size = new System.Drawing.Size(816, 378);
             this.tab6.TabIndex = 6;
             this.tab6.Text = "TT Khách     ";
             this.tab6.UseVisualStyleBackColor = true;
             // 
             // tab4
             // 
-            this.tab4.Location = new System.Drawing.Point(4, 25);
+            this.tab4.Location = new System.Drawing.Point(4, 28);
             this.tab4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab4.Name = "tab4";
-            this.tab4.Size = new System.Drawing.Size(820, 321);
+            this.tab4.Size = new System.Drawing.Size(816, 378);
             this.tab4.TabIndex = 4;
             this.tab4.Text = "Hóa Đơn     ";
             this.tab4.UseVisualStyleBackColor = true;
             // 
             // tab3
             // 
-            this.tab3.Location = new System.Drawing.Point(4, 25);
+            this.tab3.Location = new System.Drawing.Point(4, 28);
             this.tab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab3.Name = "tab3";
-            this.tab3.Size = new System.Drawing.Size(820, 321);
+            this.tab3.Size = new System.Drawing.Size(816, 378);
             this.tab3.TabIndex = 3;
             this.tab3.Text = "Thuê      ";
             this.tab3.UseVisualStyleBackColor = true;
             // 
             // tab2
             // 
+            this.tab2.Controls.Add(this.dataGridView1);
             this.tab2.Controls.Add(this.groupBox2);
-            this.tab2.Location = new System.Drawing.Point(4, 25);
+            this.tab2.Location = new System.Drawing.Point(4, 28);
             this.tab2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2.Name = "tab2";
-            this.tab2.Size = new System.Drawing.Size(820, 321);
+            this.tab2.Size = new System.Drawing.Size(816, 378);
             this.tab2.TabIndex = 2;
             this.tab2.Text = "Thông tin hóa đơn      ";
             this.tab2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 112);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 249);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.domainUpDown3);
@@ -698,16 +719,16 @@
             // 
             // tab1
             // 
+            this.tab1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tab1.Controls.Add(this.button3);
             this.tab1.Controls.Add(this.groupBox1);
-            this.tab1.Location = new System.Drawing.Point(4, 25);
+            this.tab1.Location = new System.Drawing.Point(4, 28);
             this.tab1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab1.Name = "tab1";
             this.tab1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab1.Size = new System.Drawing.Size(820, 321);
+            this.tab1.Size = new System.Drawing.Size(816, 378);
             this.tab1.TabIndex = 1;
             this.tab1.Text = "Thêm nhân viên     ";
-            this.tab1.UseVisualStyleBackColor = true;
             this.tab1.Click += new System.EventHandler(this.tab1_Click);
             // 
             // button3
@@ -722,6 +743,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox4);
@@ -740,7 +763,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(579, 326);
+            this.groupBox1.Size = new System.Drawing.Size(579, 369);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -885,6 +908,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tab1);
             this.tabControl1.Controls.Add(this.tab2);
             this.tabControl1.Controls.Add(this.tab3);
@@ -899,7 +925,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(828, 350);
+            this.tabControl1.Size = new System.Drawing.Size(824, 410);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -907,29 +933,31 @@
             // 
             // tab5
             // 
-            this.tab5.Location = new System.Drawing.Point(4, 25);
+            this.tab5.Location = new System.Drawing.Point(4, 28);
             this.tab5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab5.Name = "tab5";
             this.tab5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab5.Size = new System.Drawing.Size(820, 321);
+            this.tab5.Size = new System.Drawing.Size(816, 378);
             this.tab5.TabIndex = 5;
             this.tab5.Text = "TT phòng     ";
             this.tab5.UseVisualStyleBackColor = true;
             // 
             // tab9
             // 
+            this.tab9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tab9.Controls.Add(this.groupBox4);
             this.tab9.Controls.Add(this.groupBox3);
-            this.tab9.Location = new System.Drawing.Point(4, 25);
+            this.tab9.Location = new System.Drawing.Point(4, 28);
             this.tab9.Name = "tab9";
             this.tab9.Padding = new System.Windows.Forms.Padding(3);
-            this.tab9.Size = new System.Drawing.Size(820, 321);
+            this.tab9.Size = new System.Drawing.Size(816, 378);
             this.tab9.TabIndex = 9;
             this.tab9.Text = "Home     ";
-            this.tab9.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.button28);
             this.groupBox4.Controls.Add(this.label26);
@@ -965,7 +993,7 @@
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Location = new System.Drawing.Point(212, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(602, 309);
+            this.groupBox4.Size = new System.Drawing.Size(598, 364);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
@@ -1407,12 +1435,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 498);
+            this.ClientSize = new System.Drawing.Size(831, 553);
             this.Controls.Add(tabControl2);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Home";
-            this.Text = "Home";
+            this.Text = "Thuê Phòng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             tabControl2.ResumeLayout(false);
             this.tab1_p.ResumeLayout(false);
@@ -1422,6 +1452,7 @@
             this.tab8.ResumeLayout(false);
             this.tab8.PerformLayout();
             this.tab2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tab1.ResumeLayout(false);
@@ -1538,5 +1569,6 @@
         private System.Windows.Forms.ImageList imageList3;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

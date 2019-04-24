@@ -23,7 +23,7 @@ namespace BUS
             }
         }
 
-        public DataTable getTK(TaiKhoangEntities user)
+        public DataTable getTK(TaiKhoanEntities user)
         {
             DataTable dt = null;
             try
