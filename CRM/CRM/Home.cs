@@ -384,8 +384,7 @@ namespace CRM
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
-            log.Taikhoan = "asdfg";
-            log.Matkhau = "123";
+            
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.getTK(log);
             if (dt.Rows.Count > 0)
