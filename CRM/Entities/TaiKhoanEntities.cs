@@ -84,9 +84,9 @@ namespace Entities
         public int Id
         {
             get
-            {return id;}
+            { return id; }
             set
-            {id = value;}
+            { id = value; }
         }
         private string dientich;
         public string DienTich
@@ -291,6 +291,281 @@ namespace Entities
             this.sdt = dt;
             this.hinhanh = ha;
             this.phongid = pid;
+        }
+    }
+
+    public class LoaiPhong
+    {
+        private int id;
+        public int Id
+        {
+            get
+            { return id; }
+            set
+            { id = value; }
+        }
+
+        private string hinhanh;
+        public string Hinhanh
+        {
+            get
+            { return hinhanh; }
+            set
+            { hinhanh = value; }
+        }
+
+        private string chitiet;
+        public string Chitiet
+        {
+            get
+            { return chitiet; }
+            set
+            { chitiet = value; }
+        }
+
+        public LoaiPhong()
+        { }
+        public LoaiPhong(int id, string ha, string ct)
+        {
+            this.id = id;
+            this.hinhanh = ha;
+            this.chitiet = ct;
+        }
+    }
+
+    public class HopDongPhat
+    {
+        private int id;
+        public int Id
+        {
+            get
+            { return id; }
+            set
+            { id = value; }
+        }
+
+        private int hopdongid;
+        public int Hopdongid
+        {
+            get
+            { return hopdongid; }
+            set
+            { hopdongid = value; }
+        }
+
+        private string tenloaiphat;
+        public string Tenloaiphat
+        {
+            get
+            { return tenloaiphat; }
+            set
+            { tenloaiphat = value; }
+        }
+
+        private int thanhtien;
+        public int Thanhtien
+        {
+            get
+            { return thanhtien; }
+            set
+            { thanhtien = value; }
+        }
+
+        public HopDongPhat()
+        { }
+        public HopDongPhat(int id, int hdid, string tlp, int tt)
+        {
+            this.id = id;
+            this.hopdongid = hdid;
+            this.tenloaiphat = tlp;
+            this.thanhtien = tt;
+
+        }
+    }
+
+    public class HopDong
+    {
+        private int id;
+        public int Id
+        {
+            get
+            { return id; }
+            set
+            { id = value; }
+        }
+
+        private string cmnd;
+        public string Cmnd
+        {
+            get
+            { return cmnd; }
+            set
+            { cmnd = value; }
+        }
+        private int phongid;
+        public int PhongID
+        {
+            get
+            { return phongid; }
+            set
+            { phongid = value; }
+        }
+
+        private DateTime ngaybatdau;
+        public DateTime Ngaybatdau
+        {
+            get
+            { return ngaybatdau; }
+            set
+            { ngaybatdau = value; }
+        }
+
+        private DateTime ngayketthuc;
+        public DateTime Ngayketthuc
+        {
+            get
+            { return ngayketthuc; }
+            set
+            { ngayketthuc = value; }
+        }
+
+        private int songuoio;
+        public int Songuoio
+        {
+            get
+            { return songuoio; }
+            set
+            { songuoio = value; }
+        }
+
+        private int tiencoc;
+        public int Tiencoc
+        {
+            get
+            { return tiencoc; }
+            set
+            { tiencoc = value; }
+        }
+
+        private int chietkhau;
+        public int Chietkhau
+        {
+            get
+            { return chietkhau; }
+            set
+            { chietkhau = value; }
+        }
+
+        private int tienhopdong;
+        public int Tienhopdong
+        {
+            get
+            { return tienhopdong; }
+            set
+            { tienhopdong = value; }
+        }
+
+        private int tiendien;
+        public int Tiendien
+        {
+            get
+            { return tiendien; }
+            set
+            { tiendien = value; }
+        }
+
+        private int tiennuoc;
+        public int Tiennuoc
+        {
+            get
+            { return tiennuoc; }
+            set
+            { tiennuoc = value; }
+        }
+
+        private string lietkedichvu;
+        public string Lietkedichvu
+        {
+            get
+            { return lietkedichvu; }
+            set
+            { lietkedichvu = value; }
+        }
+
+        public HopDong()
+        { }
+        public HopDong(int id, string cmnd , int phongid, DateTime ntt, DateTime nkt, int sno, int tcoc, int chietkhau, int tienhopdong, int tiendien, int tiennuoc, string lietkedichvu)
+        {
+            this.id = id;
+            this.cmnd = cmnd;
+            this.phongid = phongid;
+            this.ngaybatdau = ntt;
+            this.ngayketthuc = nkt;
+            this.songuoio = sno;
+            this.tiencoc = tcoc;
+            this.chietkhau = chietkhau;
+            this.tienhopdong = tienhopdong;
+            this.tiendien = tiendien;
+            this.tiennuoc = tiennuoc;
+            this.lietkedichvu = lietkedichvu;
+
+        }
+    }
+
+    public class DichVu
+    {
+        private int id;
+        public int Id
+        {
+            get
+            { return id; }
+            set
+            { id = value; }
+        }
+        private string tendichvu;
+        public string Tendichvu
+        {
+            get
+            { return tendichvu; }
+            set
+            { tendichvu = value; }
+        }
+        private string chitietdichvu;
+        public string Chitietdichvu
+        {
+            get
+            { return chitietdichvu; }
+            set
+            { chitietdichvu = value; }
+        }
+
+        private int soluong;
+        public int Soluong
+        {
+            get
+            { return soluong; }
+            set
+            { soluong = value; }
+        }
+
+        private int thanhtien;
+        public int Thanhtien
+        {
+            get
+            { return thanhtien; }
+            set
+            { thanhtien = value; }
+        }
+
+        public DichVu()
+        { }
+        public DichVu ( int id, string tendichvu, string chitietdichvu , int soluong, int thanhtien)
+        {
+            this.id = id;
+            this.tendichvu = tendichvu;
+            this.chitietdichvu = chitietdichvu;
+            this.soluong = soluong;
+            this.thanhtien = thanhtien;
         }
     }
 }
