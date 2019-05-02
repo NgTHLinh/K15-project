@@ -17,12 +17,12 @@ namespace DAO
         DataTable dt;
         SQLiteCommand cmd;
         //khởi tạo kết nối 
-        public void conncet()
+        public void connect()
         {
             string str = System.IO.Directory.GetCurrentDirectory().ToString() + @"\NCKH_KhoaLong.db";
             //MessageBox.Show(str);
             if (con == null)
-                con = new SQLiteConnection(@"Data Source = " + str);
+                con = new SQLiteConnection(@"Data Source = C:\Users\DuyKhoa\Documents\GitHub\K15-project\CRM\DAO\NCKH_KhoaLong.db " + str);
             // Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = rfid - data; Integrated Security = True; Pooling = False //|DataDirectory|\
             if (con.State == ConnectionState.Closed)
                 con.Open();
@@ -47,7 +47,7 @@ namespace DAO
         //Hàm lấy dữ liệu (get data) trong Class kết nối
         public DataSet getDataSet(string sql)
         {
-            conncet();
+            connect();
             da = new SQLiteDataAdapter(sql, con);
             ds = new DataSet();
             da.Fill(ds);
@@ -57,7 +57,7 @@ namespace DAO
         public DataTable getDataTable(string sql)
         {
             Console.WriteLine(sql);
-            conncet();
+            connect();
             da = new SQLiteDataAdapter(sql, con);
             dt = new DataTable();
             da.Fill(dt);
@@ -68,7 +68,7 @@ namespace DAO
 các công việc thêm xóa sửa trong database chỉ khác nhau chổ truy vấn SQL nên ta sẽ gom chung nó vào một hàm.*/
         public void ExeCuteNonQuery(string sql)
         {
-            conncet();
+            connect();
             cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             disconnect();
