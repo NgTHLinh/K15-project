@@ -21,7 +21,7 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
 
             InitializeComponent();
-            
+
 
             tabControl1.TabPages.Remove(tab1);
             tabControl1.TabPages.Remove(tab5);
@@ -34,7 +34,7 @@ namespace CRM
             //tabControl1.Visible = false;
         }
 
-        
+
 
         private void Home_Load(object sender, EventArgs e)
         {
@@ -44,114 +44,16 @@ namespace CRM
             //this.Size = new Size(w, h);
 
 
-        //TODO: This line of code loads data into the 'sTUDENTDataSet.login' table.You can move, or remove it, as needed.  
-        //    this.loginTableAdapter.Fill(this.sTUDENTDataSet.login);
-        //    SqlConnection con = new SqlConnection("Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True");
-        //    con.Open();
+            //TODO: This line of code loads data into the 'sTUDENTDataSet.login' table.You can move, or remove it, as needed.  
+            //    this.loginTableAdapter.Fill(this.sTUDENTDataSet.login);
+            //    SqlConnection con = new SqlConnection("Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True");
+            //    con.Open();
 
             //{
             //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sÁToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void domainUpDown2_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -169,10 +71,7 @@ namespace CRM
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -188,15 +87,7 @@ namespace CRM
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -208,20 +99,7 @@ namespace CRM
             }
         }
 
-        private void tabPage7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -235,10 +113,7 @@ namespace CRM
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button6_Click_1(object sender, EventArgs e)
         {
@@ -318,20 +193,6 @@ namespace CRM
             }
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void MouseDown(object sender, MouseEventArgs e)
         {
@@ -355,10 +216,7 @@ namespace CRM
             }
         }
 
-        private void tab1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -384,7 +242,7 @@ namespace CRM
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
-            log.Taikhoan = "asdfg";
+            log.Taikhoan = "tonlong";
             log.Matkhau = "123";
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.getTK(log);
@@ -392,7 +250,27 @@ namespace CRM
                 MessageBox.Show("Welcome to NoWhere !!");
             else
                 MessageBox.Show("Đăng nhập thất bại !!!");
-            
+
         }
+
+        
+
+        private void tabPage1_Paint(object sender, PaintEventArgs e)
+        {
+            for (int i = 0; i <= 5; i++)
+            {
+                Button button = new Button();
+                this.Controls.Add(button);
+                button.Location = new Point(170, 170);
+                button.Text = "123";
+                button.Size = new Size(220, 150);
+                button.Visible = true;
+                button.BringToFront();
+                button.Tag = i;
+               
+            }
+        }
+
+       
     }
 }
