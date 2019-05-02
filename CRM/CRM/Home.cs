@@ -386,7 +386,7 @@ namespace CRM
             TaiKhoanEntities log = new TaiKhoanEntities();
             
             TaiKhoanBUS logbus = new TaiKhoanBUS();
-            DataTable dt = logbus.getTK(log);
+            DataTable dt = logbus.GetTK(log);
             if (dt.Rows.Count > 0)
                 MessageBox.Show("Welcome to NoWhere !!");
             else

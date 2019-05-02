@@ -13,27 +13,16 @@ namespace BUS
         private TaiKhoanDAO userDAO;
         public TaiKhoanBUS()
         {
-            try
-            {
-                userDAO = new TaiKhoanDAO();
-            }
-            catch
-            {
-                throw;
-            }
+
+            userDAO = new TaiKhoanDAO();
         }
 
-        public DataTable getTK(TaiKhoanEntities user)
+        public DataTable GetTK(TaiKhoanEntities user)
         {
             DataTable dt = null;
-            try
-            {
-                dt = userDAO.getTK(user);
-            }
-            catch
-            {
-                throw;
-            }
+            
+                dt = userDAO.GetTK(user);
+           
             return dt;
         }
 
