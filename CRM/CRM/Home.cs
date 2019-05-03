@@ -242,12 +242,12 @@ namespace CRM
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
-<<<<<<< HEAD
+
             log.Taikhoan = "tonlong";
             log.Matkhau = "123";
-=======
+
             
->>>>>>> 4dae56ba4cd0a2c022d30093fa007be8703f4d53
+
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.GetTK(log);
             if (dt.Rows.Count > 0)
