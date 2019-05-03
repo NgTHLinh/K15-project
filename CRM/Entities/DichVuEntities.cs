@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Entities
 {
+<<<<<<< HEAD
     public class DichVuEntities
     {
         private int id;
@@ -60,5 +61,76 @@ namespace Entities
             this.soluong = soluong;
             this.thanhtien = thanhtien;
         }
+=======
+    class DichVuEntities
+    {
+
+        private int id;
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+
+        private string loai;
+        public string Loaidichvu
+        {
+            get
+            {
+                return loai;
+            }
+
+            set
+            {
+                loai = value;
+            }
+        }
+
+
+        private string ten;
+        public string Tendichvu
+        {
+            get
+            {
+                return ten;
+            }
+
+            set
+            {
+                ten = value;
+            }
+        }
+
+       
+        private string Chitiet;
+        public string Chitietdichvu
+        {
+            get
+            {
+                return Chitiet;
+            }
+
+            set
+            {
+                Chitiet = value;
+            }
+        }
+
+
+
+
+
+
+
+
+>>>>>>> 2d33d024c182adc42fbaacdd1a1727a71b77ccb5
     }
 }

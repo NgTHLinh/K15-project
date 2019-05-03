@@ -69,12 +69,20 @@ namespace Entities
         public TaiKhoanEntities()
         {
         }
+<<<<<<< HEAD
+        public TaiKhoanEntities(int id ,string tk, string mk, string tkl)
+=======
         public TaiKhoanEntities(int id, string tk, string mk, string mkl)
+>>>>>>> 4dae56ba4cd0a2c022d30093fa007be8703f4d53
         {
             this.id = id;
             this.taikhoan = tk;
             this.matkhau = mk;
+<<<<<<< HEAD
+            this.loai = tkl;
+=======
             this.loai = mkl;
+>>>>>>> 4dae56ba4cd0a2c022d30093fa007be8703f4d53
         }
 
     }

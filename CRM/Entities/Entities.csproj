@@ -41,10 +41,13 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DichVuEntities.cs" />
+<<<<<<< HEAD
     <Compile Include="HopDongEntities.cs" />
     <Compile Include="HopDongPhatEntities.cs" />
     <Compile Include="LoaiPhongEntities.cs" />
     <Compile Include="PhongEntities.cs" />
+=======
+>>>>>>> 2d33d024c182adc42fbaacdd1a1727a71b77ccb5
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanEntities.cs" />
     <Compile Include="ThanhToanEntities.cs" />
