@@ -243,8 +243,8 @@ namespace CRM
 
             TaiKhoanEntities log = new TaiKhoanEntities();
 
-            log.Taikhoan = "tonlong";
-            log.Matkhau = "123";
+            log.Taikhoan =textBox6.Text;
+            log.Matkhau = textBox7.Text;
 
             
 

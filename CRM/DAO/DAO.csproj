@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="NCKH_KhoaLong.db" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
