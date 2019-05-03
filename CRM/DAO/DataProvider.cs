@@ -19,10 +19,10 @@ namespace DAO
         //khởi tạo kết nối 
         public void connect()
         {
-            string str = System.IO.Directory.GetCurrentDirectory().ToString() + @"\NCKH_KhoaLong.db";
+            string str = @"D:\NCKH_KhoaLong.db";
             //MessageBox.Show(str);
             if (con == null)
-                con = new SQLiteConnection(@"Data Source = C:\Users\DuyKhoa\Documents\GitHub\K15-project\CRM\DAO\NCKH_KhoaLong.db " + str);
+                con = new SQLiteConnection(@"Data Source = " + str);
             // Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = rfid - data; Integrated Security = True; Pooling = False //|DataDirectory|\
             if (con.State == ConnectionState.Closed)
                 con.Open();

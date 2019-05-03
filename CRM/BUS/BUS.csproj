@@ -49,7 +49,7 @@
       <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{A43AA125-082D-42D8-A595-6D08A5B0A1ED}</Project>
+      <Project>{a43aa125-082d-42d8-a595-6d08a5b0a1ed}</Project>
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
