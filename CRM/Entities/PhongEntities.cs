@@ -15,6 +15,8 @@ namespace Entities
             set
             { id = value; }
         }
+
+
         private string dientich;
         public string DienTich
         {
@@ -23,6 +25,8 @@ namespace Entities
             set
             { DienTich = value; }
         }
+
+
         private string huong;
         public string Huong
         {
@@ -31,6 +35,8 @@ namespace Entities
             set
             { Huong = value; }
         }
+
+
         private int loaiphongid;
         public int LoaiPhongId
         {
@@ -39,6 +45,8 @@ namespace Entities
             set
             { LoaiPhongId = value; }
         }
+
+
         private int sodien;
         public int SoDien
         {
@@ -47,6 +55,8 @@ namespace Entities
             set
             { SoDien = value; }
         }
+
+
         private int sonuoc;
         public int SoNuoc
         {
@@ -55,6 +65,8 @@ namespace Entities
             set
             { SoNuoc = value; }
         }
+
+
         private string hientrang;
         public string HienTrang
         {
@@ -63,6 +75,8 @@ namespace Entities
             set
             { HienTrang = value; }
         }
+
+
         private int giaca;
         public int GiaCa
         {
@@ -71,6 +85,8 @@ namespace Entities
             set
             { GiaCa = value; }
         }
+
+
         public PhongEntities()
         {
         }
@@ -79,6 +95,7 @@ namespace Entities
             this.id = id;
             this.dientich = dt;
             this.huong = h;
+            this.loaiphongid = lp;
             this.sodien = sd;
             this.sonuoc = sn;
             this.hientrang = ht;

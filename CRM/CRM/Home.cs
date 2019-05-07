@@ -14,14 +14,16 @@ namespace CRM
     public partial class Home : Form
     {
         //SqlConnection con = new SqlConnection();
+        
 
         public Home()
         {
+            
             //SqlConnection con = new SqlConnection();
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
 
             InitializeComponent();
-
+            
 
             tabControl1.TabPages.Remove(tab1);
             tabControl1.TabPages.Remove(tab5);
@@ -38,6 +40,7 @@ namespace CRM
 
         private void Home_Load(object sender, EventArgs e)
         {
+            
             //int w = Screen.PrimaryScreen.Bounds.Width;
             //int h = Screen.PrimaryScreen.Bounds.Height;
             //this.Location = new Point(0, 0);
@@ -51,6 +54,7 @@ namespace CRM
 
             //{
             //}
+            
         }
 
       
@@ -275,6 +279,15 @@ namespace CRM
             }
         }
 
-       
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            Thue p = new Thue();
+            p.ShowDialog();
+        }
     }
 }

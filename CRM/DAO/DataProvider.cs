@@ -19,7 +19,7 @@ namespace DAO
         //khởi tạo kết nối 
         public void connect()
         {
-            string str = @"E:\NCKH_KhoaLong.db";
+            string str = @"D:\NCKH_KhoaLong.db";
             //MessageBox.Show(str);
             if (con == null)
                 con = new SQLiteConnection(@"Data Source = " + str);
