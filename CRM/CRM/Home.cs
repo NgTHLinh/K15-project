@@ -265,11 +265,20 @@ namespace CRM
 
         private void tabPage1_Paint(object sender, PaintEventArgs e)
         {
+            int x = 0;
             for (int i = 0; i <= 5; i++)
             {
                 Button button = new Button();
                 this.Controls.Add(button);
-                button.Location = new Point(170, 170);
+                if (i < 0)
+                {
+                    button.Location = new Point(170, 170);
+                }
+                else
+                {
+                    button.Location = new Point(x, 170);
+                }                
+                x = button.Location.X + 220 + 80;
                 button.Text = "123";
                 button.Size = new Size(220, 150);
                 button.Visible = true;
