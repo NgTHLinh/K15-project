@@ -269,8 +269,8 @@ namespace CRM
             for (int i = 0; i <= 5; i++)
             {
                 Button button = new Button();
-                this.Controls.Add(button);
-                if (i < 0)
+                
+                if (i == 0)
                 {
                     button.Location = new Point(170, 170);
                 }
@@ -284,7 +284,7 @@ namespace CRM
                 button.Visible = true;
                 button.BringToFront();
                 button.Tag = i;
-               
+                tabPage1.Controls.Add(button);
             }
         }
 
