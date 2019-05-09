@@ -36,11 +36,11 @@ namespace Entities
 
         public LoaiPhongEntities()
         { }
-        public LoaiPhongEntities(int id, string ha, string ct)
+        public LoaiPhongEntities(int id, string hinhanh, string chitiet)
         {
             this.id = id;
-            this.hinhanh = ha;
-            this.chitiet = ct;
+            this.hinhanh = hinhanh;
+            this.chitiet = chitiet;
         }
     }
 }

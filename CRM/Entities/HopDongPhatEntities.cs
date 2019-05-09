@@ -45,12 +45,12 @@ namespace Entities
 
         public HopDongPhatEntities()
         { }
-        public HopDongPhatEntities(int id, int hdid, string tlp, int tt)
+        public HopDongPhatEntities(int id, int hopdongid, string tenloaiphat, int thanhtien)
         {
             this.id = id;
-            this.hopdongid = hdid;
-            this.tenloaiphat = tlp;
-            this.thanhtien = tt;
+            this.hopdongid = hopdongid;
+            this.tenloaiphat = tenloaiphat;
+            this.thanhtien = thanhtien;
 
         }
     }

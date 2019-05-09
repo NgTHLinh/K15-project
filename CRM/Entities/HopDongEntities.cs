@@ -116,15 +116,15 @@ namespace Entities
 
         public HopDongEntities()
         { }
-        public HopDongEntities(int id, string cmnd, int phongid, DateTime ntt, DateTime nkt, int sno, int tcoc, int chietkhau, int tienhopdong, int tiendien, int tiennuoc, string lietkedichvu)
+        public HopDongEntities(int id, string cmnd, int phongid, DateTime ngaybatdau, DateTime ngayketthuc, int songuoio, int tiencoc, int chietkhau, int tienhopdong, int tiendien, int tiennuoc, string lietkedichvu)
         {
             this.id = id;
             this.cmnd = cmnd;
             this.phongid = phongid;
-            this.ngaybatdau = ntt;
-            this.ngayketthuc = nkt;
-            this.songuoio = sno;
-            this.tiencoc = tcoc;
+            this.ngaybatdau = ngaybatdau;
+            this.ngayketthuc = ngayketthuc;
+            this.songuoio = songuoio;
+            this.tiencoc = tiencoc;
             this.chietkhau = chietkhau;
             this.tienhopdong = tienhopdong;
             this.tiendien = tiendien;

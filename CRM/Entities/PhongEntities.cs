@@ -90,16 +90,16 @@ namespace Entities
         public PhongEntities()
         {
         }
-        public PhongEntities(int id, string dt, string h, int lp, int sd, int sn, string ht, int gc)
+        public PhongEntities(int id, string dientich, string huong, int loaiphong, int sodien, int songuoi, string hientrang, int giaca)
         {
             this.id = id;
-            this.dientich = dt;
-            this.huong = h;
-            this.loaiphongid = lp;
-            this.sodien = sd;
-            this.sonuoc = sn;
-            this.hientrang = ht;
-            this.giaca = gc;
+            this.dientich = dientich;
+            this.huong = huong;
+            this.loaiphongid = loaiphong;
+            this.sodien = sodien;
+            this.sonuoc = songuoi;
+            this.hientrang = hientrang;
+            this.giaca = giaca;
         }
     }
 }
