@@ -14,8 +14,8 @@ namespace CRM
     public partial class Home : Form
     {
         //SqlConnection con = new SqlConnection();
-        
 
+        TaiKhoanEntities userlogin = new TaiKhoanEntities();
         public Home()
         {
             
@@ -250,12 +250,19 @@ namespace CRM
             log.Taikhoan =textBox6.Text;
             log.Matkhau = textBox7.Text;
 
-            
 
+          
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.GetTK(log);
+
             if (dt.Rows.Count > 0)
-                MessageBox.Show("Welcome to NoWhere !!");
+            {
+                userlogin.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
+                userlogin.Loai = dt.Rows[0][3].ToString();
+
+               // if (userlogin.Loai == 3)//la nhan vien}
+                    MessageBox.Show("Welcome to NoWhere !!");
+            }
             else
                 MessageBox.Show("Đăng nhập thất bại !!!");
 
@@ -272,13 +279,13 @@ namespace CRM
                 
                 if (i == 0)
                 {
-                    button.Location = new Point(170, 170);
+                    button.Location = new Point(12, 42);
                 }
                 else
                 {
-                    button.Location = new Point(x, 170);
+                    button.Location = new Point(x, 42);
                 }                
-                x = button.Location.X + 220 + 80;
+                x = button.Location.X + 220 + 40;
                 button.Text = "123";
                 button.Size = new Size(220, 150);
                 button.Visible = true;
