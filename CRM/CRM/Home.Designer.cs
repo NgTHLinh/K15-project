@@ -248,6 +248,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             tabControl2 = new System.Windows.Forms.TabControl();
             tabControl2.SuspendLayout();
             this.tab1_p.SuspendLayout();
@@ -287,6 +288,7 @@
             tabControl2.Controls.Add(this.tab2_p);
             tabControl2.Controls.Add(this.tab3_p);
             tabControl2.Controls.Add(this.tab4_p);
+            tabControl2.Controls.Add(this.tabPage2);
             tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tabControl2.ImageList = this.imageList1;
             tabControl2.Location = new System.Drawing.Point(4, 2);
@@ -596,6 +598,7 @@
             this.imageList1.Images.SetKeyName(3, "Home.png");
             this.imageList1.Images.SetKeyName(4, "LogIn.png");
             this.imageList1.Images.SetKeyName(5, "LogOut.png");
+            this.imageList1.Images.SetKeyName(6, "CustomerInfo.png");
             // 
             // tab8
             // 
@@ -3037,6 +3040,17 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.ImageIndex = 6;
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1767, 114);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "QL Nhân Viên";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3313,5 +3327,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
