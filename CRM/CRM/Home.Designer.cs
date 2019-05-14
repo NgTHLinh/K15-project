@@ -49,6 +49,7 @@
             this.tab4_p = new System.Windows.Forms.TabPage();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tab8 = new System.Windows.Forms.TabPage();
             this.button16 = new System.Windows.Forms.Button();
@@ -248,13 +249,15 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button86 = new System.Windows.Forms.Button();
+            this.button87 = new System.Windows.Forms.Button();
             tabControl2 = new System.Windows.Forms.TabControl();
             tabControl2.SuspendLayout();
             this.tab1_p.SuspendLayout();
             this.tab2_p.SuspendLayout();
             this.tab3_p.SuspendLayout();
             this.tab4_p.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tab8.SuspendLayout();
             this.tab7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -321,7 +324,7 @@
             this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button17.ImageIndex = 13;
             this.button17.ImageList = this.imageList2;
-            this.button17.Location = new System.Drawing.Point(235, 4);
+            this.button17.Location = new System.Drawing.Point(237, 4);
             this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(112, 98);
@@ -353,6 +356,8 @@
             this.imageList2.Images.SetKeyName(15, "Green.png");
             this.imageList2.Images.SetKeyName(16, "Red.png");
             this.imageList2.Images.SetKeyName(17, "I.png");
+            this.imageList2.Images.SetKeyName(18, "AddUser.png");
+            this.imageList2.Images.SetKeyName(19, "DoiMK.png");
             // 
             // button5
             // 
@@ -360,7 +365,7 @@
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.ImageIndex = 12;
             this.button5.ImageList = this.imageList2;
-            this.button5.Location = new System.Drawing.Point(117, 2);
+            this.button5.Location = new System.Drawing.Point(119, 4);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(112, 98);
@@ -376,7 +381,7 @@
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button4.ImageIndex = 0;
             this.button4.ImageList = this.imageList2;
-            this.button4.Location = new System.Drawing.Point(5, 2);
+            this.button4.Location = new System.Drawing.Point(6, 4);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 98);
@@ -409,7 +414,7 @@
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button10.ImageIndex = 3;
             this.button10.ImageList = this.imageList2;
-            this.button10.Location = new System.Drawing.Point(459, 2);
+            this.button10.Location = new System.Drawing.Point(460, 4);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(107, 98);
@@ -425,7 +430,7 @@
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button9.ImageIndex = 3;
             this.button9.ImageList = this.imageList2;
-            this.button9.Location = new System.Drawing.Point(347, 2);
+            this.button9.Location = new System.Drawing.Point(347, 4);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(107, 98);
@@ -441,7 +446,7 @@
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button8.ImageIndex = 4;
             this.button8.ImageList = this.imageList2;
-            this.button8.Location = new System.Drawing.Point(231, 2);
+            this.button8.Location = new System.Drawing.Point(232, 4);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(109, 98);
@@ -456,7 +461,7 @@
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button6.ImageIndex = 2;
             this.button6.ImageList = this.imageList2;
-            this.button6.Location = new System.Drawing.Point(5, 2);
+            this.button6.Location = new System.Drawing.Point(6, 4);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 98);
@@ -472,7 +477,7 @@
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button7.ImageIndex = 5;
             this.button7.ImageList = this.imageList2;
-            this.button7.Location = new System.Drawing.Point(117, 2);
+            this.button7.Location = new System.Drawing.Point(119, 4);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 98);
@@ -502,7 +507,7 @@
             this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button13.ImageIndex = 11;
             this.button13.ImageList = this.imageList2;
-            this.button13.Location = new System.Drawing.Point(231, 2);
+            this.button13.Location = new System.Drawing.Point(232, 4);
             this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(107, 98);
@@ -518,7 +523,7 @@
             this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button12.ImageIndex = 8;
             this.button12.ImageList = this.imageList2;
-            this.button12.Location = new System.Drawing.Point(117, 2);
+            this.button12.Location = new System.Drawing.Point(119, 4);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(107, 98);
@@ -533,7 +538,7 @@
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button11.ImageIndex = 10;
             this.button11.ImageList = this.imageList2;
-            this.button11.Location = new System.Drawing.Point(5, 2);
+            this.button11.Location = new System.Drawing.Point(6, 4);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(107, 98);
@@ -563,7 +568,7 @@
             this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button15.ImageIndex = 9;
             this.button15.ImageList = this.imageList2;
-            this.button15.Location = new System.Drawing.Point(116, 2);
+            this.button15.Location = new System.Drawing.Point(119, 4);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(107, 98);
@@ -578,7 +583,7 @@
             this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button14.ImageIndex = 7;
             this.button14.ImageList = this.imageList2;
-            this.button14.Location = new System.Drawing.Point(4, 2);
+            this.button14.Location = new System.Drawing.Point(6, 4);
             this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(107, 98);
@@ -587,6 +592,19 @@
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage2.Controls.Add(this.button87);
+            this.tabPage2.Controls.Add(this.button86);
+            this.tabPage2.ImageIndex = 6;
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1767, 114);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "QL Nhân Viên";
             // 
             // imageList1
             // 
@@ -894,7 +912,7 @@
             this.tab4.Name = "tab4";
             this.tab4.Size = new System.Drawing.Size(1782, 768);
             this.tab4.TabIndex = 4;
-            this.tab4.Text = "Hóa Đơn     ";
+            this.tab4.Text = "Thêm NV     ";
             this.tab4.UseVisualStyleBackColor = true;
             // 
             // tab3
@@ -3040,16 +3058,36 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
-            // tabPage2
+            // button86
             // 
-            this.tabPage2.ImageIndex = 6;
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1767, 114);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "QL Nhân Viên";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button86.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button86.ImageIndex = 18;
+            this.button86.ImageList = this.imageList2;
+            this.button86.Location = new System.Drawing.Point(6, 5);
+            this.button86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button86.Name = "button86";
+            this.button86.Size = new System.Drawing.Size(107, 98);
+            this.button86.TabIndex = 3;
+            this.button86.Text = "Thêm NV";
+            this.button86.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button86.UseVisualStyleBackColor = false;
+            this.button86.Click += new System.EventHandler(this.button86_Click);
+            // 
+            // button87
+            // 
+            this.button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button87.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button87.ImageIndex = 19;
+            this.button87.ImageList = this.imageList2;
+            this.button87.Location = new System.Drawing.Point(119, 5);
+            this.button87.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button87.Name = "button87";
+            this.button87.Size = new System.Drawing.Size(107, 98);
+            this.button87.TabIndex = 4;
+            this.button87.Text = "Đổi MK";
+            this.button87.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button87.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -3072,6 +3110,7 @@
             this.tab2_p.ResumeLayout(false);
             this.tab3_p.ResumeLayout(false);
             this.tab4_p.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.tab8.ResumeLayout(false);
             this.tab8.PerformLayout();
             this.tab7.ResumeLayout(false);
@@ -3328,5 +3367,7 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button87;
+        private System.Windows.Forms.Button button86;
     }
 }

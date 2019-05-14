@@ -305,5 +305,18 @@ namespace CRM
             Thue p = new Thue();
             p.ShowDialog();
         }
+
+        private void button86_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tab4))//tab already present
+            {
+                tabControl1.SelectTab(tab4);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tab4); // add removed tab
+                tabControl1.SelectTab(tab4);    // select by name
+            }
+        }
     }
 }
