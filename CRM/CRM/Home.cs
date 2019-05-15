@@ -67,7 +67,7 @@ namespace CRM
             }
         }
 
-        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
             {
@@ -75,7 +75,23 @@ namespace CRM
             }
         }
 
-       
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                checkBox4.Checked = false;
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                checkBox3.Checked = false;
+            }
+        }
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -103,7 +119,17 @@ namespace CRM
             }
         }
 
-      
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ dùng số");
+            }
+        }
+
+
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -318,5 +344,7 @@ namespace CRM
                 tabControl1.SelectTab(tab4);    // select by name
             }
         }
+
+        
     }
 }

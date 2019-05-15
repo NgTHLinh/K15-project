@@ -50,6 +50,8 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button87 = new System.Windows.Forms.Button();
+            this.button86 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tab8 = new System.Windows.Forms.TabPage();
             this.button16 = new System.Windows.Forms.Button();
@@ -76,6 +78,34 @@
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.tab4 = new System.Windows.Forms.TabPage();
+            this.button88 = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.button89 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.tab3 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button54 = new System.Windows.Forms.Button();
@@ -249,8 +279,8 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button86 = new System.Windows.Forms.Button();
-            this.button87 = new System.Windows.Forms.Button();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             tabControl2 = new System.Windows.Forms.TabControl();
             tabControl2.SuspendLayout();
             this.tab1_p.SuspendLayout();
@@ -265,6 +295,8 @@
             this.tab6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox9.SuspendLayout();
+            this.tab4.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.tab3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -606,6 +638,37 @@
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "QL Nhân Viên";
             // 
+            // button87
+            // 
+            this.button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button87.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button87.ImageIndex = 19;
+            this.button87.ImageList = this.imageList2;
+            this.button87.Location = new System.Drawing.Point(119, 5);
+            this.button87.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button87.Name = "button87";
+            this.button87.Size = new System.Drawing.Size(107, 98);
+            this.button87.TabIndex = 4;
+            this.button87.Text = "Đổi MK";
+            this.button87.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button87.UseVisualStyleBackColor = false;
+            // 
+            // button86
+            // 
+            this.button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button86.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button86.ImageIndex = 18;
+            this.button86.ImageList = this.imageList2;
+            this.button86.Location = new System.Drawing.Point(6, 5);
+            this.button86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button86.Name = "button86";
+            this.button86.Size = new System.Drawing.Size(107, 98);
+            this.button86.TabIndex = 3;
+            this.button86.Text = "Thêm NV";
+            this.button86.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button86.UseVisualStyleBackColor = false;
+            this.button86.Click += new System.EventHandler(this.button86_Click);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -907,6 +970,8 @@
             // 
             // tab4
             // 
+            this.tab4.Controls.Add(this.button88);
+            this.tab4.Controls.Add(this.groupBox11);
             this.tab4.Location = new System.Drawing.Point(4, 28);
             this.tab4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab4.Name = "tab4";
@@ -914,6 +979,309 @@
             this.tab4.TabIndex = 4;
             this.tab4.Text = "Thêm NV     ";
             this.tab4.UseVisualStyleBackColor = true;
+            // 
+            // button88
+            // 
+            this.button88.Location = new System.Drawing.Point(36, 38);
+            this.button88.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button88.Name = "button88";
+            this.button88.Size = new System.Drawing.Size(116, 143);
+            this.button88.TabIndex = 5;
+            this.button88.Text = "Ảnh";
+            this.button88.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.comboBox4);
+            this.groupBox11.Controls.Add(this.dateTimePicker5);
+            this.groupBox11.Controls.Add(this.dateTimePicker4);
+            this.groupBox11.Controls.Add(this.label96);
+            this.groupBox11.Controls.Add(this.label95);
+            this.groupBox11.Controls.Add(this.comboBox3);
+            this.groupBox11.Controls.Add(this.textBox18);
+            this.groupBox11.Controls.Add(this.label94);
+            this.groupBox11.Controls.Add(this.label93);
+            this.groupBox11.Controls.Add(this.label92);
+            this.groupBox11.Controls.Add(this.textBox15);
+            this.groupBox11.Controls.Add(this.label91);
+            this.groupBox11.Controls.Add(this.textBox14);
+            this.groupBox11.Controls.Add(this.label90);
+            this.groupBox11.Controls.Add(this.button89);
+            this.groupBox11.Controls.Add(this.textBox10);
+            this.groupBox11.Controls.Add(this.textBox11);
+            this.groupBox11.Controls.Add(this.textBox12);
+            this.groupBox11.Controls.Add(this.textBox13);
+            this.groupBox11.Controls.Add(this.checkBox3);
+            this.groupBox11.Controls.Add(this.checkBox4);
+            this.groupBox11.Controls.Add(this.label84);
+            this.groupBox11.Controls.Add(this.label85);
+            this.groupBox11.Controls.Add(this.label86);
+            this.groupBox11.Controls.Add(this.label87);
+            this.groupBox11.Controls.Add(this.label88);
+            this.groupBox11.Controls.Add(this.label89);
+            this.groupBox11.Controls.Add(this.dateTimePicker3);
+            this.groupBox11.Location = new System.Drawing.Point(214, 5);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox11.Size = new System.Drawing.Size(1532, 759);
+            this.groupBox11.TabIndex = 4;
+            this.groupBox11.TabStop = false;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(492, 247);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(280, 22);
+            this.dateTimePicker4.TabIndex = 27;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(6, 404);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(68, 17);
+            this.label96.TabIndex = 26;
+            this.label96.Text = "Ngày vào";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(6, 367);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(61, 17);
+            this.label95.TabIndex = 25;
+            this.label95.Text = "Bộ phận";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
+            "Hồ Chí Minh",
+            "Hà Nội",
+            "Hải Phòng",
+            "Huế",
+            "Đắc Lắk",
+            "Đắc N",
+            "Vũng Tàu",
+            "Vũng ***"});
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Hồ Chí Minh",
+            "Hà Nội",
+            "Hải Phòng",
+            "Huế",
+            "Đắc Lắk",
+            "Đắc N",
+            "Vũng Tàu",
+            "Vũng ***"});
+            this.comboBox3.Location = new System.Drawing.Point(117, 288);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(655, 24);
+            this.comboBox3.TabIndex = 24;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(117, 325);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(655, 22);
+            this.textBox18.TabIndex = 23;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(6, 329);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(42, 17);
+            this.label94.TabIndex = 22;
+            this.label94.Text = "Email";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(6, 291);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(56, 17);
+            this.label93.TabIndex = 20;
+            this.label93.Text = "Nơi cấp";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(418, 249);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(68, 17);
+            this.label92.TabIndex = 18;
+            this.label92.Text = "Ngày cấp";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(117, 209);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(655, 22);
+            this.textBox15.TabIndex = 17;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(6, 213);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(57, 17);
+            this.label91.TabIndex = 16;
+            this.label91.Text = "Tạm trú";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(117, 11);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(655, 22);
+            this.textBox14.TabIndex = 15;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(6, 16);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(93, 17);
+            this.label90.TabIndex = 14;
+            this.label90.Text = "Mã nhân viên";
+            // 
+            // button89
+            // 
+            this.button89.BackColor = System.Drawing.Color.Aquamarine;
+            this.button89.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button89.Location = new System.Drawing.Point(317, 507);
+            this.button89.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button89.Name = "button89";
+            this.button89.Size = new System.Drawing.Size(121, 58);
+            this.button89.TabIndex = 13;
+            this.button89.Text = "Thêm";
+            this.button89.UseVisualStyleBackColor = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(117, 435);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(655, 22);
+            this.textBox10.TabIndex = 12;
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(117, 247);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(280, 22);
+            this.textBox11.TabIndex = 11;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(117, 169);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(655, 22);
+            this.textBox12.TabIndex = 10;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(117, 48);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(655, 22);
+            this.textBox13.TabIndex = 9;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(203, 131);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(48, 21);
+            this.checkBox3.TabIndex = 8;
+            this.checkBox3.Text = "Nữ";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(117, 131);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(59, 21);
+            this.checkBox4.TabIndex = 7;
+            this.checkBox4.Text = "Nam";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(6, 439);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(36, 17);
+            this.label84.TabIndex = 6;
+            this.label84.Text = "SĐT";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(6, 251);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(48, 17);
+            this.label85.TabIndex = 5;
+            this.label85.Text = "CMND";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(6, 173);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(78, 17);
+            this.label86.TabIndex = 4;
+            this.label86.Text = "Thường trú";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(6, 131);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(60, 17);
+            this.label87.TabIndex = 3;
+            this.label87.Text = "Giới tính";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(6, 92);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(71, 17);
+            this.label88.TabIndex = 2;
+            this.label88.Text = "Ngày sinh";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(6, 53);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(69, 17);
+            this.label89.TabIndex = 0;
+            this.label89.Text = "Họ và tên";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(117, 86);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(280, 22);
+            this.dateTimePicker3.TabIndex = 1;
             // 
             // tab3
             // 
@@ -1778,7 +2146,7 @@
             this.checkBox2.TabIndex = 8;
             this.checkBox2.Text = "Nữ";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged_1);
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -3058,36 +3426,20 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
-            // button86
+            // dateTimePicker5
             // 
-            this.button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button86.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button86.ImageIndex = 18;
-            this.button86.ImageList = this.imageList2;
-            this.button86.Location = new System.Drawing.Point(6, 5);
-            this.button86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button86.Name = "button86";
-            this.button86.Size = new System.Drawing.Size(107, 98);
-            this.button86.TabIndex = 3;
-            this.button86.Text = "Thêm NV";
-            this.button86.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button86.UseVisualStyleBackColor = false;
-            this.button86.Click += new System.EventHandler(this.button86_Click);
+            this.dateTimePicker5.Location = new System.Drawing.Point(117, 401);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(280, 22);
+            this.dateTimePicker5.TabIndex = 28;
             // 
-            // button87
+            // comboBox4
             // 
-            this.button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button87.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button87.ImageIndex = 19;
-            this.button87.ImageList = this.imageList2;
-            this.button87.Location = new System.Drawing.Point(119, 5);
-            this.button87.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button87.Name = "button87";
-            this.button87.Size = new System.Drawing.Size(107, 98);
-            this.button87.TabIndex = 4;
-            this.button87.Text = "Đổi MK";
-            this.button87.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button87.UseVisualStyleBackColor = false;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(117, 364);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(655, 24);
+            this.comboBox4.TabIndex = 29;
             // 
             // Home
             // 
@@ -3121,6 +3473,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.tab4.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.tab3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -3369,5 +3724,35 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button87;
         private System.Windows.Forms.Button button86;
+        private System.Windows.Forms.Button button88;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Button button89;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }
