@@ -63,18 +63,28 @@ namespace Entities
             set
             { PhongId = value; }
         }
+        private DateTime ngaysinh;
+        public DateTime NgaySinh
+        {
+            get
+            { return NgaySinh; }
+            set
+            { NgaySinh = value; }
+        }
+
         public ThongTinKhachThueEntities()
         {
         }
-        public ThongTinKhachThueEntities(int cmt, int tkid, string t, bool gt, string dt, string ha, int pid)
+        public ThongTinKhachThueEntities(int chungminhnhandan, int taikhoanid, string ten, bool gioitinh, string sodienthoai, string hinhanh, int phongid,DateTime ngaysinh)
         {
-            this.cmnd = cmt;
-            this.taikhoanid = tkid;
-            this.ten = t;
-            this.gioitinh = gt;
-            this.sdt = dt;
-            this.hinhanh = ha;
-            this.phongid = pid;
+            this.cmnd = chungminhnhandan;
+            this.taikhoanid = taikhoanid;
+            this.ten = ten;
+            this.gioitinh = gioitinh;
+            this.sdt = sodienthoai;
+            this.hinhanh = hinhanh;
+            this.phongid = phongid;
+            this.ngaysinh = ngaysinh;
         }
     }
 }

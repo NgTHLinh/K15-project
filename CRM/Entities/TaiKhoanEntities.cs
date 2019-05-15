@@ -70,12 +70,12 @@ namespace Entities
         {
         }
 
-        public TaiKhoanEntities(int id, string tk, string mk, string mkl)
+        public TaiKhoanEntities(int id, string taikhoan, string matkhau, string matkhauloai)
         {
             this.id = id;
-            this.taikhoan = tk;
-            this.matkhau = mk;
-            this.loai = mkl;
+            this.taikhoan = taikhoan;
+            this.matkhau = matkhau;
+            this.loai = matkhauloai;
         }
 
     }

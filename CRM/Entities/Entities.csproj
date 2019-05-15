@@ -46,6 +46,7 @@
     <Compile Include="LoaiPhongEntities.cs" />
     <Compile Include="PhongEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhanVienEntities.cs" />
     <Compile Include="TaiKhoanEntities.cs" />
     <Compile Include="ThanhToanEntities.cs" />
     <Compile Include="ThongTinKhachThueEntities.cs" />

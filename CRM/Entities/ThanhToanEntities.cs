@@ -58,14 +58,14 @@ namespace Entities
         public ThanhToanEntities()
         {
         }
-        public ThanhToanEntities(int id, DateTime ntt, int pid, int sd, int sn, int tdv)
+        public ThanhToanEntities(int id, DateTime ngaythanhtoan, int phongid, int sodien, int sonuoc, int tiendichvu)
         {
             this.id = id;
-            this.ngaythanhtoan = ntt;
-            this.phongid = pid;
-            this.sodien = sd;
-            this.sonuoc = sn;
-            this.tiendichvu = tdv;
+            this.ngaythanhtoan = ngaythanhtoan;
+            this.phongid = phongid;
+            this.sodien = sodien;
+            this.sonuoc = sonuoc;
+            this.tiendichvu = tiendichvu;
         }
     }
 }
