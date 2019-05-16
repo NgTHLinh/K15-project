@@ -80,6 +80,8 @@
             this.tab4 = new System.Windows.Forms.TabPage();
             this.button88 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label96 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
@@ -279,8 +281,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             tabControl2 = new System.Windows.Forms.TabControl();
             tabControl2.SuspendLayout();
             this.tab1_p.SuspendLayout();
@@ -390,6 +390,7 @@
             this.imageList2.Images.SetKeyName(17, "I.png");
             this.imageList2.Images.SetKeyName(18, "AddUser.png");
             this.imageList2.Images.SetKeyName(19, "DoiMK.png");
+            this.imageList2.Images.SetKeyName(20, "Closebutton.png");
             // 
             // button5
             // 
@@ -692,9 +693,9 @@
             this.tab8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab8.Name = "tab8";
             this.tab8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab8.Size = new System.Drawing.Size(1782, 768);
+            this.tab8.Size = new System.Drawing.Size(1782, 755);
             this.tab8.TabIndex = 8;
-            this.tab8.Text = "Tài Khoản     ";
+            this.tab8.Text = "Tài Khoản";
             this.tab8.UseVisualStyleBackColor = true;
             // 
             // button16
@@ -759,9 +760,9 @@
             this.tab7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab7.Name = "tab7";
             this.tab7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab7.Size = new System.Drawing.Size(1782, 768);
+            this.tab7.Size = new System.Drawing.Size(1782, 755);
             this.tab7.TabIndex = 7;
-            this.tab7.Text = "TT NV     ";
+            this.tab7.Text = "TT NV";
             this.tab7.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
@@ -855,7 +856,7 @@
             this.tab6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab6.Name = "tab6";
             this.tab6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab6.Size = new System.Drawing.Size(1782, 768);
+            this.tab6.Size = new System.Drawing.Size(1782, 755);
             this.tab6.TabIndex = 6;
             this.tab6.Text = "TT Khách";
             this.tab6.UseVisualStyleBackColor = true;
@@ -975,9 +976,9 @@
             this.tab4.Location = new System.Drawing.Point(4, 28);
             this.tab4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab4.Name = "tab4";
-            this.tab4.Size = new System.Drawing.Size(1782, 768);
+            this.tab4.Size = new System.Drawing.Size(1782, 755);
             this.tab4.TabIndex = 4;
-            this.tab4.Text = "Thêm NV     ";
+            this.tab4.Text = "Thêm NV";
             this.tab4.UseVisualStyleBackColor = true;
             // 
             // button88
@@ -1030,6 +1031,21 @@
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(117, 364);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(655, 24);
+            this.comboBox4.TabIndex = 29;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(117, 401);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(280, 22);
+            this.dateTimePicker5.TabIndex = 28;
+            // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.Location = new System.Drawing.Point(492, 247);
@@ -1058,26 +1074,136 @@
             // comboBox3
             // 
             this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
-            "Hồ Chí Minh",
-            "Hà Nội",
+            "An Giang",
+            "Bà Rịa - Vũng Tàu",
+            "Bắc Giang",
+            "Bắc Kạn",
+            "Bạc Liêu",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Định",
+            "Bình Dương",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hậu Giang",
+            "Hòa Bình",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lâm Đồng",
+            "Lạng Sơn",
+            "Lào Cai",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái",
+            "Phú Yên",
+            "Cần Thơ",
+            "Đà Nẵng",
             "Hải Phòng",
-            "Huế",
-            "Đắc Lắk",
-            "Đắc N",
-            "Vũng Tàu",
-            "Vũng ***"});
+            "Hà Nội",
+            "Hồ Chí Minh"});
             this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Hồ Chí Minh",
-            "Hà Nội",
+            "An Giang",
+            "Bà Rịa - Vũng Tàu",
+            "Bắc Giang",
+            "Bắc Kạn",
+            "Bạc Liêu",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Định",
+            "Bình Dương",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hậu Giang",
+            "Hòa Bình",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lâm Đồng",
+            "Lạng Sơn",
+            "Lào Cai",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái",
+            "Phú Yên",
+            "Cần Thơ",
+            "Đà Nẵng",
             "Hải Phòng",
-            "Huế",
-            "Đắc Lắk",
-            "Đắc N",
-            "Vũng Tàu",
-            "Vũng ***"});
+            "Hà Nội",
+            "Hồ Chí Minh"});
             this.comboBox3.Location = new System.Drawing.Point(117, 288);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(655, 24);
@@ -1290,9 +1416,9 @@
             this.tab3.Location = new System.Drawing.Point(4, 28);
             this.tab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab3.Name = "tab3";
-            this.tab3.Size = new System.Drawing.Size(1782, 768);
+            this.tab3.Size = new System.Drawing.Size(1782, 755);
             this.tab3.TabIndex = 3;
-            this.tab3.Text = "Thuê      ";
+            this.tab3.Text = "Thuê";
             this.tab3.UseVisualStyleBackColor = true;
             // 
             // groupBox5
@@ -1922,9 +2048,9 @@
             this.tab2.Location = new System.Drawing.Point(4, 28);
             this.tab2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2.Name = "tab2";
-            this.tab2.Size = new System.Drawing.Size(1782, 768);
+            this.tab2.Size = new System.Drawing.Size(1782, 755);
             this.tab2.TabIndex = 2;
-            this.tab2.Text = "Thông tin hóa đơn      ";
+            this.tab2.Text = "Thông tin hóa đơn";
             this.tab2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -2051,13 +2177,13 @@
             this.tab1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab1.Name = "tab1";
             this.tab1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab1.Size = new System.Drawing.Size(1782, 768);
+            this.tab1.Size = new System.Drawing.Size(1782, 755);
             this.tab1.TabIndex = 1;
-            this.tab1.Text = "Thêm nhân viên     ";
+            this.tab1.Text = "Thêm nhân viên";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(57, 38);
+            this.button3.Location = new System.Drawing.Point(53, 38);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 143);
@@ -2238,15 +2364,14 @@
             this.tabControl1.Controls.Add(this.tab8);
             this.tabControl1.Controls.Add(this.tab9);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(4, 143);
+            this.tabControl1.Location = new System.Drawing.Point(4, 156);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1790, 800);
+            this.tabControl1.Size = new System.Drawing.Size(1790, 787);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
-            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tab5
             // 
@@ -2256,9 +2381,9 @@
             this.tab5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab5.Name = "tab5";
             this.tab5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab5.Size = new System.Drawing.Size(1782, 768);
+            this.tab5.Size = new System.Drawing.Size(1782, 755);
             this.tab5.TabIndex = 5;
-            this.tab5.Text = "TT phòng     ";
+            this.tab5.Text = "TT phòng";
             this.tab5.UseVisualStyleBackColor = true;
             // 
             // groupBox7
@@ -2880,9 +3005,9 @@
             this.tab9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab9.Name = "tab9";
             this.tab9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab9.Size = new System.Drawing.Size(1782, 768);
+            this.tab9.Size = new System.Drawing.Size(1782, 755);
             this.tab9.TabIndex = 9;
-            this.tab9.Text = "Home     ";
+            this.tab9.Text = "Home";
             // 
             // groupBox4
             // 
@@ -3026,7 +3151,7 @@
             this.label27.Size = new System.Drawing.Size(73, 17);
             this.label27.TabIndex = 28;
             this.label27.Text = "Room 303";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
+            
             // 
             // button30
             // 
@@ -3420,26 +3545,11 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1782, 768);
+            this.tabPage1.Size = new System.Drawing.Size(1782, 755);
             this.tabPage1.TabIndex = 10;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(117, 401);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(280, 22);
-            this.dateTimePicker5.TabIndex = 28;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(117, 364);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(655, 24);
-            this.comboBox4.TabIndex = 29;
             // 
             // Home
             // 
