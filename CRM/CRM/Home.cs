@@ -331,8 +331,22 @@ namespace CRM
                 userlogin.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
                 userlogin.Loai = dt.Rows[0][3].ToString();
 
+                switch (userlogin.Loai)
+                {
+                    case "1":
+                        MessageBox.Show("Welcome Admin");
+                        break;
+                    case "2":
+                        MessageBox.Show("Welcome NhanVien");
+                        break;
+                    case "3":
+                        MessageBox.Show("Welcome KhachHang");
+                        break;
+
+                }
+
                // if (userlogin.Loai == 3)//la nhan vien}
-                    MessageBox.Show("Welcome to NoWhere !!");
+                    //MessageBox.Show("Welcome to NoWhere !!");
             }
             else
                 MessageBox.Show("Đăng nhập thất bại !!!");
