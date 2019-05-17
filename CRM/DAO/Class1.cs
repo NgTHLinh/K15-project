@@ -11,7 +11,7 @@ namespace DAO
             : base()
         {
         }
-        public DataTable getAccount(AccountEntities user)
+        public DataTable getAccount(AccountEntities user)  abc
         {
             string sql = "select * from Account where username='" + user.GetUsername + "' and pass='" + user.GetPass + "'";
             return getDataTable(sql);

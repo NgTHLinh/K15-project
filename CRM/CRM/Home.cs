@@ -340,11 +340,13 @@ namespace CRM
                         break;
                     case "2":
                         MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
-                        button6.Visible = false;
+                        tabControl1.TabPages.Remove(tab8);
+                        //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
                         MessageBox.Show("Welcome KhachHang " + userlogin.Taikhoan);
                         break;
+                    
                 }
 
                // if (userlogin.Loai == 3)//la nhan vien}
