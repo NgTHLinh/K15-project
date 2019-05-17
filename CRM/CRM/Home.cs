@@ -329,20 +329,22 @@ namespace CRM
             if (dt.Rows.Count > 0)
             {
                 userlogin.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
+                userlogin.Taikhoan = dt.Rows[0][1].ToString();
                 userlogin.Loai = dt.Rows[0][3].ToString();
 
                 switch (userlogin.Loai)
                 {
                     case "1":
                         MessageBox.Show("Welcome Admin");
+                        //this.Visible = false;
                         break;
                     case "2":
-                        MessageBox.Show("Welcome NhanVien");
+                        MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
+                        button6.Visible = false;
                         break;
                     case "3":
-                        MessageBox.Show("Welcome KhachHang");
+                        MessageBox.Show("Welcome KhachHang " + userlogin.Taikhoan);
                         break;
-
                 }
 
                // if (userlogin.Loai == 3)//la nhan vien}
