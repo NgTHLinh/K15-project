@@ -26,8 +26,9 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
 
             InitializeComponent();
-            
 
+            
+        
             tabControl1.TabPages.Remove(tab1);
             tabControl1.TabPages.Remove(tab5);
             tabControl1.TabPages.Remove(tab2);
@@ -64,7 +65,7 @@ namespace CRM
 
         }
 
-        private void tabControl1_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        private void tabControl1_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e) // Vẽ hình nút X lên cái tabpage trong tabcontrol1
         {
             try
             {
@@ -93,7 +94,7 @@ namespace CRM
 
         }
 
-        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e) //Bắt sự kiện cho nút X
         {
             TabControl tc = (TabControl)sender;
             Point p = e.Location;
@@ -311,9 +312,11 @@ namespace CRM
         private void button17_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Clear();
+            
+            
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs e) // Đăng nhập và phân quyền !!!
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
@@ -341,6 +344,7 @@ namespace CRM
                     case "2":
                         MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
                         tabControl1.TabPages.Remove(tab8);
+                        tabControl2.TabPages.Remove(tabPage4);
                         //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
@@ -390,8 +394,26 @@ namespace CRM
             p.ShowDialog();
         }
 
-       
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void textbox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button16.PerformClick();
+            }
+
+        }
+
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox7.Focus();
+            }
+        }
     }
 }

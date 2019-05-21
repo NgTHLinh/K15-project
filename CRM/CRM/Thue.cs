@@ -19,6 +19,7 @@ namespace CRM
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();
+            
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
