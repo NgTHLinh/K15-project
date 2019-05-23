@@ -29,7 +29,7 @@ namespace CRM
 
             
         
-            tabControl1.TabPages.Remove(tab1);
+            tabControl1.TabPages.Remove(tab_ThemNgThue);
             tabControl1.TabPages.Remove(tab5);
             tabControl1.TabPages.Remove(tab2);
             tabControl1.TabPages.Remove(tab3);
@@ -206,14 +206,14 @@ namespace CRM
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab1))//tab already present
+            if (tabControl1.TabPages.Contains(tab_ThemNgThue))//tab already present
             {
-                tabControl1.SelectTab(tab1);  // select by name
+                tabControl1.SelectTab(tab_ThemNgThue);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab1); // add removed tab
-                tabControl1.SelectTab(tab1);    // select by name
+                tabControl1.TabPages.Add(tab_ThemNgThue); // add removed tab
+                tabControl1.SelectTab(tab_ThemNgThue);    // select by name
             }
         }
 
@@ -313,7 +313,8 @@ namespace CRM
         {
             tabControl1.TabPages.Clear();
             
-            
+
+
         }
 
         private void button16_Click(object sender, EventArgs e) // Đăng nhập và phân quyền !!!
@@ -321,8 +322,8 @@ namespace CRM
 
             TaiKhoanEntities log = new TaiKhoanEntities();
 
-            log.Taikhoan =textBox6.Text;
-            log.Matkhau = textBox7.Text;
+            log.Taikhoan = txt_TaiKhoan.Text;
+            log.Matkhau = txt_MatKhau.Text;
 
 
           
@@ -339,16 +340,23 @@ namespace CRM
                 {
                     case "1":
                         MessageBox.Show("Welcome Admin");
+                        btn_Login.Hide();
+                        
                         //this.Visible = false;
                         break;
                     case "2":
                         MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
                         tabControl1.TabPages.Remove(tab8);
-                        tabControl2.TabPages.Remove(tabPage4);
+                        
+                        tabControl2.TabPages.Remove(TP_QlNgThue);
+                        tabControl2.TabPages.Remove(TP_QlNv);
+                        btn_Login.Hide();
                         //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
                         MessageBox.Show("Welcome KhachHang " + userlogin.Taikhoan);
+                        
+                        btn_Login.Hide();
                         break;
                     
                 }
@@ -403,7 +411,7 @@ namespace CRM
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button16.PerformClick();
+                btn_DangNhap.PerformClick();
             }
 
         }
@@ -412,8 +420,23 @@ namespace CRM
         {
             if (e.KeyCode == Keys.Enter)
             {
-                textBox7.Focus();
+                txt_MatKhau.Focus();
             }
+        }
+
+        private void btn_themNV(object sender, EventArgs e)
+        {
+            QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
+
+            a.Ten = txt_MaNV_Them.Text;
+            a.NgaySinh = dateTime_NV.Value;
+            //a.GioiTinh = ;
+            a.ThuongTru = txt_ThuongTruNV.Text;
+            a.TamTru = txt_TamTruNV.Text;
+            //a.CMND = textBox11.;
+
+
+
         }
     }
 }

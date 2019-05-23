@@ -24,7 +24,7 @@ namespace Entities
 
         private string ten;
 
-        public int Ten
+        public string Ten
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Entities
 
         private DateTime ngaysinh;
 
-        public int NgaySinh
+        public DateTime NgaySinh
         {
             get
             {
@@ -54,7 +54,7 @@ namespace Entities
 
         private bool gioitinh;
 
-        public int GioiTinh
+        public bool GioiTinh
         {
             get
             {
