@@ -434,8 +434,12 @@ namespace CRM
             a.ThuongTru = txt_ThuongTruNV.Text;
             a.TamTru = txt_TamTruNV.Text;
             //a.CMND = textBox11.;
-
-
+            a.NgayCap = dateTime_NgayCapNV.Value;
+            a.NoiCap = comboBox_NoiCapNV.Text;
+            a.Email = txt_EmailNV.Text;
+            a.BoPhan = comboBox_BoPhanNV.Text;
+            a.NgayVao = dateTime_NgayVaoNV.Value;
+            //a.SDT = 
 
         }
     }
