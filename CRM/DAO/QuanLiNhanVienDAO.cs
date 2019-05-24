@@ -7,9 +7,9 @@ namespace DAO
     {
         public QuanLiNhanVienDAO():base()
         { }
-        //public DataTable getNV (QuanLyNhanVienEntities add)
+        //public DataTable getNV(QuanLyNhanVienEntities add)
         //{
-        //    string sql = "insert into QuanLyNhanVien ('ten','gioitinh','thuongtru','tamtru','cmnd','ngaycap','noicap','email','bophan','ngayvao','sdt') values ('ten'='" + add.Ten +'",'" + );
+        //    string sql = "insert into QuanLyNhanVien ('ten','gioitinh','thuongtru','tamtru','cmnd','ngaycap','noicap','email','bophan','ngayvao','sdt') values ('" + add.Ten + "','" + add.GioiTinh + "','" + add.ThuongTru + "','" + add.TamTru + "','" + add.CMND + "','" + add.NgayCap + "','" + add.NoiCap + "','" + add.Email + "','" + add.BoPhan + "','" + add.NgayVao + "','" + add.SDT + "')";
         //}
     }
 }

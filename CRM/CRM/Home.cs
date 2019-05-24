@@ -430,16 +430,28 @@ namespace CRM
 
             a.Ten = txt_MaNV_Them.Text;
             a.NgaySinh = dateTime_NV.Value;
-            //a.GioiTinh = ;
+            if (checkBox3.Checked == true)
+            {
+                a.GioiTinh = true;
+            }
+            else
+                a.GioiTinh = false;
+            if (checkBox4.Checked == true)
+            {
+                a.GioiTinh = false;
+            }
+            else
+                a.GioiTinh = true;
+            ////a.GioiTinh = ;
             a.ThuongTru = txt_ThuongTruNV.Text;
             a.TamTru = txt_TamTruNV.Text;
-            //a.CMND = textBox11.;
+            a.CMND =Convert.ToInt32( txt_CmndNV.Text);
             a.NgayCap = dateTime_NgayCapNV.Value;
             a.NoiCap = comboBox_NoiCapNV.Text;
             a.Email = txt_EmailNV.Text;
             a.BoPhan = comboBox_BoPhanNV.Text;
             a.NgayVao = dateTime_NgayVaoNV.Value;
-            //a.SDT = 
+            a.SDT = Convert.ToInt32(txt_SdtNV);
 
         }
     }
