@@ -19,41 +19,41 @@ namespace Entities
         public int TienDichVu
         {
             get
-            { return TienDichVu; }
+            { return tiendichvu; }
             set
-            { TienDichVu = value; }
+            { tiendichvu = value; }
         }
         private string ngaythanhtoan;
         public string NgayThanhToan
         {
             get
-            { return NgayThanhToan; }
+            { return ngaythanhtoan; }
             set
-            { NgayThanhToan = value; }
+            { ngaythanhtoan = value; }
         }
         private int phongid;
         public int PhongId
         {
             get
-            { return PhongId; }
+            { return phongid; }
             set
-            { PhongId = value; }
+            { phongid = value; }
         }
         private int sodien;
         public int SoDien
         {
             get
-            { return SoDien; }
+            { return sodien; }
             set
-            { SoDien = value; }
+            { sodien = value; }
         }
         private int sonuoc;
         public int SoNuoc
         {
             get
-            { return SoNuoc; }
+            { return sonuoc; }
             set
-            { SoNuoc = value; }
+            { sonuoc = value; }
         }
         public ThanhToanEntities()
         {

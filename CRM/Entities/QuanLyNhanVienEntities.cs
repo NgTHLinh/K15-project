@@ -28,12 +28,12 @@ namespace Entities
         {
             get
             {
-                return Ten;
+                return ten;
             }
 
             set
             {
-                Ten = value;
+                ten = value;
             }
         }
 
@@ -43,12 +43,12 @@ namespace Entities
         {
             get
             {
-                return NgaySinh;
+                return ngaysinh;
             }
 
             set
             {
-                NgaySinh = value;
+                ngaysinh = value;
             }
         }
 
@@ -58,12 +58,12 @@ namespace Entities
         {
             get
             {
-                return GioiTinh;
+                return gioitinh;
             }
 
             set
             {
-                GioiTinh = value;
+                gioitinh = value;
             }
         }
 
@@ -73,12 +73,12 @@ namespace Entities
         {
             get
             {
-                return ThuongTru;
+                return thuongtru;
             }
 
             set
             {
-                ThuongTru = value;
+                thuongtru = value;
             }
         }
 
@@ -88,12 +88,12 @@ namespace Entities
         {
             get
             {
-                return TamTru;
+                return tamtru;
             }
 
             set
             {
-                TamTru = value;
+                tamtru = value;
             }
         }
 
@@ -103,12 +103,12 @@ namespace Entities
         {
             get
             {
-                return CMND;
+                return cmnd;
             }
 
             set
             {
-                CMND = value;
+                cmnd = value;
             }
         }
 
@@ -118,12 +118,12 @@ namespace Entities
         {
             get
             {
-                return NgayCap;
+                return ngaycap;
             }
 
             set
             {
-                NgayCap = value;
+                ngaycap = value;
             }
         }
 
@@ -133,12 +133,12 @@ namespace Entities
         {
             get
             {
-                return NoiCap;
+                return noicap;
             }
 
             set
             {
-                NoiCap = value;
+                noicap = value;
             }
         }
 
@@ -148,12 +148,12 @@ namespace Entities
         {
             get
             {
-                return Email;
+                return email;
             }
 
             set
             {
-                Email = value;
+                email = value;
             }
         }
 
@@ -163,12 +163,12 @@ namespace Entities
         {
             get
             {
-                return BoPhan;
+                return bophan;
             }
 
             set
             {
-                BoPhan = value;
+                bophan = value;
             }
         }
 
@@ -178,12 +178,12 @@ namespace Entities
         {
             get
             {
-                return NgayVao;
+                return ngayvao;
             }
 
             set
             {
-                NgayVao = value;
+                ngayvao = value;
             }
         }
 
@@ -193,12 +193,12 @@ namespace Entities
         {
             get
             {
-                return SDT;
+                return sdt;
             }
 
             set
             {
-                SDT = value;
+                sdt = value;
             }
         }
 

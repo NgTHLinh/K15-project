@@ -310,19 +310,13 @@ namespace CRM
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            tabControl1.TabPages.Clear();
-            
-
-
-        }
+        
 
         private void Btn_themNV(object sender, EventArgs e)
         {
             QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
 
-
+            
             a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
             a.Ten = txt_TenNV.Text;
             a.NgaySinh = dateTime_NV.Text;
@@ -348,18 +342,16 @@ namespace CRM
             a.Email = txt_EmailNV.Text;
             a.BoPhan = comboBox_BoPhanNV.Text;
             a.NgayVao = dateTime_NgayVaoNV.Text;
-            a.SDT = Convert.ToInt32(txt_SdtNV);
+            a.SDT = Convert.ToInt32(txt_SdtNV.Text);
 
             QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
             DataTable dt = abus.GetNV(a);
 
-            if (dt.Rows.Count > 0)
-            {
-                addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
-                addlogin.Ten = dt.Rows[0][1].ToString();
+            
+                
 
                 MessageBox.Show("Them Thanh Cong");
-            }
+                
 
         }
 
@@ -385,7 +377,7 @@ namespace CRM
                     case "1":
                         MessageBox.Show("Welcome Admin");
                         btn_Login.Hide();
-                        
+                        btn_Logout.Show();
                         //this.Visible = false;
                         break;
                     case "2":
@@ -395,12 +387,14 @@ namespace CRM
                         tabControl2.TabPages.Remove(TP_QlNgThue);
                         tabControl2.TabPages.Remove(TP_QlNv);
                         btn_Login.Hide();
+                        btn_Logout.Show();
                         //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
                         MessageBox.Show("Welcome KhachHang " + userlogin.Taikhoan);
                         
                         btn_Login.Hide();
+                        btn_Logout.Show();
                         break;
                     
                 }
@@ -413,7 +407,19 @@ namespace CRM
 
         }
 
-        
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+            this.tabControl2.Refresh();
+            tabControl2.Refresh();
+            btn_Login.Show();
+            
+
+            
+
+
+        }
+
 
         private void tabPage1_Paint(object sender, PaintEventArgs e)
         {

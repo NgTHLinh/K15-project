@@ -11,65 +11,65 @@ namespace Entities
         public int Cmnd
         {
             get
-            { return Cmnd; }
+            { return cmnd; }
             set
-            { Cmnd = value; }
+            { cmnd = value; }
         }
         private int taikhoanid;
         public int TaiKhoanID
         {
             get
-            { return TaiKhoanID; }
+            { return taikhoanid; }
             set
-            { TaiKhoanID = value; }
+            { taikhoanid = value; }
         }
         private string ten;
         public string Ten
         {
             get
-            { return Ten; }
+            { return ten; }
             set
-            { Ten = value; }
+            { ten = value; }
         }
         private bool gioitinh;
         public bool GioiTinh
         {
             get
-            { return GioiTinh; }
+            { return gioitinh; }
             set
-            { GioiTinh = value; }
+            { gioitinh = value; }
         }
         private string sdt;
         public string Sdt
         {
             get
-            { return Sdt; }
+            { return sdt; }
             set
-            { Sdt = value; }
+            { sdt = value; }
         }
         private string hinhanh;
         public string HinhAnh
         {
             get
-            { return HinhAnh; }
+            { return hinhanh; }
             set
-            { HinhAnh = value; }
+            { hinhanh = value; }
         }
         private int phongid;
         public int PhongId
         {
             get
-            { return PhongId; }
+            { return phongid; }
             set
-            { PhongId = value; }
+            { phongid = value; }
         }
         private string ngaysinh;
         public string NgaySinh
         {
             get
-            { return NgaySinh; }
+            { return ngaysinh; }
             set
-            { NgaySinh = value; }
+            { ngaysinh = value; }
         }
 
         public ThongTinKhachThueEntities()

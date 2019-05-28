@@ -315,14 +315,15 @@
             // 
             // btn_Logout
             // 
+            this.btn_Logout.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Logout.ImageIndex = 13;
             this.btn_Logout.ImageList = this.imageList2;
-            this.btn_Logout.Location = new System.Drawing.Point(176, 4);
+            this.btn_Logout.Location = new System.Drawing.Point(166, 2);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(84, 80);
+            this.btn_Logout.Size = new System.Drawing.Size(84, 82);
             this.btn_Logout.TabIndex = 2;
             this.btn_Logout.Text = "Log Out";
             this.btn_Logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -357,14 +358,15 @@
             // 
             // btn_Login
             // 
+            this.btn_Login.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Login.ImageIndex = 12;
             this.btn_Login.ImageList = this.imageList2;
-            this.btn_Login.Location = new System.Drawing.Point(88, 4);
+            this.btn_Login.Location = new System.Drawing.Point(82, 2);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(84, 80);
+            this.btn_Login.Size = new System.Drawing.Size(84, 82);
             this.btn_Login.TabIndex = 1;
             this.btn_Login.Text = "LogIn";
             this.btn_Login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -373,14 +375,15 @@
             // 
             // btn_Home
             // 
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Home.ImageIndex = 0;
             this.btn_Home.ImageList = this.imageList2;
-            this.btn_Home.Location = new System.Drawing.Point(3, 4);
+            this.btn_Home.Location = new System.Drawing.Point(2, 2);
             this.btn_Home.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(80, 80);
+            this.btn_Home.Size = new System.Drawing.Size(80, 82);
             this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "Home";
             this.btn_Home.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -930,6 +933,7 @@
             this.checkBox4.TabIndex = 34;
             this.checkBox4.Text = "Nữ";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -940,6 +944,7 @@
             this.checkBox3.TabIndex = 33;
             this.checkBox3.Text = "Nam";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // comboBox_BoPhanNV
             // 

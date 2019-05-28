@@ -21,9 +21,9 @@ namespace Entities
         public string DienTich
         {
             get
-            { return DienTich; }
+            { return dientich; }
             set
-            { DienTich = value; }
+            { dientich = value; }
         }
 
 
@@ -31,9 +31,9 @@ namespace Entities
         public string Huong
         {
             get
-            { return Huong; }
+            { return huong; }
             set
-            { Huong = value; }
+            { huong = value; }
         }
 
 
@@ -41,9 +41,9 @@ namespace Entities
         public int LoaiPhongId
         {
             get
-            { return LoaiPhongId; }
+            { return loaiphongid; }
             set
-            { LoaiPhongId = value; }
+            { loaiphongid = value; }
         }
 
 
@@ -51,9 +51,9 @@ namespace Entities
         public int SoDien
         {
             get
-            { return SoDien; }
+            { return sodien; }
             set
-            { SoDien = value; }
+            { sodien = value; }
         }
 
 
@@ -61,9 +61,9 @@ namespace Entities
         public int SoNuoc
         {
             get
-            { return SoNuoc; }
+            { return sonuoc; }
             set
-            { SoNuoc = value; }
+            { sonuoc = value; }
         }
 
 
@@ -71,9 +71,9 @@ namespace Entities
         public string HienTrang
         {
             get
-            { return HienTrang; }
+            { return hientrang; }
             set
-            { HienTrang = value; }
+            { hientrang = value; }
         }
 
 
@@ -81,9 +81,9 @@ namespace Entities
         public int GiaCa
         {
             get
-            { return GiaCa; }
+            { return giaca; }
             set
-            { GiaCa = value; }
+            { giaca = value; }
         }
 
 
