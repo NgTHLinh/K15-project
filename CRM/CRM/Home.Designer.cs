@@ -1210,7 +1210,7 @@
             this.btn_ThemNhanVien.TabIndex = 13;
             this.btn_ThemNhanVien.Text = "Thêm";
             this.btn_ThemNhanVien.UseVisualStyleBackColor = false;
-            this.btn_ThemNhanVien.Click += new System.EventHandler(this.btn_themNV);
+            this.btn_ThemNhanVien.Click += new System.EventHandler(this.Btn_themNV);
             // 
             // txt_SdtNV
             // 

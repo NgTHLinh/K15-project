@@ -63,8 +63,8 @@ namespace Entities
             set
             { PhongId = value; }
         }
-        private DateTime ngaysinh;
-        public DateTime NgaySinh
+        private string ngaysinh;
+        public string NgaySinh
         {
             get
             { return NgaySinh; }
@@ -75,7 +75,7 @@ namespace Entities
         public ThongTinKhachThueEntities()
         {
         }
-        public ThongTinKhachThueEntities(int chungminhnhandan, int taikhoanid, string ten, bool gioitinh, string sodienthoai, string hinhanh, int phongid,DateTime ngaysinh)
+        public ThongTinKhachThueEntities(int chungminhnhandan, int taikhoanid, string ten, bool gioitinh, string sodienthoai, string hinhanh, int phongid,string ngaysinh)
         {
             this.cmnd = chungminhnhandan;
             this.taikhoanid = taikhoanid;

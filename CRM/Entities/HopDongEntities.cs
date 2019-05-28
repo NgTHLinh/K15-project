@@ -33,8 +33,8 @@ namespace Entities
             { phongid = value; }
         }
 
-        private DateTime ngaybatdau;
-        public DateTime Ngaybatdau
+        private string ngaybatdau;
+        public string Ngaybatdau
         {
             get
             { return ngaybatdau; }
@@ -42,8 +42,8 @@ namespace Entities
             { ngaybatdau = value; }
         }
 
-        private DateTime ngayketthuc;
-        public DateTime Ngayketthuc
+        private string ngayketthuc;
+        public string Ngayketthuc
         {
             get
             { return ngayketthuc; }
@@ -116,7 +116,7 @@ namespace Entities
 
         public HopDongEntities()
         { }
-        public HopDongEntities(int id, string cmnd, int phongid, DateTime ngaybatdau, DateTime ngayketthuc, int songuoio, int tiencoc, int chietkhau, int tienhopdong, int tiendien, int tiennuoc, string lietkedichvu)
+        public HopDongEntities(int id, string cmnd, int phongid, string ngaybatdau, string ngayketthuc, int songuoio, int tiencoc, int chietkhau, int tienhopdong, int tiendien, int tiennuoc, string lietkedichvu)
         {
             this.id = id;
             this.cmnd = cmnd;

@@ -7,18 +7,18 @@ namespace Entities
 {
     public class QuanLyNhanVienEntities
     {
-        private int id;
+        private int manv;
 
-        public int Id
+        public int MaNV 
         {
             get
             {
-                return id;
+                return MaNV;
             }
 
             set
             {
-                id = value;
+                MaNV = value;
             }
         }
 
@@ -37,9 +37,9 @@ namespace Entities
             }
         }
 
-        private DateTime ngaysinh;
+        private string ngaysinh;
 
-        public DateTime NgaySinh
+        public string NgaySinh
         {
             get
             {
@@ -112,9 +112,9 @@ namespace Entities
             }
         }
 
-        private DateTime ngaycap;
+        private string ngaycap;
 
-        public DateTime NgayCap
+        public string NgayCap
         {
             get
             {
@@ -172,9 +172,9 @@ namespace Entities
             }
         }
 
-        private DateTime ngayvao;
+        private string ngayvao;
 
-        public DateTime NgayVao
+        public string NgayVao
         {
             get
             {
@@ -206,9 +206,9 @@ namespace Entities
         {
         }
 
-        public QuanLyNhanVienEntities(int id, string ten, DateTime ngaysinh, Boolean gioitinh, string thuongtru , string tamtru, int cmnd, DateTime ngaycap, string noicap, string email, string bophan, DateTime ngayvao, int sdt)
+        public QuanLyNhanVienEntities(int manv, string ten, string ngaysinh, Boolean gioitinh, string thuongtru , string tamtru, int cmnd, string ngaycap, string noicap, string email, string bophan, string ngayvao, int sdt)
         {
-            this.id = id;
+            this.manv = manv;
             this.ten = ten;
             this.gioitinh = gioitinh;
             this.thuongtru = thuongtru;

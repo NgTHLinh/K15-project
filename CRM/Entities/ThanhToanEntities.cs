@@ -23,8 +23,8 @@ namespace Entities
             set
             { TienDichVu = value; }
         }
-        private DateTime ngaythanhtoan;
-        public DateTime NgayThanhToan
+        private string ngaythanhtoan;
+        public string NgayThanhToan
         {
             get
             { return NgayThanhToan; }
@@ -58,7 +58,7 @@ namespace Entities
         public ThanhToanEntities()
         {
         }
-        public ThanhToanEntities(int id, DateTime ngaythanhtoan, int phongid, int sodien, int sonuoc, int tiendichvu)
+        public ThanhToanEntities(int id, string ngaythanhtoan, int phongid, int sodien, int sonuoc, int tiendichvu)
         {
             this.id = id;
             this.ngaythanhtoan = ngaythanhtoan;

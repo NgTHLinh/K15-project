@@ -19,6 +19,7 @@ namespace CRM
         Image CloseImage;
 
         TaiKhoanEntities userlogin = new TaiKhoanEntities();
+        QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         public Home()
         {
             
@@ -317,16 +318,59 @@ namespace CRM
 
         }
 
+        private void Btn_themNV(object sender, EventArgs e)
+        {
+            QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
+
+
+            a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
+            a.Ten = txt_TenNV.Text;
+            a.NgaySinh = dateTime_NV.Text;
+           
+            if (checkBox3.Checked == true)
+            {
+                a.GioiTinh = true;
+            }
+            else
+                a.GioiTinh = false;
+            if (checkBox4.Checked == true)
+            {
+                a.GioiTinh = false;
+            }
+            else
+                a.GioiTinh = true;
+            ////a.GioiTinh = ;
+            a.ThuongTru = txt_ThuongTruNV.Text;
+            a.TamTru = txt_TamTruNV.Text;
+            a.CMND = Convert.ToInt32(txt_CmndNV.Text);
+            a.NgayCap = dateTime_NgayCapNV.Text;
+            a.NoiCap = comboBox_NoiCapNV.Text;
+            a.Email = txt_EmailNV.Text;
+            a.BoPhan = comboBox_BoPhanNV.Text;
+            a.NgayVao = dateTime_NgayVaoNV.Text;
+            a.SDT = Convert.ToInt32(txt_SdtNV);
+
+            QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
+            DataTable dt = abus.GetNV(a);
+
+            if (dt.Rows.Count > 0)
+            {
+                addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
+                addlogin.Ten = dt.Rows[0][1].ToString();
+
+                MessageBox.Show("Them Thanh Cong");
+            }
+
+        }
+
         private void button16_Click(object sender, EventArgs e) // Đăng nhập và phân quyền !!!
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
-
+       
             log.Taikhoan = txt_TaiKhoan.Text;
             log.Matkhau = txt_MatKhau.Text;
 
-
-          
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.GetTK(log);
 
@@ -424,35 +468,6 @@ namespace CRM
             }
         }
 
-        private void btn_themNV(object sender, EventArgs e)
-        {
-            QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
-
-            a.Ten = txt_MaNV_Them.Text;
-            a.NgaySinh = dateTime_NV.Value;
-            if (checkBox3.Checked == true)
-            {
-                a.GioiTinh = true;
-            }
-            else
-                a.GioiTinh = false;
-            if (checkBox4.Checked == true)
-            {
-                a.GioiTinh = false;
-            }
-            else
-                a.GioiTinh = true;
-            ////a.GioiTinh = ;
-            a.ThuongTru = txt_ThuongTruNV.Text;
-            a.TamTru = txt_TamTruNV.Text;
-            a.CMND =Convert.ToInt32( txt_CmndNV.Text);
-            a.NgayCap = dateTime_NgayCapNV.Value;
-            a.NoiCap = comboBox_NoiCapNV.Text;
-            a.Email = txt_EmailNV.Text;
-            a.BoPhan = comboBox_BoPhanNV.Text;
-            a.NgayVao = dateTime_NgayVaoNV.Value;
-            a.SDT = Convert.ToInt32(txt_SdtNV);
-
-        }
+        
     }
 }
