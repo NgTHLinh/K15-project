@@ -13,12 +13,12 @@ namespace Entities
         {
             get
             {
-                return MaNV;
+                return manv;
             }
 
             set
             {
-                MaNV = value;
+                manv = value;
             }
         }
 
