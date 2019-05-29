@@ -410,8 +410,8 @@ namespace CRM
         private void button17_Click(object sender, EventArgs e)
         {
 
-            this.tabControl2.Refresh();
-            tabControl2.Refresh();
+            
+            
             btn_Login.Show();
             
 
