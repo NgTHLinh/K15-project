@@ -28,14 +28,20 @@ namespace CRM
 
             InitializeComponent();
 
-            
-        
+
+            btn_Logout.Hide();
+            btn_Home.Hide();
+            tabControl2.TabPages.Remove(TP_QlHoaDon);
+            tabControl2.TabPages.Remove(TP_QlNgThue);
+            tabControl2.TabPages.Remove(TP_QlNv);
+            tabControl2.TabPages.Remove(TP_QlPhong);  
+
             tabControl1.TabPages.Remove(tab_ThemNgThue);
             tabControl1.TabPages.Remove(tab5);
             tabControl1.TabPages.Remove(tab2);
             tabControl1.TabPages.Remove(tab3);
             tabControl1.TabPages.Remove(tab4);
-            tabControl1.TabPages.Remove(tab8);
+            tabControl1.TabPages.Remove(tab9);
             tabControl1.TabPages.Remove(tab6);
             tabControl1.TabPages.Remove(tab7);
             tabControl1.TabPages.Remove(tabPage1);
@@ -351,8 +357,8 @@ namespace CRM
                 
 
                 MessageBox.Show("Them Thanh Cong");
-                
 
+            tab4.Refresh();
         }
 
         private void button16_Click(object sender, EventArgs e) // Đăng nhập và phân quyền !!!
@@ -378,14 +384,26 @@ namespace CRM
                         MessageBox.Show("Welcome Admin");
                         btn_Login.Hide();
                         btn_Logout.Show();
+                        btn_Home.Show();
+
+                        tabControl2.TabPages.Add(TP_QlHoaDon);
+                        tabControl2.TabPages.Add(TP_QlNgThue);
+                        tabControl2.TabPages.Add(TP_QlNv);
+                        tabControl2.TabPages.Add(TP_QlPhong);
+
+                        tabControl1.TabPages.Add(tab9);
+                        tabControl1.TabPages.Remove(tab8);
                         //this.Visible = false;
                         break;
                     case "2":
                         MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
+                        btn_Home.Show();
+
                         tabControl1.TabPages.Remove(tab8);
-                        
-                        tabControl2.TabPages.Remove(TP_QlNgThue);
-                        tabControl2.TabPages.Remove(TP_QlNv);
+                        tabControl1.TabPages.Add(tab9);
+
+                        tabControl2.TabPages.Add(TP_QlHoaDon);
+                        tabControl2.TabPages.Add(TP_QlPhong);
                         btn_Login.Hide();
                         btn_Logout.Show();
                         //zzz.TabPages.Remove(tab2_p);
