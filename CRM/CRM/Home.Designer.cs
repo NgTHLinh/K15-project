@@ -328,7 +328,6 @@
             this.btn_Logout.Text = "Log Out";
             this.btn_Logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Logout.UseVisualStyleBackColor = false;
-            this.btn_Logout.UseWaitCursor = true;
             this.btn_Logout.Click += new System.EventHandler(this.button17_Click);
             // 
             // imageList2
@@ -372,7 +371,6 @@
             this.btn_Login.Text = "LogIn";
             this.btn_Login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Login.UseVisualStyleBackColor = false;
-            this.btn_Login.UseWaitCursor = true;
             this.btn_Login.Click += new System.EventHandler(this.button5_Click);
             // 
             // btn_Home
@@ -390,7 +388,6 @@
             this.btn_Home.Text = "Home";
             this.btn_Home.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Home.UseVisualStyleBackColor = false;
-            this.btn_Home.UseWaitCursor = true;
             this.btn_Home.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_TTNV
@@ -407,7 +404,6 @@
             this.btn_TTNV.Text = "TT NV";
             this.btn_TTNV.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_TTNV.UseVisualStyleBackColor = false;
-            this.btn_TTNV.UseWaitCursor = true;
             this.btn_TTNV.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // btn_TTKhach
@@ -424,7 +420,6 @@
             this.btn_TTKhach.Text = "TT Khách";
             this.btn_TTKhach.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_TTKhach.UseVisualStyleBackColor = false;
-            this.btn_TTKhach.UseWaitCursor = true;
             this.btn_TTKhach.Click += new System.EventHandler(this.button9_Click);
             // 
             // btn_XoaNgThue
@@ -441,7 +436,6 @@
             this.btn_XoaNgThue.Text = "Xóa";
             this.btn_XoaNgThue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_XoaNgThue.UseVisualStyleBackColor = false;
-            this.btn_XoaNgThue.UseWaitCursor = true;
             // 
             // btn_ThemNgThue_TP
             // 
@@ -457,7 +451,6 @@
             this.btn_ThemNgThue_TP.Text = "Thêm";
             this.btn_ThemNgThue_TP.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ThemNgThue_TP.UseVisualStyleBackColor = false;
-            this.btn_ThemNgThue_TP.UseWaitCursor = true;
             this.btn_ThemNgThue_TP.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // btn_SuaNgThue
@@ -474,7 +467,6 @@
             this.btn_SuaNgThue.Text = "Sửa";
             this.btn_SuaNgThue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_SuaNgThue.UseVisualStyleBackColor = false;
-            this.btn_SuaNgThue.UseWaitCursor = true;
             // 
             // btn_ThongTinPhong
             // 
@@ -490,7 +482,6 @@
             this.btn_ThongTinPhong.Text = "Thông tin";
             this.btn_ThongTinPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ThongTinPhong.UseVisualStyleBackColor = false;
-            this.btn_ThongTinPhong.UseWaitCursor = true;
             this.btn_ThongTinPhong.Click += new System.EventHandler(this.button13_Click);
             // 
             // btn_TraPhong
@@ -507,7 +498,6 @@
             this.btn_TraPhong.Text = "Trả";
             this.btn_TraPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_TraPhong.UseVisualStyleBackColor = false;
-            this.btn_TraPhong.UseWaitCursor = true;
             // 
             // btn_ThuePhong
             // 
@@ -523,7 +513,6 @@
             this.btn_ThuePhong.Text = "Thuê";
             this.btn_ThuePhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ThuePhong.UseVisualStyleBackColor = false;
-            this.btn_ThuePhong.UseWaitCursor = true;
             this.btn_ThuePhong.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // btn_SuaHD
@@ -540,7 +529,6 @@
             this.btn_SuaHD.Text = "Sửa";
             this.btn_SuaHD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_SuaHD.UseVisualStyleBackColor = false;
-            this.btn_SuaHD.UseWaitCursor = true;
             // 
             // btn_XemHD
             // 
@@ -556,7 +544,6 @@
             this.btn_XemHD.Text = "Xem HĐ";
             this.btn_XemHD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_XemHD.UseVisualStyleBackColor = false;
-            this.btn_XemHD.UseWaitCursor = true;
             this.btn_XemHD.Click += new System.EventHandler(this.button14_Click);
             // 
             // btn_DoiMK
@@ -573,7 +560,6 @@
             this.btn_DoiMK.Text = "Đổi MK";
             this.btn_DoiMK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_DoiMK.UseVisualStyleBackColor = false;
-            this.btn_DoiMK.UseWaitCursor = true;
             // 
             // btn_ThemNV_TP
             // 
@@ -589,7 +575,6 @@
             this.btn_ThemNV_TP.Text = "Thêm NV";
             this.btn_ThemNV_TP.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ThemNV_TP.UseVisualStyleBackColor = false;
-            this.btn_ThemNV_TP.UseWaitCursor = true;
             this.btn_ThemNV_TP.Click += new System.EventHandler(this.button86_Click);
             // 
             // imageList1
@@ -2049,7 +2034,6 @@
             this.label53.TabIndex = 3;
             this.label53.Text = "       : Sắp hết HĐ";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label53.UseWaitCursor = true;
             // 
             // imageList3
             // 
@@ -2073,7 +2057,6 @@
             this.label55.TabIndex = 1;
             this.label55.Text = "       : Đã có người ";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label55.UseWaitCursor = true;
             // 
             // label56
             // 
@@ -2089,7 +2072,6 @@
             this.label56.TabIndex = 0;
             this.label56.Text = "     : CHÚ THÍCH";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label56.UseWaitCursor = true;
             // 
             // tab2
             // 
@@ -2454,13 +2436,12 @@
             this.tabControl1.Controls.Add(this.tab9);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(3, 127);
+            this.tabControl1.Location = new System.Drawing.Point(3, 128);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1331, 650);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.UseWaitCursor = true;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
@@ -3126,7 +3107,6 @@
             this.label76.TabIndex = 3;
             this.label76.Text = "       : Sắp hết HĐ";
             this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label76.UseWaitCursor = true;
             // 
             // label81
             // 
@@ -3141,7 +3121,6 @@
             this.label81.TabIndex = 1;
             this.label81.Text = "       : Đã có người ";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label81.UseWaitCursor = true;
             // 
             // label83
             // 
@@ -3157,7 +3136,6 @@
             this.label83.TabIndex = 0;
             this.label83.Text = "     : CHÚ THÍCH";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label83.UseWaitCursor = true;
             // 
             // tab9
             // 
@@ -3718,7 +3696,6 @@
             this.label34.TabIndex = 3;
             this.label34.Text = "       : Sắp hết HĐ";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label34.UseWaitCursor = true;
             // 
             // label33
             // 
@@ -3733,7 +3710,6 @@
             this.label33.TabIndex = 2;
             this.label33.Text = "       : Trống";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label33.UseWaitCursor = true;
             // 
             // label32
             // 
@@ -3748,7 +3724,6 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "       : Đã có người ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.UseWaitCursor = true;
             // 
             // label31
             // 
@@ -3764,7 +3739,6 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "     : CHÚ THÍCH";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label31.UseWaitCursor = true;
             // 
             // tabPage1
             // 
@@ -3798,7 +3772,6 @@
             this.tabControl2.Size = new System.Drawing.Size(1331, 122);
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl2.TabIndex = 2;
-            this.tabControl2.UseWaitCursor = true;
             // 
             // TP_Trangchu
             // 
@@ -3887,7 +3860,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 605);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
-            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1027, 596);
@@ -3895,9 +3868,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thuê Phòng";
-            this.TopMost = true;
-            this.UseWaitCursor = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.tab8.ResumeLayout(false);
             this.tab8.PerformLayout();
