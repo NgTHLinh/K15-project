@@ -22,13 +22,12 @@ namespace CRM
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         public Home()
         {
-            
+
             //SqlConnection con = new SqlConnection();
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
-
+            TopMost = true;
             InitializeComponent();
-
-
+           
             btn_Logout.Hide();
             btn_Home.Hide();
             tabControl2.TabPages.Remove(TP_QlHoaDon);
@@ -147,33 +146,33 @@ namespace CRM
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (ck_NamKhachThue.Checked)
             {
-                checkBox2.Checked = false;
+                ck_NuKhachThue.Checked = false;
             }
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
+            if (ck_NuKhachThue.Checked)
             {
-                checkBox1.Checked = false;
+                ck_NamKhachThue.Checked = false;
             }
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
+            if (ck_NamNV.Checked)
             {
-                checkBox4.Checked = false;
+                ck_NuNV.Checked = false;
             }
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4.Checked)
+            if (ck_NuNV.Checked)
             {
-                checkBox3.Checked = false;
+                ck_NamNV.Checked = false;
             }
         }
 
@@ -327,13 +326,13 @@ namespace CRM
             a.Ten = txt_TenNV.Text;
             a.NgaySinh = dateTime_NV.Text;
            
-            if (checkBox3.Checked == true)
+            if (ck_NamNV.Checked == true)
             {
                 a.GioiTinh = true;
             }
             else
                 a.GioiTinh = false;
-            if (checkBox4.Checked == true)
+            if (ck_NuNV.Checked == true)
             {
                 a.GioiTinh = false;
             }
@@ -429,12 +428,14 @@ namespace CRM
         private void button17_Click(object sender, EventArgs e)
         {
 
+            Form a = new Home();
             
-            
-            btn_Login.Show();
-            
+            this.Visible = false;
+            a.ShowDialog();
+                //btn_Login.Show();
 
-            
+
+
 
 
         }
@@ -492,7 +493,5 @@ namespace CRM
                 txt_MatKhau.Focus();
             }
         }
-
-        
     }
 }
