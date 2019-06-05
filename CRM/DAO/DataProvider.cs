@@ -19,8 +19,8 @@ namespace DAO
         //khởi tạo kết nối 
         public void connect()
         {
-            //string str = @"D:\K15-project\NCKH_KhoaLong.db";
-            string str = @"C:\Users\DuyKhoa\Documents\GitHub\K15-project\NCKH_KhoaLong.db";
+            string str = @"D:\K15-project\NCKH_KhoaLong.db";
+            //string str = @"C:\Users\DuyKhoa\Documents\GitHub\K15-project\NCKH_KhoaLong.db";
             //MessageBox.Show(str);
             if (con == null)
                 con = new SQLiteConnection(@"Data Source = " + str);

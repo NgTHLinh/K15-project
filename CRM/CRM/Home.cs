@@ -44,7 +44,7 @@ namespace CRM
             tabControl1.TabPages.Remove(tab6);
             tabControl1.TabPages.Remove(tab7);
             tabControl1.TabPages.Remove(tabPage1);
-            //tabControl1.Visible = false;
+            
         }
 
 
@@ -385,10 +385,12 @@ namespace CRM
                         btn_Logout.Show();
                         btn_Home.Show();
 
-                        tabControl2.TabPages.Add(TP_QlHoaDon);
+                        
                         tabControl2.TabPages.Add(TP_QlNgThue);
-                        tabControl2.TabPages.Add(TP_QlNv);
                         tabControl2.TabPages.Add(TP_QlPhong);
+                        tabControl2.TabPages.Add(TP_QlHoaDon);
+                        tabControl2.TabPages.Add(TP_QlNv);
+                        
 
                         tabControl1.TabPages.Add(tab9);
                         tabControl1.TabPages.Remove(tab8);
@@ -401,8 +403,9 @@ namespace CRM
                         tabControl1.TabPages.Remove(tab8);
                         tabControl1.TabPages.Add(tab9);
 
-                        tabControl2.TabPages.Add(TP_QlHoaDon);
                         tabControl2.TabPages.Add(TP_QlPhong);
+                        tabControl2.TabPages.Add(TP_QlHoaDon);
+                        
                         btn_Login.Hide();
                         btn_Logout.Show();
                         //zzz.TabPages.Remove(tab2_p);
@@ -468,8 +471,11 @@ namespace CRM
 
         private void button52_Click(object sender, EventArgs e)
         {
+            
             Thue p = new Thue();
+            
             p.ShowDialog();
+
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
