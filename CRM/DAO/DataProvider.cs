@@ -50,7 +50,7 @@ namespace DAO
         {
             connect();
             da = new SQLiteDataAdapter(sql, con);
-            ds = new DataSet();
+            ds = new DataSet(); 
             da.Fill(ds);
             disconnect();
             return ds;

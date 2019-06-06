@@ -8,11 +8,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace CRM
 {
     public partial class Home : Form
-    {
+    {            
+        
         //SqlConnection con = new SqlConnection();
         private Point _imageLocation = new Point(22, 0);
         private Point _imageHitArea = new Point(13,2);
@@ -20,12 +23,16 @@ namespace CRM
 
         TaiKhoanEntities userlogin = new TaiKhoanEntities();
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
+        ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
+
+        
+
         public Home()
         {
-
-            //SqlConnection con = new SqlConnection();
+            //string conn = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
+        //SqlConnection con = new SqlConnection(conn);
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
-            TopMost = true;
+            //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
            
             btn_Logout.Hide();
@@ -47,10 +54,26 @@ namespace CRM
             
         }
 
-
+        
 
         private void Home_Load(object sender, EventArgs e)
         {
+            //DataTable dt = ThongTinKhachThueBUS.GetTK();
+            
+            //DataTable dt = new DataTable();
+            //SqlConnection conn = new SqlConnection(@"Data Source=D:\\K15-project\\NCKH_KhoaLong.db");
+            
+            ////SqlCommand cmd = new SqlCommand("select * from ThongTinKhachThue");
+            //conn.Open();
+            //SqlDataAdapter da = new SqlDataAdapter("select * from ThongTinKhachThue", "Data Source=D:\\K15-project\\NCKH_KhoaLong.db");
+            //da.Fill(dt);
+            //conn.Close();
+
+            //ThongTinKhachThueBUS bus = new ThongTinKhachThueBUS();
+            //DataTable dt = bus.GetTK();
+
+            //dataGridView2.DataSource = dt;
+
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             tabControl1.DrawItem += tabControl1_DrawItem;
             CloseImage = CRM.Properties.Resources.Closebutton;
@@ -498,6 +521,11 @@ namespace CRM
             {
                 txt_MatKhau.Focus();
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                      
         }
     }
 }

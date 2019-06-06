@@ -17,9 +17,8 @@ namespace CRM
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Home());
             //Application.Run(new Form1());
-        
+
             Form frm = new Home();
-            frm.BringToFront();
             Application.Run(frm);
         }
     }
