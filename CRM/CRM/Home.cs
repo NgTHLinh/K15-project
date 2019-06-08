@@ -25,6 +25,7 @@ namespace CRM
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
 
+
         
 
         public Home()
@@ -58,21 +59,14 @@ namespace CRM
 
         private void Home_Load(object sender, EventArgs e)
         {
-            //DataTable dt = ThongTinKhachThueBUS.GetTK();
-            
-            //DataTable dt = new DataTable();
-            //SqlConnection conn = new SqlConnection(@"Data Source=D:\\K15-project\\NCKH_KhoaLong.db");
-            
-            ////SqlCommand cmd = new SqlCommand("select * from ThongTinKhachThue");
-            //conn.Open();
-            //SqlDataAdapter da = new SqlDataAdapter("select * from ThongTinKhachThue", "Data Source=D:\\K15-project\\NCKH_KhoaLong.db");
-            //da.Fill(dt);
-            //conn.Close();
-
-            //ThongTinKhachThueBUS bus = new ThongTinKhachThueBUS();
-            //DataTable dt = bus.GetTK();
-
-            //dataGridView2.DataSource = dt;
+            ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
+           DataTable dt =ttktbus.GetTK();
+            //tao cot cho datagrid, dat ten, kich thuoc
+            //  dataGridView2.DataSource = dt;
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    dataGridView2.Rows[i][0].Value = dt.Rows[i][1].ToString();
+            //}
 
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             tabControl1.DrawItem += tabControl1_DrawItem;

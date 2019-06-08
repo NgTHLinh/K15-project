@@ -7,7 +7,9 @@ namespace DAO
         public class ThongTinKhachThueDAO : DataProvider
         {
             public ThongTinKhachThueDAO() : base()
-            { }
+            {
+
+            }
             //public DataTable GetTK(ThongTinKhachThueEntities user)
             //{
             //    string sql = "select * from ThongTinKhachThue  ";
@@ -15,10 +17,10 @@ namespace DAO
             //    return getDataTable(sql);
             //}
             public DataTable GetTT()
-        {
-            string sql = "select * from ThongTinKhachThue";
-            return getDataTable(sql);
-        }
+            {
+                string sql = "select * from ThongTinKhachThue";
+                return getDataTable(sql);
+            }
         }
  }
 

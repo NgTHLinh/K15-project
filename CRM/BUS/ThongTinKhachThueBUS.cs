@@ -32,12 +32,6 @@ namespace BUS
             DataTable dt = new DataTable();
             dt = userTTDAO.GetTT();
             return dt;
-
-            //DataTable dt=new DataTable();
-            //string sql = "select * from ThongTinKhachThue";
-            //SqlDataAdapter da = new SqlDataAdapter(sql, con);
-            //    da.Fill(dt);
-            //return dt;
         }
 
     }
