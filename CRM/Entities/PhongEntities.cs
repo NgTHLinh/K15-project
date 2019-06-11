@@ -15,6 +15,14 @@ namespace Entities
             set
             { id = value; }
         }
+        private int idtang;
+        public int IdTang
+        {
+            get
+            { return idtang; }
+            set
+            { idtang = value; }
+        }
 
 
         private string dientich;
@@ -90,9 +98,10 @@ namespace Entities
         public PhongEntities()
         {
         }
-        public PhongEntities(int id, string dientich, string huong, int loaiphong, int sodien, int songuoi, string hientrang, int giaca)
+        public PhongEntities(int id,int idtang, string dientich, string huong, int loaiphong, int sodien, int songuoi, string hientrang, int giaca)
         {
             this.id = id;
+            this.idtang = idtang;
             this.dientich = dientich;
             this.huong = huong;
             this.loaiphongid = loaiphong;

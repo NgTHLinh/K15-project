@@ -24,7 +24,7 @@ namespace CRM
         TaiKhoanEntities userlogin = new TaiKhoanEntities();
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
-
+        TangBUS tang = new TangBUS();
 
         
 
@@ -461,28 +461,54 @@ namespace CRM
         }
 
 
+        void createarraybutton(DataTable dtphong, int top, ref int t)
+        {
+          
+            int left = 0;
+            for(int i=0;i<dtphong.Rows.Count;i++)
+            {
+                Button bt = new Button();
+                bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
+                bt.Tag = string.Format("[{0}]", i);
+                bt.Text = string.Format("Phòng [{0}]", dtphong.Rows[i][0].ToString());
+                bt.Size = new Size(50, 50);
+                bt.Top = top;
+                bt.Left = left;
+                
+                left += 80;
+                bt.Click += new EventHandler(bt_Click);
+                tabPage1.Controls.Add(bt);
+                t++;
+            }
+        }
+        private void bt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
+        }
         private void tabPage1_Paint(object sender, PaintEventArgs e)
         {
-            int x = 0;
-            for (int i = 0; i <= 5; i++)
+            DataTable dttang = new DataTable();
+            int top = 50;
+            int toplb = 10;
+            dttang = tang.GetTang();
+            for (int i = 0; i < dttang.Rows.Count; i++)
             {
-                Button button = new Button();
+                //tao label hien thi tang
+                Label lb = new Label();
+                lb.Name = string.Format("lb{0}", i);
+                lb.Text = string.Format("TẦNG {0}", dttang.Rows[i][0].ToString());
                 
-                if (i == 0)
-                {
-                    button.Location = new Point(12, 42);
-                }
-                else
-                {
-                    button.Location = new Point(x, 42);
-                }                
-                x = button.Location.X + 220 + 40;
-                button.Text = "123";
-                button.Size = new Size(220, 150);
-                button.Visible = true;
-                button.BringToFront();
-                button.Tag = i;
-                tabPage1.Controls.Add(button);
+                lb.Top = toplb;
+                tabPage1.Controls.Add(lb);
+                toplb += 100;
+                //   
+                int sobt = 0;
+                PhongEntities phongE = new PhongEntities();
+                PhongBUS phongB = new PhongBUS();
+                DataTable dtphong = new DataTable();
+                dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
+                createarraybutton(dtphong,top,ref sobt);
+                top += 100;
             }
         }
 
@@ -524,6 +550,20 @@ namespace CRM
 
         private void btn_SuaNgThue_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(tabPage1))//tab already present
+            {
+                tabControl1.SelectTab(tabPage1);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tabPage1); // add removed tab
+                tabControl1.SelectTab(tabPage1);    // select by name
+            }
 
         }
     }

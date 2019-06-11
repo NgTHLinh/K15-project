@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNhanVienEntities.cs" />
     <Compile Include="TaiKhoanEntities.cs" />
+    <Compile Include="TangEntities.cs" />
     <Compile Include="ThanhToanEntities.cs" />
     <Compile Include="ThongTinKhachThueEntities.cs" />
   </ItemGroup>
