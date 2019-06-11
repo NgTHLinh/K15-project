@@ -60,7 +60,7 @@ namespace CRM
         private void Home_Load(object sender, EventArgs e)
         {
             ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
-          DataTable dt =ttktbus.GetTK();
+            DataTable dt = ttktbus.GetTK();
             //tao cot cho datagrid, dat ten, kich thuoc
             //  dataGridView2.DataSource = dt;
             //for (int i = 0; i < dt.Rows.Count; i++)
