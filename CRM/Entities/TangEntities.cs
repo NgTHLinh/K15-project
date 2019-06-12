@@ -15,7 +15,7 @@ namespace Entities
             set
             { id = value; }
         }
-        
+
         private string ten;
         public string Tên
         {
@@ -24,7 +24,7 @@ namespace Entities
             set
             { ten = value; }
         }
-        
+
         public TangEntities(int id, string ten)
         {
             this.id = id;

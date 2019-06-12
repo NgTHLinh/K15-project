@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
+
+//Khoa
+
 namespace CRM
 {
     public partial class Home : Form
@@ -26,7 +29,7 @@ namespace CRM
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
         TangBUS tang = new TangBUS();
 
-        
+
 
         public Home()
         {
@@ -43,15 +46,15 @@ namespace CRM
             tabControl2.TabPages.Remove(TP_QlNv);
             tabControl2.TabPages.Remove(TP_QlPhong);  
 
-            tabControl1.TabPages.Remove(tab_ThemNgThue);
-            tabControl1.TabPages.Remove(tab5);
-            tabControl1.TabPages.Remove(tab2);
-            tabControl1.TabPages.Remove(tab3);
-            tabControl1.TabPages.Remove(tab4);
-            tabControl1.TabPages.Remove(tab9);
-            tabControl1.TabPages.Remove(tab6);
-            tabControl1.TabPages.Remove(tab7);
-            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(TP_ThemNgThue);
+            tabControl1.TabPages.Remove(TP_ttphong);
+            tabControl1.TabPages.Remove(TP_tthd);
+            tabControl1.TabPages.Remove(TP_thue);
+            tabControl1.TabPages.Remove(TP_themnv);
+            tabControl1.TabPages.Remove(TP_home);
+            tabControl1.TabPages.Remove(TP_ttkhach);
+            tabControl1.TabPages.Remove(TP_ttnv);
+            //tabControl1.TabPages.Remove(tabPage1);
             
         }
 
@@ -59,10 +62,50 @@ namespace CRM
 
         private void Home_Load(object sender, EventArgs e)
         {
-            ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
-            DataTable dt = ttktbus.GetTK();
+            {
+                ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
+                ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
+                DataTable dt = ttktbus.GetTK(t);
+                if (dt.Rows.Count > 0)
+                {
+                    table.Cmnd = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    table.Ten = dt.Rows[0][1].ToString();
+                    table.NgaySinh = dt.Rows[0][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                    table.Cmnd = Convert.ToInt32(dt.Rows[0][4].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+                    //table.PhongId = Convert.ToInt32(dt.Rows[0][7].ToString());
+                }
+
+                foreach (var item in dt.Rows)
+                    dataGridView2.Rows.Add(table.Cmnd, table.Ten, table.NgaySinh, table.GioiTinh, table.Cmnd, table.Sdt);//, table.PhongId);
+
+            }
+            {
+                ThongTinNhanVienBUS nv = new ThongTinNhanVienBUS();
+                DataTable dt = nv.GetTTNV();
+                if (dt.Rows.Count > 0)
+                {
+                    addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    addlogin.Ten = dt.Rows[0][1].ToString();
+                    addlogin.NgaySinh = dt.Rows[0][2].ToString();
+                    addlogin.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                    addlogin.ThuongTru = dt.Rows[0][4].ToString();
+                    addlogin.TamTru = dt.Rows[0][5].ToString();
+                    //addlogin.Cmnd = Convert.ToInt32(dt.Rows[0][6].ToString());
+                    addlogin.NgayCap = dt.Rows[0][7].ToString();
+                    //addlogin.NoiCap = dt.Rows[0][8].ToString();
+                    //addlogin.Email = dt.Rows[0][9].ToString();
+                    //addlogin.BoPhan = dt.Rows[0][10].ToString();
+                    //addlogin.NgayVao = dt.Rows[0][11].ToString();
+                    //addlogin.SDT = Convert.ToInt32(dt.Rows[0][12].ToString());
+                }
+                foreach (var item in dt.Rows)
+                    dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
+                }
+
             //tao cot cho datagrid, dat ten, kich thuoc
-            //  dataGridView2.DataSource = dt;
+            //dataGridView2.DataSource = dt;
             //for (int i = 0; i < dt.Rows.Count; i++)
             //{
             //    dataGridView2.Rows[i][0].Value = dt.Rows[i][1].ToString();
@@ -215,166 +258,157 @@ namespace CRM
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab9))//tab already present
+            if (tabControl1.TabPages.Contains(TP_home))//tab already present
             {
-                tabControl1.SelectTab(tab9);  // select by name
+                tabControl1.SelectTab(TP_home);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab9); // add removed tab
-                tabControl1.SelectTab(tab9);    // select by name
+                tabControl1.TabPages.Add(TP_home); // add removed tab
+                tabControl1.SelectTab(TP_home);    // select by name
             }
 
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab_ThemNgThue))//tab already present
+            if (tabControl1.TabPages.Contains(TP_ThemNgThue))//tab already present
             {
-                tabControl1.SelectTab(tab_ThemNgThue);  // select by name
+                tabControl1.SelectTab(TP_ThemNgThue);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab_ThemNgThue); // add removed tab
-                tabControl1.SelectTab(tab_ThemNgThue);    // select by name
+                tabControl1.TabPages.Add(TP_ThemNgThue); // add removed tab
+                tabControl1.SelectTab(TP_ThemNgThue);    // select by name
             }
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab7))//tab already present
+            if (tabControl1.TabPages.Contains(TP_ttnv))//tab already present
             {
-                tabControl1.SelectTab(tab7);  // select by name
+                tabControl1.SelectTab(TP_ttnv);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab7); // add removed tab
-                tabControl1.SelectTab(tab7);    // select by name
+                tabControl1.TabPages.Add(TP_ttnv); // add removed tab
+                tabControl1.SelectTab(TP_ttnv);    // select by name
             }
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab3))//tab already present
+            if (tabControl1.TabPages.Contains(TP_thue))//tab already present
             {
-                tabControl1.SelectTab(tab3);  // select by name
+                tabControl1.SelectTab(TP_thue);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab3); // add removed tab
-                tabControl1.SelectTab(tab3);    // select by name
+                tabControl1.TabPages.Add(TP_thue); // add removed tab
+                tabControl1.SelectTab(TP_thue);    // select by name
             }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab2))//tab already present
+            if (tabControl1.TabPages.Contains(TP_tthd))//tab already present
             {
-                tabControl1.SelectTab(tab2);  // select by name
+                tabControl1.SelectTab(TP_tthd);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab2); // add removed tab
-                tabControl1.SelectTab(tab2);    // select by name
+                tabControl1.TabPages.Add(TP_tthd); // add removed tab
+                tabControl1.SelectTab(TP_tthd);    // select by name
             }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab6))//tab already present
+            if (tabControl1.TabPages.Contains(TP_ttkhach))//tab already present
             {
-                tabControl1.SelectTab(tab6);  // select by name
+                tabControl1.SelectTab(TP_ttkhach);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab6); // add removed tab
-                tabControl1.SelectTab(tab6);    // select by name
+                tabControl1.TabPages.Add(TP_ttkhach); // add removed tab
+                tabControl1.SelectTab(TP_ttkhach);    // select by name
             }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab5))//tab already present
+            if (tabControl1.TabPages.Contains(TP_ttphong))//tab already present
             {
-                tabControl1.SelectTab(tab5);  // select by name
+                tabControl1.SelectTab(TP_ttphong);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab5); // add removed tab
-                tabControl1.SelectTab(tab5);    // select by name
+                tabControl1.TabPages.Add(TP_ttphong); // add removed tab
+                tabControl1.SelectTab(TP_ttphong);    // select by name
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab8))//tab already present
+            if (tabControl1.TabPages.Contains(TP_tk))//tab already present
             {
-                tabControl1.SelectTab(tab8);  // select by name
+                tabControl1.SelectTab(TP_tk);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab8); // add removed tab
-                tabControl1.SelectTab(tab8);    // select by name
+                tabControl1.TabPages.Add(TP_tk); // add removed tab
+                tabControl1.SelectTab(TP_tk);    // select by name
             }
 
 
         }
         private void button86_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tab4))//tab already present
+            if (tabControl1.TabPages.Contains(TP_themnv))//tab already present
             {
-                tabControl1.SelectTab(tab4);  // select by name
+                tabControl1.SelectTab(TP_themnv);  // select by name
             }
             else
             {
-                tabControl1.TabPages.Add(tab4); // add removed tab
-                tabControl1.SelectTab(tab4);    // select by name
+                tabControl1.TabPages.Add(TP_themnv); // add removed tab
+                tabControl1.SelectTab(TP_themnv);    // select by name
             }
         }
 
-        
 
-        private void Btn_themNV(object sender, EventArgs e)
+        private void btn_TraCuuNV_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
+            QuanLyNhanVienEntities nv = new QuanLyNhanVienEntities();
 
+            nv.MaNV = Convert.ToInt32(txt_MaNV_TT.Text);
             
-            a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
-            a.Ten = txt_TenNV.Text;
-            a.NgaySinh = dateTime_NV.Text;
-           
-            if (ck_NamNV.Checked == true)
-            {
-                a.GioiTinh = true;
-            }
-            else
-                a.GioiTinh = false;
-            if (ck_NuNV.Checked == true)
-            {
-                a.GioiTinh = false;
-            }
-            else
-                a.GioiTinh = true;
-            ////a.GioiTinh = ;
-            a.ThuongTru = txt_ThuongTruNV.Text;
-            a.TamTru = txt_TamTruNV.Text;
-            a.CMND = Convert.ToInt32(txt_CmndNV.Text);
-            a.NgayCap = dateTime_NgayCapNV.Text;
-            a.NoiCap = comboBox_NoiCapNV.Text;
-            a.Email = txt_EmailNV.Text;
-            a.BoPhan = comboBox_BoPhanNV.Text;
-            a.NgayVao = dateTime_NgayVaoNV.Text;
-            a.SDT = Convert.ToInt32(txt_SdtNV.Text);
-
-            QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
-            DataTable dt = abus.GetNV(a);
-
+            TimKiemNhanVienBUS tim = new TimKiemNhanVienBUS();
+            DataTable dt = tim.GetTKNV(nv);
             
-                
+           if (dt.Rows.Count > 0)
+            {
+                addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
+                addlogin.Ten = dt.Rows[0][1].ToString();
+                addlogin.NgaySinh = dt.Rows[0][2].ToString();
+                addlogin.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                addlogin.ThuongTru = dt.Rows[0][4].ToString();
+                addlogin.TamTru = dt.Rows[0][5].ToString();
+                addlogin.Cmnd = Convert.ToInt32(dt.Rows[0][6].ToString());
+                addlogin.NgayCap = dt.Rows[0][7].ToString();
+                addlogin.NoiCap = dt.Rows[0][8].ToString();
+                addlogin.Email = dt.Rows[0][9].ToString();
+                addlogin.BoPhan =  dt.Rows[0][10].ToString();
+                addlogin.NgayVao = dt.Rows[0][11].ToString();
+                addlogin.SDT = Convert.ToInt32(dt.Rows[0][12].ToString());
 
-                MessageBox.Show("Them Thanh Cong");
+                //foreach (var item in )
+                //{
+                //System.Data.DataTable dataTable = new System.Data.DataTable();
+                dataGridView3.Rows.Add(addlogin.MaNV,addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
+                //dataGridView3.DataSource = dt;
+                //}
 
-            tab4.Refresh();
+            }
         }
 
         private void button16_Click(object sender, EventArgs e) // Đăng nhập và phân quyền !!!
@@ -409,16 +443,16 @@ namespace CRM
                         tabControl2.TabPages.Add(TP_QlNv);
                         
 
-                        tabControl1.TabPages.Add(tab9);
-                        tabControl1.TabPages.Remove(tab8);
+                        tabControl1.TabPages.Add(TP_home);
+                        tabControl1.TabPages.Remove(TP_tk);
                         //this.Visible = false;
                         break;
                     case "2":
                         MessageBox.Show("Welcome NhanVien " + userlogin.Taikhoan);
                         btn_Home.Show();
 
-                        tabControl1.TabPages.Remove(tab8);
-                        tabControl1.TabPages.Add(tab9);
+                        tabControl1.TabPages.Remove(TP_tk);
+                        tabControl1.TabPages.Add(TP_home);
 
                         tabControl2.TabPages.Add(TP_QlPhong);
                         tabControl2.TabPages.Add(TP_QlHoaDon);
@@ -453,19 +487,13 @@ namespace CRM
             this.Visible = false;
             a.ShowDialog();
                 //btn_Login.Show();
-
-
-
-
-
         }
-
 
         void createarraybutton(DataTable dtphong, int top, ref int t)
         {
-          
+
             int left = 0;
-            for(int i=0;i<dtphong.Rows.Count;i++)
+            for (int i = 0; i < dtphong.Rows.Count; i++)
             {
                 Button bt = new Button();
                 bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
@@ -474,7 +502,7 @@ namespace CRM
                 bt.Size = new Size(50, 50);
                 bt.Top = top;
                 bt.Left = left;
-                
+
                 left += 80;
                 bt.Click += new EventHandler(bt_Click);
                 tabPage1.Controls.Add(bt);
@@ -483,8 +511,12 @@ namespace CRM
         }
         private void bt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
+            Thue p = new Thue();
+
+            p.ShowDialog();
+            //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
         }
+
         private void tabPage1_Paint(object sender, PaintEventArgs e)
         {
             DataTable dttang = new DataTable();
@@ -497,7 +529,7 @@ namespace CRM
                 Label lb = new Label();
                 lb.Name = string.Format("lb{0}", i);
                 lb.Text = string.Format("TẦNG {0}", dttang.Rows[i][0].ToString());
-                
+
                 lb.Top = toplb;
                 tabPage1.Controls.Add(lb);
                 toplb += 100;
@@ -507,7 +539,7 @@ namespace CRM
                 PhongBUS phongB = new PhongBUS();
                 DataTable dtphong = new DataTable();
                 dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
-                createarraybutton(dtphong,top,ref sobt);
+                createarraybutton(dtphong, top, ref sobt);
                 top += 100;
             }
         }
@@ -553,18 +585,83 @@ namespace CRM
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tabPage1))//tab already present
-            {
-                tabControl1.SelectTab(tabPage1);  // select by name
-            }
-            else
-            {
-                tabControl1.TabPages.Add(tabPage1); // add removed tab
-                tabControl1.SelectTab(tabPage1);    // select by name
-            }
 
         }
+        private void btn_ThemNguoiThue_Click(object sender, EventArgs e)
+        {
+            ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+
+            c.Ten = txt_TenNgThue.Text;
+            c.NgaySinh = dateTime_NgaySinh_NgThue.Text;
+            if (ck_NamKhachThue.Checked == true)
+            {
+                c.GioiTinh = true;
+            }
+            else
+                c.GioiTinh = false;
+            if (ck_NuKhachThue.Checked == true)
+            {
+                c.GioiTinh = false;
+            }
+            else
+                c.GioiTinh = true;
+
+            c.Cmnd = Convert.ToInt32(txt_CmndNgThue.Text);
+            c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
+
+            ThemKhachThueBUS cbus = new ThemKhachThueBUS();
+            DataTable dt = cbus.GetKT(c);
+
+            MessageBox.Show("Them KhachThue Thanh Cong");
+
+        }
+
+        private void Btn_themNV(object sender, EventArgs e)
+        {
+            QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
+
+
+            a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
+            a.Ten = txt_TenNV.Text;
+            a.NgaySinh = dateTime_NV.Text;
+
+            if (ck_NamNV.Checked == true)
+            {
+                a.GioiTinh = true;
+            }
+            else
+                a.GioiTinh = false;
+            if (ck_NuNV.Checked == true)
+            {
+                a.GioiTinh = false;
+            }
+            else
+                a.GioiTinh = true;
+            ////a.GioiTinh = ;
+            a.ThuongTru = txt_ThuongTruNV.Text;
+            a.TamTru = txt_TamTruNV.Text;
+            a.Cmnd = Convert.ToInt32(txt_CmndNV.Text);
+            a.NgayCap = dateTime_NgayCapNV.Text;
+            a.NoiCap = comboBox_NoiCapNV.Text;
+            a.Email = txt_EmailNV.Text;
+            a.BoPhan = comboBox_BoPhanNV.Text;
+            a.NgayVao = dateTime_NgayVaoNV.Text;
+            a.SDT = Convert.ToInt32(txt_SdtNV.Text);
+
+            ThemNhanVienBUS abus = new ThemNhanVienBUS();
+            DataTable dt = abus.GetNV(a);
+
+
+
+
+            MessageBox.Show("Them Thanh Cong");
+
+            TP_themnv.Refresh();
+        }
+
+        
+        
     }
 }

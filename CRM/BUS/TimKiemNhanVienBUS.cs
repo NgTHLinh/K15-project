@@ -8,20 +8,19 @@ using System.Text;
 
 namespace BUS
 {
-    public class QuanLyNhanVienBUS
+    public class TimKiemNhanVienBUS
     {
-        private QuanLyNhanVienDAO addDAO;
-        public QuanLyNhanVienBUS()
+        private TimKiemNhanVienDAO timDAO;
+        public TimKiemNhanVienBUS()
         {
-            addDAO = new QuanLyNhanVienDAO();
+            timDAO = new TimKiemNhanVienDAO();
         }
 
-        public DataTable GetNV(QuanLyNhanVienEntities add)
+        public DataTable GetTKNV (QuanLyNhanVienEntities tim)
         {
             DataTable dt = null;
-            dt = addDAO.GetNV(add);
+            dt = timDAO.GetTKNV(tim);
             return dt;
         }
-
     }
 }

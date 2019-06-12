@@ -6,10 +6,10 @@ using System.Text;
 
 namespace DAO
 {
-    public class TangDAO:DataProvider
+    public class TangDAO : DataProvider
     {
         public TangDAO() : base()
-            {
+        {
 
         }
         //public DataTable GetTK(ThongTinKhachThueEntities user)

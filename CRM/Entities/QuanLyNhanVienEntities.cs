@@ -99,7 +99,7 @@ namespace Entities
 
         private int cmnd;
 
-        public int CMND
+        public int Cmnd
         {
             get
             {
@@ -209,6 +209,7 @@ namespace Entities
         public QuanLyNhanVienEntities(int manv, string ten, string ngaysinh, Boolean gioitinh, string thuongtru , string tamtru, int cmnd, string ngaycap, string noicap, string email, string bophan, string ngayvao, int sdt)
         {
             this.manv = manv;
+            this.ngaysinh = ngaysinh;
             this.ten = ten;
             this.gioitinh = gioitinh;
             this.thuongtru = thuongtru;

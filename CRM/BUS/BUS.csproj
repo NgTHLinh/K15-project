@@ -43,9 +43,13 @@
     <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNhanVienBUS.cs" />
-    <Compile Include="TaiKhoanBUS.cs" />
     <Compile Include="TangBUS.cs" />
+    <Compile Include="ThemKhachThueBUS.cs" />
+    <Compile Include="ThemNhanVienBUS.cs" />
+    <Compile Include="TaiKhoanBUS.cs" />
     <Compile Include="ThongTinKhachThueBUS.cs" />
+    <Compile Include="ThongTinNhanVienBUS.cs" />
+    <Compile Include="TimKiemNhanVienBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

@@ -8,18 +8,18 @@ using System.Text;
 
 namespace BUS
 {
-    public class QuanLyNhanVienBUS
+    public class ThemKhachThueBUS
     {
-        private QuanLyNhanVienDAO addDAO;
-        public QuanLyNhanVienBUS()
+        private ThemKhachThueDAO addDAO;
+        public ThemKhachThueBUS()
         {
-            addDAO = new QuanLyNhanVienDAO();
+            addDAO = new ThemKhachThueDAO();
         }
 
-        public DataTable GetNV(QuanLyNhanVienEntities add)
+        public DataTable GetKT(ThongTinKhachThueEntities add)
         {
             DataTable dt = null;
-            dt = addDAO.GetNV(add);
+            dt = addDAO.GetKT(add);
             return dt;
         }
 

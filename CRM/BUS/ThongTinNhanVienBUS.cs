@@ -7,28 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 
-
 namespace BUS
 {
-    public class ThongTinKhachThueBUS
+    public class ThongTinNhanVienBUS
     {
-       
-        public ThongTinKhachThueDAO userTTDAO;
+        public ThongTinNhanVienDAO userTTNVDAO;
 
-        public ThongTinKhachThueBUS()
+        public ThongTinNhanVienBUS()
         {
-
-            userTTDAO = new ThongTinKhachThueDAO();
+            userTTNVDAO = new ThongTinNhanVienDAO();
         }
-
-        public DataTable GetTK(ThongTinKhachThueEntities ttkt)
+        public DataTable GetTTNV ()
         {
             DataTable dt = null;
-            dt = userTTDAO.GetTT(ttkt);
+            dt = userTTNVDAO.GetNV();
             return dt;
         }
-
     }
-
-
 }

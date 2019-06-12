@@ -6,10 +6,10 @@ using System.Text;
 
 namespace DAO
 {
-    public class PhongDAO:DataProvider
+    public class PhongDAO : DataProvider
     {
         public PhongDAO() : base()
-            {
+        {
 
         }
         //public DataTable GetTK(ThongTinKhachThueEntities user)
@@ -20,7 +20,7 @@ namespace DAO
         //}
         public DataTable GetPhongTheoTang(int id)
         {
-            string sql = "select * from Phong where TangID ="+id;
+            string sql = "select * from Phong where TangID =" + id;
             return getDataTable(sql);
         }
     }

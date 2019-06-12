@@ -16,7 +16,7 @@ namespace DAO
 
             //    return getDataTable(sql);
             //}
-            public DataTable GetTT()
+            public DataTable GetTT(ThongTinKhachThueEntities ttkt) 
             {
                 string sql = "select * from ThongTinKhachThue";
                 return getDataTable(sql);
