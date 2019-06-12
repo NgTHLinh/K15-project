@@ -57,6 +57,36 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(6, 28);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(164, 17);
+            label4.TabIndex = 41;
+            label4.Text = "Giá e léc tríc : vài billions";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(6, 51);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(161, 17);
+            label5.TabIndex = 42;
+            label5.Text = "Giá quơ tờ : vài hundred";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(6, 73);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(178, 17);
+            label6.TabIndex = 43;
+            label6.Text = "Giá in tơ nét : vài thousand";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::CRM.Properties.Resources.CloseRed;
@@ -337,9 +367,10 @@
             this.label3.Font = new System.Drawing.Font("Impact", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 63);
+            this.label3.Size = new System.Drawing.Size(72, 63);
             this.label3.TabIndex = 38;
-            this.label3.Text = "Phòng 102";
+            this.label3.Text = "fff";
+            this.label3.Paint += new System.Windows.Forms.PaintEventHandler(this.label3_Paint);
             // 
             // button1
             // 
@@ -365,36 +396,6 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phòng";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(6, 28);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(164, 17);
-            label4.TabIndex = 41;
-            label4.Text = "Giá e léc tríc : vài billions";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(6, 51);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(161, 17);
-            label5.TabIndex = 42;
-            label5.Text = "Giá quơ tờ : vài hundred";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(6, 73);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(178, 17);
-            label6.TabIndex = 43;
-            label6.Text = "Giá in tơ nét : vài thousand";
             // 
             // Thue
             // 
@@ -425,6 +426,7 @@
             this.Name = "Thue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thue";
+            this.Load += new System.EventHandler(this.Thue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

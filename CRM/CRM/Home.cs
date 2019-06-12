@@ -41,19 +41,19 @@ namespace CRM
            
             btn_Logout.Hide();
             btn_Home.Hide();
-            tabControl2.TabPages.Remove(TP_QlHoaDon);
-            tabControl2.TabPages.Remove(TP_QlNgThue);
-            tabControl2.TabPages.Remove(TP_QlNv);
-            tabControl2.TabPages.Remove(TP_QlPhong);  
+            //tabControl2.TabPages.Remove(TP_QlHoaDon);
+            //tabControl2.TabPages.Remove(TP_QlNgThue);
+            //tabControl2.TabPages.Remove(TP_QlNv);
+            //tabControl2.TabPages.Remove(TP_QlPhong);  
 
-            tabControl1.TabPages.Remove(TP_ThemNgThue);
-            tabControl1.TabPages.Remove(TP_ttphong);
-            tabControl1.TabPages.Remove(TP_tthd);
-            tabControl1.TabPages.Remove(TP_thue);
-            tabControl1.TabPages.Remove(TP_themnv);
-            tabControl1.TabPages.Remove(TP_home);
-            tabControl1.TabPages.Remove(TP_ttkhach);
-            tabControl1.TabPages.Remove(TP_ttnv);
+            //tabControl1.TabPages.Remove(TP_ThemNgThue);
+            //tabControl1.TabPages.Remove(TP_ttphong);
+            //tabControl1.TabPages.Remove(TP_tthd);
+            //tabControl1.TabPages.Remove(TP_thue);
+            //tabControl1.TabPages.Remove(TP_themnv);
+            //tabControl1.TabPages.Remove(TP_home);
+            //tabControl1.TabPages.Remove(TP_ttkhach);
+            //tabControl1.TabPages.Remove(TP_ttnv);
             //tabControl1.TabPages.Remove(tabPage1);
             
         }

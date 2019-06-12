@@ -23,5 +23,11 @@ namespace DAO
             string sql = "select * from Phong where TangID =" + id;
             return getDataTable(sql);
         }
+
+        public DataTable GetTenPhong()
+        {
+            string sql = "select * from Phong ";
+            return getDataTable(sql);
+        }
     }
 }

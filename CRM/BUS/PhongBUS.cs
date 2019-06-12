@@ -24,5 +24,14 @@ namespace BUS
 
             return dt;
         }
+
+        public DataTable GetTenPhong()
+        {
+            DataTable name = null;
+
+            name = phongDAO.GetTenPhong();
+
+            return name;
+        }
     }
 }
