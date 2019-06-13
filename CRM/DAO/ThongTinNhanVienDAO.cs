@@ -9,7 +9,7 @@ namespace DAO
         { }
         public DataTable GetNV ()
         {
-            string sql = "select * from ThongTinKhachThue";
+            string sql = "select * from QuanLyNhanVien";
             return getDataTable(sql);
         }
     }

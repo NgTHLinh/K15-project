@@ -68,17 +68,21 @@ namespace CRM
                 DataTable dt = ttktbus.GetTK(t);
                 if (dt.Rows.Count > 0)
                 {
-                    table.Cmnd = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    table.Ten = dt.Rows[0][1].ToString();
-                    table.NgaySinh = dt.Rows[0][2].ToString();
-                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
-                    table.Cmnd = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
-                    //table.PhongId = Convert.ToInt32(dt.Rows[0][7].ToString());
-                }
+                    for (int i = 0; i < dt.Rows.Count;i++)
+                    {
+                        table.Cmnd = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        table.Ten = dt.Rows[i][1].ToString();
+                        table.NgaySinh = dt.Rows[i][2].ToString();
+                        table.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        table.Cmnd = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        table.Sdt = Convert.ToInt32(dt.Rows[i][5].ToString());
 
-                foreach (var item in dt.Rows)
-                    dataGridView2.Rows.Add(table.Cmnd, table.Ten, table.NgaySinh, table.GioiTinh, table.Cmnd, table.Sdt);//, table.PhongId);
+                        dataGridView2.Rows.Add(table.Cmnd, table.Ten, table.NgaySinh, table.GioiTinh, table.Cmnd, table.Sdt);//, table.PhongId);
+
+                    }
+
+
+                }
 
             }
             {
@@ -86,30 +90,29 @@ namespace CRM
                 DataTable dt = nv.GetTTNV();
                 if (dt.Rows.Count > 0)
                 {
-                    addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    addlogin.Ten = dt.Rows[0][1].ToString();
-                    addlogin.NgaySinh = dt.Rows[0][2].ToString();
-                    addlogin.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
-                    addlogin.ThuongTru = dt.Rows[0][4].ToString();
-                    addlogin.TamTru = dt.Rows[0][5].ToString();
-                    //addlogin.Cmnd = Convert.ToInt32(dt.Rows[0][6].ToString());
-                    addlogin.NgayCap = dt.Rows[0][7].ToString();
-                    //addlogin.NoiCap = dt.Rows[0][8].ToString();
-                    //addlogin.Email = dt.Rows[0][9].ToString();
-                    //addlogin.BoPhan = dt.Rows[0][10].ToString();
-                    //addlogin.NgayVao = dt.Rows[0][11].ToString();
-                    //addlogin.SDT = Convert.ToInt32(dt.Rows[0][12].ToString());
-                }
-                foreach (var item in dt.Rows)
-                    dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
-                }
+                    for (int i = 0; i < dt.Rows.Count;i++)
+                    {
+                        addlogin.MaNV = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        addlogin.Ten = dt.Rows[i][1].ToString();
+                        addlogin.NgaySinh = dt.Rows[i][2].ToString();
+                        addlogin.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        addlogin.ThuongTru = dt.Rows[i][4].ToString();
+                        addlogin.TamTru = dt.Rows[i][5].ToString();
+                        addlogin.Cmnd = Convert.ToInt32(dt.Rows[i][6].ToString());
+                        addlogin.NgayCap = dt.Rows[i][7].ToString();
+                        addlogin.NoiCap = dt.Rows[i][8].ToString();
+                        addlogin.Email = dt.Rows[i][9].ToString();
+                        addlogin.BoPhan = dt.Rows[i][10].ToString();
+                        addlogin.NgayVao = dt.Rows[i][11].ToString();
+                        addlogin.SDT = Convert.ToInt32(dt.Rows[i][12].ToString());
 
-            //tao cot cho datagrid, dat ten, kich thuoc
-            //dataGridView2.DataSource = dt;
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    dataGridView2.Rows[i][0].Value = dt.Rows[i][1].ToString();
-            //}
+                        dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
+                        
+                    }
+                }
+            }
+
+            
 
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             tabControl1.DrawItem += tabControl1_DrawItem;
