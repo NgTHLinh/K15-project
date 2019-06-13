@@ -378,6 +378,14 @@ namespace CRM
             }
         }
 
+        private void btn_XoaNV_Click(object sender, EventArgs e)
+        {
+            int a = dataGridView3.CurrentCell.RowIndex;
+
+
+            dataGridView3.Rows.RemoveAt(a);
+
+        }
 
         private void btn_TraCuuNV_Click(object sender, EventArgs e)
         {
@@ -621,6 +629,8 @@ namespace CRM
 
         }
 
+
+
         private void Btn_themNV(object sender, EventArgs e)
         {
             QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
@@ -664,7 +674,6 @@ namespace CRM
             TP_themnv.Refresh();
         }
 
-        
         
     }
 }
