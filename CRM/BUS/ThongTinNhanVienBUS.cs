@@ -23,5 +23,11 @@ namespace BUS
             dt = userTTNVDAO.GetNV();
             return dt;
         }
+        public DataTable XoaNV(int str)
+        {
+            DataTable dt = null;
+            dt = userTTNVDAO.XoaNV(str);
+            return dt;
+        }
     }
 }

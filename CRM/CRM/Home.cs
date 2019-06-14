@@ -28,6 +28,7 @@ namespace CRM
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
         TangBUS tang = new TangBUS();
+        ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
 
 
 
@@ -380,9 +381,12 @@ namespace CRM
 
         private void btn_XoaNV_Click(object sender, EventArgs e)
         {
+            
+
             int a = dataGridView3.CurrentCell.RowIndex;
 
-
+            int s =Convert.ToInt32(dataGridView3.Rows[a].Cells[0].Value.ToString());
+            ttnv.XoaNV(s);
             dataGridView3.Rows.RemoveAt(a);
 
         }

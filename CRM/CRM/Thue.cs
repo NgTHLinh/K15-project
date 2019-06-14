@@ -69,5 +69,10 @@ namespace CRM
 
             label3.Text = "Phòng "+ dtphong.Rows[0][0].ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
