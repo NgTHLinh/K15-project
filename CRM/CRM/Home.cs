@@ -39,6 +39,7 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
+            
            
             btn_Logout.Hide();
             btn_Home.Hide();
@@ -55,7 +56,7 @@ namespace CRM
             //tabControl1.TabPages.Remove(TP_home);
             //tabControl1.TabPages.Remove(TP_ttkhach);
             //tabControl1.TabPages.Remove(TP_ttnv);
-            //tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage1);
             
         }
 
@@ -504,39 +505,56 @@ namespace CRM
                 //btn_Login.Show();
         }
 
-        void createarraybutton(DataTable dtphong, int top, ref int t)
+        void createarraybutton(DataTable dtphong , int top, ref int t)
         {
 
-            int left = 0;
+            int left = 10;
             for (int i = 0; i < dtphong.Rows.Count; i++)
             {
                 Button bt = new Button();
+
                 bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
                 bt.Tag = string.Format("[{0}]", i);
-                bt.Text = string.Format("Phòng [{0}]", dtphong.Rows[i][0].ToString());
-                bt.Size = new Size(50, 50);
+                bt.Text = string.Format("Phòng {0}", dtphong.Rows[i][0].ToString());
+                bt.Size = new Size(150, 120);
                 bt.Top = top;
                 bt.Left = left;
 
-                left += 80;
-                bt.Click += new EventHandler(bt_Click);
-                tabPage1.Controls.Add(bt);
+                left += 180;
+
+                bt.MouseDown += new MouseEventHandler(bt_Click);
+                groupBox5.Controls.Add(bt);
                 t++;
+
+                string txt = bt.Text;
+                Thue tr = new Thue(txt);
+                
             }
+            
         }
-        private void bt_Click(object sender, EventArgs e)
+
+        private void bt_Click(object sender, MouseEventArgs e)
         {
             Thue p = new Thue();
 
-            p.ShowDialog();
+            if (e.Button == MouseButtons.Left)
+            {
+                p.ShowDialog();
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                MessageBox.Show("sdsa");
+            }
+
             //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
         }
 
-        private void tabPage1_Paint(object sender, PaintEventArgs e)
+        private void groupBox5_Paint(object sender, PaintEventArgs e)
         {
             DataTable dttang = new DataTable();
-            int top = 50;
-            int toplb = 10;
+            int top = 45;
+            int toplb = 20;
+           
             dttang = tang.GetTang();
             for (int i = 0; i < dttang.Rows.Count; i++)
             {
@@ -544,29 +562,23 @@ namespace CRM
                 Label lb = new Label();
                 lb.Name = string.Format("lb{0}", i);
                 lb.Text = string.Format("TẦNG {0}", dttang.Rows[i][0].ToString());
-
+              
                 lb.Top = toplb;
-                tabPage1.Controls.Add(lb);
-                toplb += 100;
+                lb.Left = 10;
+                groupBox5.Controls.Add(lb);
+                toplb += 150;
                 //   
                 int sobt = 0;
                 PhongEntities phongE = new PhongEntities();
                 PhongBUS phongB = new PhongBUS();
                 DataTable dtphong = new DataTable();
                 dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
-                createarraybutton(dtphong, top, ref sobt);
-                top += 100;
+                createarraybutton(dtphong,top, ref sobt);
+                top += 150;
             }
         }
 
-        private void button52_Click(object sender, EventArgs e)
-        {
-            
-            Thue p = new Thue();
-            
-            p.ShowDialog();
-
-        }
+        
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -677,6 +689,8 @@ namespace CRM
 
             TP_themnv.Refresh();
         }
+
+       
 
         
     }

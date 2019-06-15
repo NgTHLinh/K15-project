@@ -16,17 +16,28 @@ namespace CRM
     {
         TangBUS tang = new TangBUS();
         PhongBUS phong = new PhongBUS();
+        string tx;
         public Thue()
         {
-           
-
-
             InitializeComponent();
+
+        }
+
+        public Thue(string txt) : this()
+        {
+            tx = txt;
+            label3.Text = tx;
         }
 
         private void Thue_Load(object sender, EventArgs e)
         {
-
+            //label3.Text = tx;
+            //DataTable name = new DataTable();
+            //name = phong.GetTenPhong();
+            //for (int i = 0; i < name.Rows.Count; i++)
+            //{
+            //    label3.Text = string.Format("Phòng {0}", name.Rows[i][0].ToString());
+            //}
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -63,12 +74,11 @@ namespace CRM
 
         private void label3_Paint(object sender, PaintEventArgs e)
         {
-            DataTable dtphong = new DataTable();
+            
 
-            dtphong = phong.GetTenPhong();
-
-            label3.Text = "Phòng "+ dtphong.Rows[0][0].ToString();
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {

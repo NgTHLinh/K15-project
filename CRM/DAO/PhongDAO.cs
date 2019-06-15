@@ -26,7 +26,7 @@ namespace DAO
 
         public DataTable GetTenPhong()
         {
-            string sql = "select * from Phong ";
+            string sql = "select * from Phong";
             return getDataTable(sql);
         }
     }
