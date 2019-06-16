@@ -533,9 +533,23 @@ namespace CRM
             
         }
 
+        void createlistbox()
+        {
+            ListBox lbx = new ListBox();
+            lbx.Items.Add("1. Xem phòng");
+            lbx.Location = new System.Drawing.Point(120, 120);
+            groupBox5.Controls.Add(lbx);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)  
+        {  
+            MessageBox.Show("hello");  
+        } 
+
         private void bt_Click(object sender, MouseEventArgs e)
         {
-            Thue p = new Thue();
+            string tn = ((Button)sender).Text;
+            Thue p = new Thue(tn);
 
             if (e.Button == MouseButtons.Left)
             {
@@ -543,7 +557,20 @@ namespace CRM
             }
             if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("sdsa");
+                ListBox lbx = new ListBox();
+                lbx.Items.Add("1. Long");
+                lbx.Items.Add("2. Khoa");
+                lbx.Items.Add("3. Cô Linh ");
+                lbx.SelectedIndexChanged += new EventHandler(listBox1_SelectedIndexChanged);
+
+
+                lbx.Location = new System.Drawing.Point(120, 120);
+                groupBox5.Controls.Add(lbx);
+                lbx.MultiColumn = true;
+                lbx.SelectionMode = SelectionMode.MultiExtended;
+                
+                //createlistbox();
+                //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
             }
 
             //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);

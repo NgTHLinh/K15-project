@@ -372,9 +372,9 @@
             this.label3.Font = new System.Drawing.Font("Impact", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 63);
+            this.label3.Size = new System.Drawing.Size(27, 63);
             this.label3.TabIndex = 38;
-            this.label3.Paint += new System.Windows.Forms.PaintEventHandler(this.label3_Paint);
+            this.label3.Text = "\r\n";
             // 
             // button1
             // 
@@ -387,7 +387,6 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "THUÊ";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
