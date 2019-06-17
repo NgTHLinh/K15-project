@@ -538,12 +538,45 @@ namespace CRM
             ListBox lbx = new ListBox();
             lbx.Items.Add("1. Xem phòng");
             lbx.Location = new System.Drawing.Point(120, 120);
+            
             groupBox5.Controls.Add(lbx);
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)  
-        {  
-            MessageBox.Show("hello");  
+        private void lbx_DoubleClick(object sender, System.EventArgs e)  
+        {
+            string item = "";
+            
+            foreach (int i in ((ListBox)sender).SelectedIndices)
+            {
+                item += ((ListBox)sender).Items[i] + Environment.NewLine;
+             
+            }
+
+            if (((ListBox)sender).SelectedIndex == 0)
+            {
+                //MessageBox.Show(item , "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
+                MessageBox.Show("Bạn Rất Đẹp Trai","Thông Báo");
+                //((ListBox)sender).Controls.Remove(((ListBox)sender));
+            }
+            if (((ListBox)sender).SelectedIndex == 1)
+            { 
+                //MessageBox.Show(item, "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
+                MessageBox.Show("Bạn là chó", "Thông Báo");
+                //((ListBox)sender).Controls.Remove(((ListBox)sender));
+            }
+            if (((ListBox)sender).SelectedIndex == 2)
+            {
+                //MessageBox.Show(item, "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
+                MessageBox.Show("Chào "+ item, "Thông Báo");
+                //((ListBox)sender).Controls.Remove(((ListBox)sender));
+            }
+
+
+
+
+            //MessageBox.Show(item);
+            //((ListBox)sender).Controls.Remove(((ListBox)sender));
+            //MessageBox.Show("hello");  
         } 
 
         private void bt_Click(object sender, MouseEventArgs e)
@@ -558,13 +591,13 @@ namespace CRM
             if (e.Button == MouseButtons.Right)
             {
                 ListBox lbx = new ListBox();
-                lbx.Items.Add("1. Long");
-                lbx.Items.Add("2. Khoa");
-                lbx.Items.Add("3. Cô Linh ");
-                lbx.SelectedIndexChanged += new EventHandler(listBox1_SelectedIndexChanged);
+                lbx.Items.Add("Long");
+                lbx.Items.Add("Khoa");
+                lbx.Items.Add("Cô Linh ");
+                lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
 
 
-                lbx.Location = new System.Drawing.Point(120, 120);
+                lbx.Location = new System.Drawing.Point(200, 100);
                 groupBox5.Controls.Add(lbx);
                 lbx.MultiColumn = true;
                 lbx.SelectionMode = SelectionMode.MultiExtended;
