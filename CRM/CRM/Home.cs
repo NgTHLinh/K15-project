@@ -11,9 +11,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-
-//Khoa
-
 namespace CRM
 {
     public partial class Home : Form
@@ -30,12 +27,10 @@ namespace CRM
         TangBUS tang = new TangBUS();
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
 
-
-
         public Home()
         {
             //string conn = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
-        //SqlConnection con = new SqlConnection(conn);
+            //SqlConnection con = new SqlConnection(conn);
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
@@ -80,12 +75,8 @@ namespace CRM
                         table.Sdt = Convert.ToInt32(dt.Rows[i][5].ToString());
 
                         dataGridView2.Rows.Add(table.Cmnd, table.Ten, table.NgaySinh, table.GioiTinh, table.Cmnd, table.Sdt);//, table.PhongId);
-
                     }
-
-
                 }
-
             }
             {
                 ThongTinNhanVienBUS nv = new ThongTinNhanVienBUS();
@@ -113,9 +104,6 @@ namespace CRM
                     }
                 }
             }
-
-            
-
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             tabControl1.DrawItem += tabControl1_DrawItem;
             CloseImage = CRM.Properties.Resources.Closebutton;
@@ -184,30 +172,8 @@ namespace CRM
                     tc.TabPages.Remove(tabP);
                 }
             }
-            // }
+            
         }
-
-        //private void tabControl1_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    for (int i = 0; i <= this.tabControl1.TabPages.Count; i++)
-        //    {
-        //        Rectangle rPage = tabControl1.GetTabRect(i);
-        //        Rectangle closeButton = new Rectangle(rPage.Right - 20, rPage.Top + 5, rPage.Left + 15, 10);
-        //        if (closeButton.Contains(e.Location))
-        //        {
-
-        //            if (MessageBox.Show("Bạn Có Muốn Tắt Tab Này?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-        //            {
-
-        //                this.tabControl1.TabPages.RemoveAt(i);
-        //                break;
-
-
-        //            }
-
-        //        }
-        //    }
-        //}
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -533,24 +499,20 @@ namespace CRM
             
         }
 
-        void createlistbox()
+        private void lbx_MouseLeave(object sender, EventArgs e)
         {
-            ListBox lbx = new ListBox();
-            lbx.Items.Add("1. Xem phòng");
-            lbx.Location = new System.Drawing.Point(120, 120);
-            
-            groupBox5.Controls.Add(lbx);
+            ((ListBox)sender).Controls.Remove(((ListBox)sender));
         }
 
         private void lbx_DoubleClick(object sender, System.EventArgs e)  
         {
             string item = "";
             
-            foreach (int i in ((ListBox)sender).SelectedIndices)
-            {
-                item += ((ListBox)sender).Items[i] + Environment.NewLine;
+            //foreach (int i in ((ListBox)sender).SelectedIndices)
+            //{
+            //    item += ((ListBox)sender).Items[i] + Environment.NewLine;
              
-            }
+            //}
 
             if (((ListBox)sender).SelectedIndex == 0)
             {
@@ -590,18 +552,24 @@ namespace CRM
             }
             if (e.Button == MouseButtons.Right)
             {
+                //ContextMenu cm = new ContextMenu();
+                //cm.MenuItems.Add("Item 1" );
+                //cm.MenuItems.Add("Item 2" );
+                
                 ListBox lbx = new ListBox();
                 lbx.Items.Add("Long");
                 lbx.Items.Add("Khoa");
                 lbx.Items.Add("Cô Linh ");
                 lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
+                lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
+                //lbx.TopIndex = lbx.SelectedIndex;
 
-
-                lbx.Location = new System.Drawing.Point(200, 100);
-                groupBox5.Controls.Add(lbx);
+                lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
+                
                 lbx.MultiColumn = true;
                 lbx.SelectionMode = SelectionMode.MultiExtended;
-                
+                groupBox5.Controls.Add(lbx);
+                //((Button)sender).Controls.Add(lbx);
                 //createlistbox();
                 //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
             }
@@ -662,20 +630,6 @@ namespace CRM
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                      
-        }
-
-        private void btn_SuaNgThue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void btn_ThemNguoiThue_Click(object sender, EventArgs e)
         {
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
@@ -742,15 +696,21 @@ namespace CRM
             ThemNhanVienBUS abus = new ThemNhanVienBUS();
             DataTable dt = abus.GetNV(a);
 
-
-
-
             MessageBox.Show("Them Thanh Cong");
+            txt_MaNV_Them.Text = txt_TenNV.Text = txt_ThuongTruNV.Text = txt_TamTruNV.Text = txt_CmndNV.Text = comboBox_NoiCapNV.Text = txt_EmailNV.Text = comboBox_BoPhanNV.Text = txt_SdtNV.Text= null;
+            ck_NamNV.Checked = ck_NuNV.Checked = false;
+            dateTime_NV.Value = dateTime_NgayCapNV.Value = dateTime_NgayVaoNV.Value = System.DateTime.Today;
 
-            TP_themnv.Refresh();
+            //TP_themnv.Refresh();
         }
 
        
+
+        private void listBox1_MouseHover(object sender, EventArgs e)
+        {
+            //((ListBox)sender).SelectedIndex = 
+            //listBox1.BackColorChanged += DefaultBackColor;
+        }
 
         
     }
