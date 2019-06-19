@@ -704,14 +704,32 @@ namespace CRM
             //TP_themnv.Refresh();
         }
 
-       
-
         private void listBox1_MouseHover(object sender, EventArgs e)
         {
-            //((ListBox)sender).SelectedIndex = 
-            //listBox1.BackColorChanged += DefaultBackColor;
+            
+            Point point = listBox1.PointToClient(Cursor.Position);
+            int index = listBox1.IndexFromPoint(point);
+            if (index < 0) return;
+            //Do any action with the item
+            listBox1.GetItemRectangle(index).Inflate(1, 2);
         }
 
-        
+        private void listView1_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+        {
+            e.Item.BackColor = Color.BlueViolet;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
+        }
+
+        //private void listBox1_MouseHover(object sender, EventArgs e)
+        //{
+        //    //((ListBox)sender).SelectedIndex = 
+        //    //listBox1.BackColorChanged += DefaultBackColor;
+        //}
+
+
     }
 }
