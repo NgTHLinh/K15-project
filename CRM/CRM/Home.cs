@@ -366,7 +366,7 @@ namespace CRM
             
             TimKiemNhanVienBUS tim = new TimKiemNhanVienBUS();
             DataTable dt = tim.GetTKNV(nv);
-            
+            dataGridView3.Rows.Clear();
            if (dt.Rows.Count > 0)
             {
                 addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
@@ -722,6 +722,11 @@ namespace CRM
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
+        }
+
+        private void button63_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void listBox1_MouseHover(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace BUS
             addDAO = new ThemNhanVienDAO();
         }
 
-        public DataTable GetNV (QuanLyNhanVienEntities add)
+        public DataTable GetNV(QuanLyNhanVienEntities add)
         {
             DataTable dt = null;
             dt = addDAO.GetNV(add);
