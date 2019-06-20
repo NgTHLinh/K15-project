@@ -62,7 +62,7 @@ namespace CRM
             {
                 ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
                 ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
-                DataTable dt = ttktbus.GetTK(t);
+                DataTable dt = ttktbus.GetTKBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count;i++)
@@ -652,8 +652,8 @@ namespace CRM
             c.Cmnd = Convert.ToInt32(txt_CmndNgThue.Text);
             c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
 
-            ThemKhachThueBUS cbus = new ThemKhachThueBUS();
-            DataTable dt = cbus.GetKT(c);
+            ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
+            DataTable dt = cbus.GetTKBUS(c);
 
             MessageBox.Show("Them KhachThue Thanh Cong");
 
