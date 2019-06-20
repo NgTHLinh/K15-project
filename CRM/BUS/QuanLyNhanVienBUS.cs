@@ -16,10 +16,17 @@ namespace BUS
             addDAO = new QuanLyNhanVienDAO();
         }
 
-        public DataTable GetNV(QuanLyNhanVienEntities add)
+        public DataTable GetNVBUS(QuanLyNhanVienEntities add)
         {
             DataTable dt = null;
-            dt = addDAO.GetNV(add);
+            dt = addDAO.GetNVDAO(add);
+            return dt;
+        }
+
+        public DataTable GetThemNVBUS(QuanLyNhanVienEntities add)
+        {
+            DataTable dt = null;
+            dt = addDAO.GetThemNVDAO(add);
             return dt;
         }
 

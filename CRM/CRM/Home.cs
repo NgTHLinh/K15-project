@@ -693,8 +693,8 @@ namespace CRM
             a.NgayVao = dateTime_NgayVaoNV.Text;
             a.SDT = Convert.ToInt32(txt_SdtNV.Text);
 
-            ThemNhanVienBUS abus = new ThemNhanVienBUS();
-            DataTable dt = abus.GetNV(a);
+            QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
+            DataTable dt = abus.GetThemNVBUS(a);
 
             MessageBox.Show("Them Thanh Cong");
             txt_MaNV_Them.Text = txt_TenNV.Text = txt_ThuongTruNV.Text = txt_TamTruNV.Text = txt_CmndNV.Text = comboBox_NoiCapNV.Text = txt_EmailNV.Text = comboBox_BoPhanNV.Text = txt_SdtNV.Text= null;
