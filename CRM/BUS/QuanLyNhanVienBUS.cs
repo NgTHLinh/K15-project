@@ -30,6 +30,14 @@ namespace BUS
             return dt;
         }
         
+        public DataTable GetUpdateNVBUS (string a, string b, bool c, string d, string ee, int f, string g, string h, string i, string j, string k, int l, int m)
+        {
+            DataTable dt = null;
+            dt = addDAO.GetUpdateNVDAO(a,b,c,d,ee,f,g,h,i,j,k,l,m);
+            return dt;
+        }
+
+
 
     }
 }

@@ -20,5 +20,11 @@ namespace DAO
 
             return getDataTable(sql);
         }
+
+        public DataTable GetUpdateNVDAO(string a,string b,bool c,string d,string ee, int f, string g, string h, string i, string j , string k, int l, int m)
+        {
+            string sql = "update QuanLyNhanVien set Ten='" + a + "',NgaySinh='"+b+"',GioiTinh='"+c+"',ThuongTru='"+d+"',TamTru='"+ee+"',Cmnd='"+f+"',NgayCap='"+g+"',Noicap='"+h+"',Email='"+i+"',BoPhan='"+j+"',NgayVao='"+k+"',Sdt='"+l+"' where MaNV= "+m;
+            return getDataTable(sql);
+        }
     }
 }

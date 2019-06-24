@@ -27,8 +27,30 @@ namespace BUS
             dt = userTTDAO.GetTT(ttkt);
             return dt;
         }
-        
-
+        public DataTable GetmBUS (ThongTinKhachThueEntities l)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.Getm(l);
+            return dt;
+        }
+        public DataTable GetmmBUS(ThongTinKhachThueEntities l)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.Getmm(l);
+            return dt;
+        }
+        public DataTable GetmmmBUS(ThongTinKhachThueEntities l)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.Getmmm(l);
+            return dt;
+        }
+        public DataTable XoaKTBUS(int s)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.XoaKT(s);
+            return dt;
+        }
     }
 
 

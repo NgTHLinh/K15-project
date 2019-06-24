@@ -67,7 +67,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNhanVienDAO.cs" />
     <Compile Include="TangDAO.cs" />
-    <Compile Include="ThemKhachThueDAO.cs" />
     <Compile Include="TaiKhoanDAO.cs" />
     <Compile Include="ThongTinKhachThueDAO.cs" />
     <Compile Include="ThongTinNhanVienDAO.cs" />

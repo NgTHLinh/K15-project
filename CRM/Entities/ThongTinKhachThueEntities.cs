@@ -7,13 +7,13 @@ namespace Entities
 {
     public class ThongTinKhachThueEntities
     {
-        private int cmnd;
-        public int Cmnd
+        private int id;
+        public int ID
         {
             get
-            { return cmnd; }
+            { return id; }
             set
-            { cmnd = value; }
+            { id = value; }
         }
         
         private string ten;
@@ -31,6 +31,14 @@ namespace Entities
             { return gioitinh; }
             set
             { gioitinh = value; }
+        }
+        private int cmnd;
+        public int CMND
+        {
+            get
+            { return cmnd; }
+            set
+            { cmnd = value; }
         }
         private int sdt;
         public int Sdt
@@ -68,16 +76,18 @@ namespace Entities
         public ThongTinKhachThueEntities()
         {
         }
-        public ThongTinKhachThueEntities(int chungminhnhandan, string ten, bool gioitinh, int sodienthoai, string hinhanh, int phongid,string ngaysinh)
+        public ThongTinKhachThueEntities(int id, string ten, string ngaysinh,bool gioitinh,int cmnd, int sodienthoai, string hinhanh, int phongid)
         {
-            this.cmnd = chungminhnhandan;
+            this.id = id;
             
             this.ten = ten;
+            this.ngaysinh = ngaysinh;
             this.gioitinh = gioitinh;
+            this.cmnd = cmnd;
             this.sdt = sodienthoai;
             this.hinhanh = hinhanh;
             this.phongid = phongid;
-            this.ngaysinh = ngaysinh;
+            
         }
     }
 }

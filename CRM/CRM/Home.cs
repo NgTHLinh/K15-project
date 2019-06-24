@@ -26,7 +26,8 @@ namespace CRM
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
         TangBUS tang = new TangBUS();
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
-
+        QuanLyNhanVienBUS qlnv = new QuanLyNhanVienBUS();
+        ThongTinKhachThueBUS ttkt = new ThongTinKhachThueBUS();
         public Home()
         {
             //string conn = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
@@ -67,14 +68,14 @@ namespace CRM
                 {
                     for (int i = 0; i < dt.Rows.Count;i++)
                     {
-                        table.Cmnd = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        table.ID = Convert.ToInt32(dt.Rows[i][0].ToString());
                         table.Ten = dt.Rows[i][1].ToString();
                         table.NgaySinh = dt.Rows[i][2].ToString();
                         table.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
-                        table.Cmnd = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        table.CMND = Convert.ToInt32(dt.Rows[i][4].ToString());
                         table.Sdt = Convert.ToInt32(dt.Rows[i][5].ToString());
 
-                        dataGridView2.Rows.Add(table.Cmnd, table.Ten, table.NgaySinh, table.GioiTinh, table.Cmnd, table.Sdt);//, table.PhongId);
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);//, table.PhongId);
                     }
                 }
             }
@@ -348,8 +349,7 @@ namespace CRM
 
         private void btn_XoaNV_Click(object sender, EventArgs e)
         {
-            
-
+ 
             int a = dataGridView3.CurrentCell.RowIndex;
 
             int s =Convert.ToInt32(dataGridView3.Rows[a].Cells[0].Value.ToString());
@@ -357,7 +357,101 @@ namespace CRM
             dataGridView3.Rows.RemoveAt(a);
 
         }
+        private void btn_XoaKT_Click(object sender, EventArgs e)
+        {
+            int a = dataGridView2.CurrentCell.RowIndex;
+            int s = Convert.ToInt32(dataGridView2.Rows[a].Cells[0].Value.ToString());
+            ttkt.XoaKTBUS(s);
+            dataGridView2.Rows.RemoveAt(a);
+        }
 
+
+        private void btn_CapNhatNV_Click(object sender, EventArgs e)
+        {
+            
+            int mm = dataGridView3.CurrentCell.RowIndex;
+            int m  = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
+            string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
+            string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
+            bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
+            string d = (dataGridView3.Rows[mm].Cells[4].Value.ToString());
+            string ee = (dataGridView3.Rows[mm].Cells[5].Value.ToString());
+            int f = Convert.ToInt32(dataGridView3.Rows[mm].Cells[6].Value.ToString());
+            string g = (dataGridView3.Rows[mm].Cells[7].Value.ToString());
+            string h = (dataGridView3.Rows[mm].Cells[8].Value.ToString());
+            string i = (dataGridView3.Rows[mm].Cells[9].Value.ToString());
+            string j = (dataGridView3.Rows[mm].Cells[10].Value.ToString());
+            string k = (dataGridView3.Rows[mm].Cells[11].Value.ToString());
+            int l = Convert.ToInt32(dataGridView3.Rows[mm].Cells[12].Value.ToString());
+            
+
+            qlnv.GetUpdateNVBUS(a,b,c,d,ee,f,g,h,i,j,k,l,m);
+            MessageBox.Show("Capnhat tc");
+        }
+        private void btn_TraCuuKT_Click(object sender, EventArgs e)
+        {
+            ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
+
+
+
+            dataGridView2.Rows.Clear();
+
+            if (txt_TenKT_TT.Text == "")
+            {
+                t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                DataTable dt = a.GetmmBUS(t);
+                if (dt.Rows.Count > 0)
+                {
+                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    table.Ten = dt.Rows[0][1].ToString();
+                    table.NgaySinh = dt.Rows[0][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                    MessageBox.Show("aaa");
+                }
+            }
+            if (Txt_MaKhachHang_TT.Text == "")
+            {
+                t.Ten = txt_TenKT_TT.Text;
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                DataTable dt = a.GetmmmBUS(t);
+                if (dt.Rows.Count > 0)
+                {
+                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    table.Ten = dt.Rows[0][1].ToString();
+                    table.NgaySinh = dt.Rows[0][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                    MessageBox.Show("BBB");
+                }
+            }
+            if (Txt_MaKhachHang_TT.Text != "" & txt_TenKT_TT.Text != "")
+            {
+                t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
+                t.Ten = txt_TenKT_TT.Text;
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                DataTable dt = a.GetmBUS(t);
+                if (dt.Rows.Count > 0)
+                {
+                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
+                    table.Ten = dt.Rows[0][1].ToString();
+                    table.NgaySinh = dt.Rows[0][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
+                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                    MessageBox.Show("ccc");
+                }
+            }
+        }
         private void btn_TraCuuNV_Click(object sender, EventArgs e)
         {
             QuanLyNhanVienEntities nv = new QuanLyNhanVienEntities();
@@ -649,13 +743,15 @@ namespace CRM
             else
                 c.GioiTinh = true;
 
-            c.Cmnd = Convert.ToInt32(txt_CmndNgThue.Text);
+            c.CMND = Convert.ToInt32(txt_CmndNgThue.Text);
             c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
 
             ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
             DataTable dt = cbus.GetTKBUS(c);
 
             MessageBox.Show("Them KhachThue Thanh Cong");
+            txt_TenNgThue.Text = txt_DiaChiNgThue.Text = txt_SdtNgThue.Text = txt_CmndNgThue.Text = null;
+            ck_NamKhachThue.Checked = ck_NuKhachThue.Checked = false;
 
         }
 
@@ -724,10 +820,15 @@ namespace CRM
             //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
         }
 
-        private void button63_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
+
+
 
         //private void listBox1_MouseHover(object sender, EventArgs e)
         //{
