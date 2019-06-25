@@ -76,21 +76,30 @@ namespace CRM
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             c.Ten = textBox1.Text;
             c.NgaySinh = dateTimePicker1.Text;
-            if (ck_NamKhachThue.Checked == true)
+            if (checkBox1.Checked == true)
             {
                 c.GioiTinh = true;
             }
             else
                 c.GioiTinh = false;
-            if (ck_NuKhachThue.Checked == true)
+            if (checkBox2.Checked == true)
             {
                 c.GioiTinh = false;
             }
             else
                 c.GioiTinh = true;
 
-            c.CMND = Convert.ToInt32(txt_CmndNgThue.Text);
-            c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
+            c.CMND = Convert.ToInt32(textBox11.Text);
+            c.NgayCap = dateTimePicker4.Text;
+            c.NoiCap = comboBox3.Text;
+            c.NgayVao = dateTimePicker5.Text;
+            c.Sdt = Convert.ToInt32(textBox10.Text);
+
+            ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
+            DataTable dt = cbus.GetTKBUS(c);
+
+            MessageBox.Show("Them KhachThue Thanh Cong");
+            
         }
     }
 }

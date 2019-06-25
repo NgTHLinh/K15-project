@@ -23,7 +23,7 @@ namespace DAO
             }
         public DataTable GetKT(ThongTinKhachThueEntities add)
         {
-            string sql = "insert into ThongTinKhachThue ('Ten','NgaySinh','GioiTinh','Cmnd','Sdt') values ('" + add.Ten + "','" + add.NgaySinh + "','" + add.GioiTinh + "','" + add.CMND + "','" + add.Sdt + "')";
+            string sql = "insert into ThongTinKhachThue ('Ten','NgaySinh','GioiTinh','Cmnd','NgayCap','NoiCap','NgayVao','Sdt') values ('" + add.Ten + "','" + add.NgaySinh + "','" + add.GioiTinh + "','" + add.CMND + "','"+add.NgayCap+"','"+add.NoiCap+"','"+add.NgayVao+"','" + add.Sdt + "')";
 
             return getDataTable(sql);
         }
