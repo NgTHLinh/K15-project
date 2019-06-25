@@ -73,7 +73,24 @@ namespace CRM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+            c.Ten = textBox1.Text;
+            c.NgaySinh = dateTimePicker1.Text;
+            if (ck_NamKhachThue.Checked == true)
+            {
+                c.GioiTinh = true;
+            }
+            else
+                c.GioiTinh = false;
+            if (ck_NuKhachThue.Checked == true)
+            {
+                c.GioiTinh = false;
+            }
+            else
+                c.GioiTinh = true;
+
+            c.CMND = Convert.ToInt32(txt_CmndNgThue.Text);
+            c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
         }
     }
 }

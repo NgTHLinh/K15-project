@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("nhan");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("long");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("khoa");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("Long");
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("Khoa");
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("Cô Linh");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("nhan");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("long");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("khoa");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Long");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Khoa");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Cô Linh");
             this.btn_Logout = new System.Windows.Forms.Button();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.btn_Login = new System.Windows.Forms.Button();
@@ -85,6 +85,8 @@
             this.TP_ttkhach = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btn_XoaKT = new System.Windows.Forms.Button();
+            this.txt_TenKT_TT = new System.Windows.Forms.TextBox();
             this.btn_TraCuuKT = new System.Windows.Forms.Button();
             this.Txt_MaKhachHang_TT = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
@@ -277,11 +279,12 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_TenKT_TT = new System.Windows.Forms.TextBox();
-            this.btn_XoaKT = new System.Windows.Forms.Button();
             this.TP_tk.SuspendLayout();
             this.TP_ttnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -880,6 +883,9 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
+            this.Column15,
+            this.Column16,
+            this.Column17,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
@@ -904,6 +910,23 @@
             this.groupBox9.Size = new System.Drawing.Size(1318, 100);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
+            // 
+            // btn_XoaKT
+            // 
+            this.btn_XoaKT.Location = new System.Drawing.Point(731, 50);
+            this.btn_XoaKT.Name = "btn_XoaKT";
+            this.btn_XoaKT.Size = new System.Drawing.Size(75, 41);
+            this.btn_XoaKT.TabIndex = 8;
+            this.btn_XoaKT.Text = "Xóa";
+            this.btn_XoaKT.UseVisualStyleBackColor = true;
+            this.btn_XoaKT.Click += new System.EventHandler(this.btn_XoaKT_Click);
+            // 
+            // txt_TenKT_TT
+            // 
+            this.txt_TenKT_TT.Location = new System.Drawing.Point(321, 22);
+            this.txt_TenKT_TT.Name = "txt_TenKT_TT";
+            this.txt_TenKT_TT.Size = new System.Drawing.Size(127, 19);
+            this.txt_TenKT_TT.TabIndex = 7;
             // 
             // btn_TraCuuKT
             // 
@@ -1847,9 +1870,9 @@
             // listView2
             // 
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem25,
-            listViewItem26,
-            listViewItem27});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.listView2.Location = new System.Drawing.Point(372, 36);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
@@ -1860,9 +1883,9 @@
             // listView1
             // 
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem28,
-            listViewItem29,
-            listViewItem30});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listView1.Location = new System.Drawing.Point(355, 150);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
@@ -3392,6 +3415,21 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "CMND";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "NgàyCấp";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "NơiCấp";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "NgàyVào";
+            this.Column17.Name = "Column17";
+            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "SDT";
@@ -3406,23 +3444,6 @@
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "Phòng ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // txt_TenKT_TT
-            // 
-            this.txt_TenKT_TT.Location = new System.Drawing.Point(321, 22);
-            this.txt_TenKT_TT.Name = "txt_TenKT_TT";
-            this.txt_TenKT_TT.Size = new System.Drawing.Size(127, 19);
-            this.txt_TenKT_TT.TabIndex = 7;
-            // 
-            // btn_XoaKT
-            // 
-            this.btn_XoaKT.Location = new System.Drawing.Point(731, 50);
-            this.btn_XoaKT.Name = "btn_XoaKT";
-            this.btn_XoaKT.Size = new System.Drawing.Size(75, 41);
-            this.btn_XoaKT.TabIndex = 8;
-            this.btn_XoaKT.Text = "Xóa";
-            this.btn_XoaKT.UseVisualStyleBackColor = true;
-            this.btn_XoaKT.Click += new System.EventHandler(this.btn_XoaKT_Click);
             // 
             // Home
             // 
@@ -3724,15 +3745,18 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button btn_CapNhatNV;
+        private System.Windows.Forms.TextBox txt_TenKT_TT;
+        private System.Windows.Forms.Button btn_XoaKT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox txt_TenKT_TT;
-        private System.Windows.Forms.Button btn_XoaKT;
     }
 }

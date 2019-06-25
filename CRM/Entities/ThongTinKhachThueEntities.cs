@@ -72,11 +72,36 @@ namespace Entities
             set
             { ngaysinh = value; }
         }
+        private string ngaycap;
+        public string NgayCap
+        {
+            get
+            { return ngaycap; }
+            set
+            { ngaycap = value; }
+        }
+        private string noicap;
+        public string NoiCap
+        {
+            get
+            { return noicap; }
+            set
+            { noicap = value; }
+        }
+        private string ngayvao;
+        public string NgayVao
+        {
+            get
+            { return ngayvao; }
+            set
+            { ngayvao = value; }
+        }
+
 
         public ThongTinKhachThueEntities()
         {
         }
-        public ThongTinKhachThueEntities(int id, string ten, string ngaysinh,bool gioitinh,int cmnd, int sodienthoai, string hinhanh, int phongid)
+        public ThongTinKhachThueEntities(int id, string ten, string ngaysinh,bool gioitinh,int cmnd,string ngaycap,string noicap,string ngayvao, int sodienthoai, string hinhanh, int phongid)
         {
             this.id = id;
             
@@ -84,6 +109,9 @@ namespace Entities
             this.ngaysinh = ngaysinh;
             this.gioitinh = gioitinh;
             this.cmnd = cmnd;
+            this.ngaycap = ngaycap;
+            this.noicap = noicap;
+            this.ngayvao = ngayvao; 
             this.sdt = sodienthoai;
             this.hinhanh = hinhanh;
             this.phongid = phongid;

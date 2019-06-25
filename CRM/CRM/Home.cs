@@ -73,9 +73,12 @@ namespace CRM
                         table.NgaySinh = dt.Rows[i][2].ToString();
                         table.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
                         table.CMND = Convert.ToInt32(dt.Rows[i][4].ToString());
-                        table.Sdt = Convert.ToInt32(dt.Rows[i][5].ToString());
+                        table.NgayCap = dt.Rows[i][5].ToString();
+                        table.NoiCap = dt.Rows[i][6].ToString();
+                        table.NgayVao = dt.Rows[i][7].ToString();
+                        table.Sdt = Convert.ToInt32(dt.Rows[i][8].ToString());
 
-                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);//, table.PhongId);
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND,table.NgayCap,table.NoiCap,table.NgayVao, table.Sdt);//, table.PhongId);
                     }
                 }
             }
@@ -408,9 +411,12 @@ namespace CRM
                     table.NgaySinh = dt.Rows[0][2].ToString();
                     table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
                     table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+                    table.NgayCap = dt.Rows[0][5].ToString();
+                    table.NoiCap = dt.Rows[0][6].ToString();
+                    table.NgayVao = dt.Rows[0][7].ToString();
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
 
-                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND,table.NgayCap,table.NoiCap,table.NgayVao, table.Sdt);
                     MessageBox.Show("aaa");
                 }
             }
@@ -426,7 +432,7 @@ namespace CRM
                     table.NgaySinh = dt.Rows[0][2].ToString();
                     table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
                     table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
 
                     dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
                     MessageBox.Show("BBB");
@@ -445,7 +451,7 @@ namespace CRM
                     table.NgaySinh = dt.Rows[0][2].ToString();
                     table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
                     table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][5].ToString());
+                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
 
                     dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
                     MessageBox.Show("ccc");
