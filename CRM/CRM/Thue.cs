@@ -98,8 +98,8 @@ namespace CRM
             ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
             DataTable dt = cbus.GetTKBUS(c);
 
-            MessageBox.Show("Them KhachThue Thanh Cong");
-            
+            MessageBox.Show("Them Khach Thue Thanh Cong");
+            Close();
         }
     }
 }
