@@ -99,7 +99,9 @@ namespace CRM
             DataTable dt = cbus.GetTKBUS(c);
 
             MessageBox.Show("Them Khach Thue Thanh Cong");
+            ((Button)sender).BackColor = Color.Red;
             Close();
+
         }
     }
 }

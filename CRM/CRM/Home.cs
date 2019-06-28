@@ -645,39 +645,42 @@ namespace CRM
         {
             string tn = ((Button)sender).Text;
             Thue p = new Thue(tn);
-
-            if (e.Button == MouseButtons.Left)
+            if (((Button)sender).BackColor == DefaultBackColor)
             {
-                p.ShowDialog();
+                if (e.Button == MouseButtons.Left)
+                {
+                    p.ShowDialog();
+                    ((Button)sender).BackColor = Color.Red;
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    //ContextMenu cm = new ContextMenu();
+                    //cm.MenuItems.Add("Item 1" );
+                    //cm.MenuItems.Add("Item 2" );
+
+                    ListBox lbx = new ListBox();
+                    lbx.Items.Add("Long");
+                    lbx.Items.Add("Khoa");
+                    lbx.Items.Add("Cô Linh ");
+                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
+                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
+                    //lbx.TopIndex = lbx.SelectedIndex;
+
+                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
+
+                    lbx.MultiColumn = true;
+                    lbx.SelectionMode = SelectionMode.MultiExtended;
+                    groupBox5.Controls.Add(lbx);
+                    //((Button)sender).Controls.Add(lbx);
+                    //createlistbox();
+                    //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
+                }
             }
-            if (e.Button == MouseButtons.Right)
-            {
-                //ContextMenu cm = new ContextMenu();
-                //cm.MenuItems.Add("Item 1" );
-                //cm.MenuItems.Add("Item 2" );
-                
-                ListBox lbx = new ListBox();
-                lbx.Items.Add("Long");
-                lbx.Items.Add("Khoa");
-                lbx.Items.Add("Cô Linh ");
-                lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
-                lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
-                //lbx.TopIndex = lbx.SelectedIndex;
 
-                lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
-                
-                lbx.MultiColumn = true;
-                lbx.SelectionMode = SelectionMode.MultiExtended;
-                groupBox5.Controls.Add(lbx);
-                //((Button)sender).Controls.Add(lbx);
-                //createlistbox();
                 //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
             }
 
-            //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
-        }
-
-        private void groupBox5_Paint(object sender, PaintEventArgs e)
+            private void groupBox5_Paint(object sender, PaintEventArgs e)
         {
             DataTable dttang = new DataTable();
             int top = 45;
