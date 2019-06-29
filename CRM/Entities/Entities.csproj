@@ -43,6 +43,7 @@
     <Compile Include="DichVuEntities.cs" />
     <Compile Include="HopDongEntities.cs" />
     <Compile Include="HopDongPhatEntities.cs" />
+    <Compile Include="LichSuEntities.cs" />
     <Compile Include="LoaiPhongEntities.cs" />
     <Compile Include="PhongEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
