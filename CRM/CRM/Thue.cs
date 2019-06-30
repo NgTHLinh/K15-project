@@ -17,6 +17,7 @@ namespace CRM
         TangBUS tang = new TangBUS();
         PhongBUS phong = new PhongBUS();
         string tx;
+        string ID;
         public Thue(string txt)
         {
             tx = txt;
@@ -29,7 +30,8 @@ namespace CRM
         private void Thue_Load(object sender, EventArgs e)
         {
             if (label3.Text.Length >5)
-                label8.Text = string.Format("{0}", label3.Text.Substring(6));
+                ID= string.Format("{0}", label3.Text.Substring(6));
+            label8.Text = ID;
             //DataTable name = new DataTable();
             //name = phong.GetTenPhong();
             //for (int i = 0; i < name.Rows.Count; i++)
