@@ -258,7 +258,7 @@ namespace CRM
             }
         }
 
-        private void button10_Click_1(object sender, EventArgs e)
+        private void btn_TTNV_Click(object sender, EventArgs e)
         {
             if (tabControl1.TabPages.Contains(TP_ttnv))//tab already present
             {
@@ -812,6 +812,8 @@ namespace CRM
         {
             //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
         }
+
+        
 
 
 
