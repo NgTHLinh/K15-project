@@ -21,10 +21,10 @@ namespace BUS
             userTTDAO = new ThongTinKhachThueDAO();
         }
 
-        public DataTable GetTKBUS(ThongTinKhachThueEntities ttkt)
+        public DataTable GetTKBUS(ThongTinKhachThueEntities add)
         {
             DataTable dt = null;
-            dt = userTTDAO.GetKT(ttkt);
+            dt = userTTDAO.GetKT(add);
             return dt;
         }
         public DataTable GetmBUS (ThongTinKhachThueEntities l)

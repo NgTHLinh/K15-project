@@ -369,28 +369,7 @@ namespace CRM
         }
 
 
-        private void btn_CapNhatNV_Click(object sender, EventArgs e)
-        {
-            
-            int mm = dataGridView3.CurrentCell.RowIndex;
-            int m  = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
-            string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
-            string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
-            bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
-            string d = (dataGridView3.Rows[mm].Cells[4].Value.ToString());
-            string ee = (dataGridView3.Rows[mm].Cells[5].Value.ToString());
-            int f = Convert.ToInt32(dataGridView3.Rows[mm].Cells[6].Value.ToString());
-            string g = (dataGridView3.Rows[mm].Cells[7].Value.ToString());
-            string h = (dataGridView3.Rows[mm].Cells[8].Value.ToString());
-            string i = (dataGridView3.Rows[mm].Cells[9].Value.ToString());
-            string j = (dataGridView3.Rows[mm].Cells[10].Value.ToString());
-            string k = (dataGridView3.Rows[mm].Cells[11].Value.ToString());
-            int l = Convert.ToInt32(dataGridView3.Rows[mm].Cells[12].Value.ToString());
-            
-
-            qlnv.GetUpdateNVBUS(a,b,c,d,ee,f,g,h,i,j,k,l,m);
-            MessageBox.Show("Capnhat tc");
-        }
+        
         private void btn_TraCuuKT_Click(object sender, EventArgs e)
         {
             ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
@@ -650,7 +629,7 @@ namespace CRM
                 if (e.Button == MouseButtons.Left)
                 {
                     p.ShowDialog();
-                    ((Button)sender).BackColor = Color.Red;
+                    //((Button)sender).BackColor = Color.Red;
                 }
                 if (e.Button == MouseButtons.Right)
                 {
@@ -735,35 +714,40 @@ namespace CRM
 
         private void btn_ThemNguoiThue_Click(object sender, EventArgs e)
         {
-            ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+            //int mm = dataGridView3.CurrentCell.RowIndex;
+            //int m = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
+            //string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
+            //string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
+            //bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
+            
 
-            c.Ten = txt_TenNgThue.Text;
-            c.NgaySinh = dateTime_NgaySinh_NgThue.Text;
-            if (ck_NamKhachThue.Checked == true)
-            {
-                c.GioiTinh = true;
-            }
-            else
-                c.GioiTinh = false;
-            if (ck_NuKhachThue.Checked == true)
-            {
-                c.GioiTinh = false;
-            }
-            else
-                c.GioiTinh = true;
-
-            c.CMND = Convert.ToInt32(txt_CmndNgThue.Text);
-            c.Sdt = Convert.ToInt32(txt_SdtNgThue.Text);
-
-            ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
-            DataTable dt = cbus.GetTKBUS(c);
-
-            MessageBox.Show("Them KhachThue Thanh Cong");
-            txt_TenNgThue.Text = txt_DiaChiNgThue.Text = txt_SdtNgThue.Text = txt_CmndNgThue.Text = null;
-            ck_NamKhachThue.Checked = ck_NuKhachThue.Checked = false;
+            //MessageBox.Show("Them KhachThue Thanh Cong");
+            //txt_TenNgThue.Text = txt_DiaChiNgThue.Text = txt_SdtNgThue.Text = txt_CmndNgThue.Text = null;
+            //ck_NamKhachThue.Checked = ck_NuKhachThue.Checked = false;
 
         }
+        private void btn_CapNhatNV_Click(object sender, EventArgs e)
+        {
 
+            int mm = dataGridView3.CurrentCell.RowIndex;
+            int m = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
+            string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
+            string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
+            bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
+            string d = (dataGridView3.Rows[mm].Cells[4].Value.ToString());
+            string ee = (dataGridView3.Rows[mm].Cells[5].Value.ToString());
+            int f = Convert.ToInt32(dataGridView3.Rows[mm].Cells[6].Value.ToString());
+            string g = (dataGridView3.Rows[mm].Cells[7].Value.ToString());
+            string h = (dataGridView3.Rows[mm].Cells[8].Value.ToString());
+            string i = (dataGridView3.Rows[mm].Cells[9].Value.ToString());
+            string j = (dataGridView3.Rows[mm].Cells[10].Value.ToString());
+            string k = (dataGridView3.Rows[mm].Cells[11].Value.ToString());
+            int l = Convert.ToInt32(dataGridView3.Rows[mm].Cells[12].Value.ToString());
+
+
+            qlnv.GetUpdateNVBUS(a, b, c, d, ee, f, g, h, i, j, k, l, m);
+            MessageBox.Show("Capnhat tc");
+        }
 
 
         private void Btn_themNV(object sender, EventArgs e)

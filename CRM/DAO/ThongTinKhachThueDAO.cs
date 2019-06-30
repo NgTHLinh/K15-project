@@ -21,9 +21,9 @@ namespace DAO
                 string sql = "select * from ThongTinKhachThue";
                 return getDataTable(sql);
             }
-        public DataTable GetKT(ThongTinKhachThueEntities add)
+        public DataTable GetKT(ThongTinKhachThueEntities add )
         {
-            string sql = "insert into ThongTinKhachThue ('Ten','NgaySinh','GioiTinh','Cmnd','NgayCap','NoiCap','NgayVao','Sdt') values ('" + add.Ten + "','" + add.NgaySinh + "','" + add.GioiTinh + "','" + add.CMND + "','"+add.NgayCap+"','"+add.NoiCap+"','"+add.NgayVao+"','" + add.Sdt + "')";
+            string sql = "update ThongTinKhachThue set Ten='" + add.Ten + "',NgaySinh='" + add.NgaySinh + "',GioiTinh='" + add.GioiTinh + "',Cmnd='"+add.CMND+"',NgayCap='"+add.NgayCap+"',NoiCap='"+add.NgayCap+"',NgayVao='"+add.NgayCap+"',Sdt='"+add.Sdt+"',PhongId='"+add.PhongId+"' where ID="+add.ID;
 
             return getDataTable(sql);
         }

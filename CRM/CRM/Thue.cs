@@ -73,6 +73,12 @@ namespace CRM
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //int mm = dataGridView3.CurrentCell.RowIndex;
+            //int m = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
+            //string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
+            //string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
+            //bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
+
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             c.Ten = textBox1.Text;
             c.NgaySinh = dateTimePicker1.Text;
