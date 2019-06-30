@@ -28,7 +28,8 @@ namespace CRM
 
         private void Thue_Load(object sender, EventArgs e)
         {
-           
+            if (label3.Text.Length >5)
+                label8.Text = string.Format("{0}", label3.Text.Substring(6));
             //DataTable name = new DataTable();
             //name = phong.GetTenPhong();
             //for (int i = 0; i < name.Rows.Count; i++)
