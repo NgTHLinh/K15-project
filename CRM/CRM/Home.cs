@@ -13,9 +13,9 @@ using System.Data.SqlClient;
 
 namespace CRM
 {
+    
     public partial class Home : Form
     {
-
         //SqlConnection con = new SqlConnection();
         private Point _imageLocation = new Point(22, 0);
         private Point _imageHitArea = new Point(13, 2);

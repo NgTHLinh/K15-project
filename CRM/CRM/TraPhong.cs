@@ -28,7 +28,10 @@ namespace CRM
 
             
         }
-
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void TraPhong_Load(object sender, EventArgs e)
         {
             
@@ -91,10 +94,7 @@ namespace CRM
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         public void btn_TraPhong_Click(object sender, EventArgs e)
         {
@@ -102,18 +102,18 @@ namespace CRM
             PhongEntities ee = new PhongEntities();
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             c.ID = Convert.ToInt32(ID);
-            c.Ten = "";
-            c.NgaySinh = "";
+            c.Ten = null;
+            c.NgaySinh = null;
             //w = "";
-            c.GioiTinh = Convert.ToBoolean("true");
+            c.GioiTinh = Convert.ToBoolean(null);
             //q = "";
-            c.CMND = Convert.ToInt32("1");
+            c.CMND = Convert.ToInt32(null);
             //c.CMND = Convert.ToInt32(lb_contentCMND.Text);
             c.NgayCap = "";
             c.NoiCap = "";
             c.NgayVao = "";
             //p = "";
-            c.Sdt = Convert.ToInt32("1");
+            c.Sdt = Convert.ToInt32(null);
             //c.PhongId = Convert.ToInt32("");
 
             ee.HienTrang = mm;
@@ -122,6 +122,7 @@ namespace CRM
             DataTable dt = cbus.GetTKBUS(c);
             PhongBUS t = new PhongBUS();
             DataTable tt = t.GetUpdate(ee);
+            MessageBox.Show("Tra phong thanh cong");
         }
     }
 }

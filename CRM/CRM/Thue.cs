@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace CRM
 {
     public partial class Thue : Form
@@ -142,7 +143,8 @@ namespace CRM
             DataTable tt = t.GetUpdate(ee);
 
             MessageBox.Show("Them Khach Thue Thanh Cong");
-            ((Button)sender).BackColor = Color.Red;
+            //((Button)sender).BackColor = Color.Red;
+            
             Close();
 
         }
