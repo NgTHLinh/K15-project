@@ -13,5 +13,27 @@ namespace DAO
 
             return getDataTable(sql);
         }
+        public DataTable GetTT(LichSuEntities ttkt)
+        {
+            string sql = "select * from LichSu";
+            return getDataTable(sql);
+        }
+        public DataTable Getm(LichSuEntities l)
+        {
+            string sql = "select * from LichSu where ID='" + l.ID + "' and Ten ='" + (l.Ten) + "'";
+            return getDataTable(sql);
+
+        }
+        public DataTable Getmm(LichSuEntities l)
+        {
+            string sql = "select * from LichSu where ID='" + l.ID + "'";
+            return getDataTable(sql);
+
+        }
+        public DataTable Getmmm(LichSuEntities l)
+        {
+            string sql = "select * from LichSu where Ten ='" + l.Ten + "'";
+            return getDataTable(sql);
+        }
     }
 }

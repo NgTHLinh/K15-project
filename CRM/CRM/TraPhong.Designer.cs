@@ -45,6 +45,10 @@
             this.txt_contentNuoc = new System.Windows.Forms.TextBox();
             this.txt_contentInternet = new System.Windows.Forms.TextBox();
             this.btn_TraPhong = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_TinhTien = new System.Windows.Forms.Button();
+            this.lb_TongCong = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +76,7 @@
             // lb_titleNguoiThue
             // 
             this.lb_titleNguoiThue.AutoSize = true;
-            this.lb_titleNguoiThue.Location = new System.Drawing.Point(17, 73);
+            this.lb_titleNguoiThue.Location = new System.Drawing.Point(14, 73);
             this.lb_titleNguoiThue.Name = "lb_titleNguoiThue";
             this.lb_titleNguoiThue.Size = new System.Drawing.Size(65, 13);
             this.lb_titleNguoiThue.TabIndex = 3;
@@ -81,20 +85,18 @@
             // lb_contentNguoiThue
             // 
             this.lb_contentNguoiThue.AutoSize = true;
-            this.lb_contentNguoiThue.Location = new System.Drawing.Point(79, 73);
+            this.lb_contentNguoiThue.Location = new System.Drawing.Point(101, 73);
             this.lb_contentNguoiThue.Name = "lb_contentNguoiThue";
-            this.lb_contentNguoiThue.Size = new System.Drawing.Size(46, 13);
+            this.lb_contentNguoiThue.Size = new System.Drawing.Size(0, 13);
             this.lb_contentNguoiThue.TabIndex = 4;
-            this.lb_contentNguoiThue.Text = "content ";
             // 
             // lb_contentCMND
             // 
             this.lb_contentCMND.AutoSize = true;
             this.lb_contentCMND.Location = new System.Drawing.Point(79, 103);
             this.lb_contentCMND.Name = "lb_contentCMND";
-            this.lb_contentCMND.Size = new System.Drawing.Size(46, 13);
+            this.lb_contentCMND.Size = new System.Drawing.Size(0, 13);
             this.lb_contentCMND.TabIndex = 6;
-            this.lb_contentCMND.Text = "content ";
             // 
             // lb_titleCMND
             // 
@@ -110,9 +112,8 @@
             this.lb_contentSDT.AutoSize = true;
             this.lb_contentSDT.Location = new System.Drawing.Point(79, 132);
             this.lb_contentSDT.Name = "lb_contentSDT";
-            this.lb_contentSDT.Size = new System.Drawing.Size(46, 13);
+            this.lb_contentSDT.Size = new System.Drawing.Size(0, 13);
             this.lb_contentSDT.TabIndex = 8;
-            this.lb_contentSDT.Text = "content ";
             // 
             // lb_titleSDT
             // 
@@ -128,9 +129,8 @@
             this.lb_contentNgayVao.AutoSize = true;
             this.lb_contentNgayVao.Location = new System.Drawing.Point(79, 162);
             this.lb_contentNgayVao.Name = "lb_contentNgayVao";
-            this.lb_contentNgayVao.Size = new System.Drawing.Size(46, 13);
+            this.lb_contentNgayVao.Size = new System.Drawing.Size(0, 13);
             this.lb_contentNgayVao.TabIndex = 10;
-            this.lb_contentNgayVao.Text = "content ";
             // 
             // lb_titleNgayVao
             // 
@@ -199,6 +199,45 @@
             this.btn_TraPhong.UseVisualStyleBackColor = true;
             this.btn_TraPhong.Click += new System.EventHandler(this.btn_TraPhong_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(302, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Tổng cộng";
+            // 
+            // btn_TinhTien
+            // 
+            this.btn_TinhTien.Location = new System.Drawing.Point(406, 236);
+            this.btn_TinhTien.Name = "btn_TinhTien";
+            this.btn_TinhTien.Size = new System.Drawing.Size(100, 41);
+            this.btn_TinhTien.TabIndex = 20;
+            this.btn_TinhTien.Text = "Tính Tiền";
+            this.btn_TinhTien.UseVisualStyleBackColor = true;
+            this.btn_TinhTien.Click += new System.EventHandler(this.btn_TinhTien_Click);
+            // 
+            // lb_TongCong
+            // 
+            this.lb_TongCong.AutoSize = true;
+            this.lb_TongCong.Location = new System.Drawing.Point(403, 162);
+            this.lb_TongCong.Name = "lb_TongCong";
+            this.lb_TongCong.Size = new System.Drawing.Size(13, 13);
+            this.lb_TongCong.TabIndex = 21;
+            this.lb_TongCong.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Impact", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 9);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 48);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "\r\n";
+            // 
             // TraPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +245,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(639, 289);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lb_TongCong);
+            this.Controls.Add(this.btn_TinhTien);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_TraPhong);
             this.Controls.Add(this.txt_contentInternet);
             this.Controls.Add(this.txt_contentNuoc);
@@ -254,5 +297,9 @@
         private System.Windows.Forms.TextBox txt_contentNuoc;
         private System.Windows.Forms.TextBox txt_contentInternet;
         private System.Windows.Forms.Button btn_TraPhong;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_TinhTien;
+        private System.Windows.Forms.Label lb_TongCong;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,19 +8,86 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CRM
 {
     public partial class TraPhong : Form
     {
         public static int a, b, c;
-        public TraPhong()
+        string tx;
+        string ID;
+        string mm;
+        string k;
+        public TraPhong(string txt)
         {
+            tx = txt;
             InitializeComponent();
+            
+            label3.Text = tx;
+
+            
         }
 
         private void TraPhong_Load(object sender, EventArgs e)
         {
+            
+            mm = "ConTrong";
+            ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
+            //string q, w;
+            lb_contentCMND.Text = "0";
+            lb_contentSDT.Text = "0";
+            ID = string.Format("{0}", label3.Text.Substring(6));
+            ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+            c.ID = Convert.ToInt32(ID);
+            ThongTinKhachThueBUS ll = new ThongTinKhachThueBUS();
+            DataTable dt = ll.GetmmBUS(c);
+            
+            if (dt.Rows.Count > 0)
+            {
+                for (int p = 0; p < dt.Rows.Count; p++)
+                {
+                    table.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                    table.Ten = dt.Rows[p][1].ToString();
+                    table.NgaySinh = dt.Rows[p][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                    table.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                    table.NgayCap = dt.Rows[p][5].ToString();
+                    table.NoiCap = dt.Rows[p][6].ToString();
+                    table.NgayVao = dt.Rows[p][7].ToString();
+                    table.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
+
+                    
+                    lb_contentNguoiThue.Text = table.Ten;
+
+                    lb_contentCMND.Text =string.Format("{0}", dt.Rows[p][4].ToString());
+                    lb_contentSDT.Text = string.Format("{0}", dt.Rows[p][8].ToString());
+                    //table.Sdt = Convert.ToInt32(w);
+                    //c.CMND = Convert.ToInt32(lb_contentCMND.Text);
+                    //c.Sdt = Convert.ToInt32(lb_contentSDT.Text);
+                    lb_contentNgayVao.Text = table.NgayVao;
+                }
+            }
+
+
+        }
+
+        private void btn_TinhTien_Click(object sender, EventArgs e)
+        {
+            int a, b, c;
+
+            a = Convert.ToInt32(txt_contentDien.Text);
+            b = Convert.ToInt32(txt_contentNuoc.Text);
+            c = Convert.ToInt32(txt_contentInternet.Text);
+
+            //if (txt_Tongcong.Text == null)
+            //{
+            //    txt_Tongcong = 0 ;
+            //}
+
+            int ee;
+            ee = (a * 10000) + (b * 10000) + (c * 10000);
+            lb_TongCong.Text = ee.ToString() + " VND";
 
         }
 
@@ -29,7 +98,30 @@ namespace CRM
 
         public void btn_TraPhong_Click(object sender, EventArgs e)
         {
-            //a = txt_contentDien.Text;
+            //string q, w, p;
+            PhongEntities ee = new PhongEntities();
+            ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+            c.ID = Convert.ToInt32(ID);
+            c.Ten = "";
+            c.NgaySinh = "";
+            //w = "";
+            c.GioiTinh = Convert.ToBoolean("true");
+            //q = "";
+            c.CMND = Convert.ToInt32("1");
+            //c.CMND = Convert.ToInt32(lb_contentCMND.Text);
+            c.NgayCap = "";
+            c.NoiCap = "";
+            c.NgayVao = "";
+            //p = "";
+            c.Sdt = Convert.ToInt32("1");
+            //c.PhongId = Convert.ToInt32("");
+
+            ee.HienTrang = mm;
+            ee.Id = Convert.ToInt32(ID);
+            ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
+            DataTable dt = cbus.GetTKBUS(c);
+            PhongBUS t = new PhongBUS();
+            DataTable tt = t.GetUpdate(ee);
         }
     }
 }

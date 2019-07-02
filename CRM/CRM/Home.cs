@@ -25,6 +25,7 @@ namespace CRM
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
         ThanhToanEntities thanhtoan = new ThanhToanEntities();
+        LichSuEntities Lichsu = new LichSuEntities();
         PhongEntities room = new PhongEntities();
         TangBUS tang = new TangBUS();
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
@@ -83,9 +84,9 @@ namespace CRM
                 }
             }
             {
-                ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
-                ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
-                DataTable dt = ttktbus.GetTKBUS(t);
+                LichSuEntities t = new LichSuEntities();
+                LichSuBUS ttktbus = new LichSuBUS();
+                DataTable dt = ttktbus.GetBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -394,7 +395,7 @@ namespace CRM
 
         private void btn_TraCuuKT_Click(object sender, EventArgs e)
         {
-            ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
+            LichSuEntities t = new LichSuEntities();
 
 
 
@@ -403,39 +404,50 @@ namespace CRM
             if (txt_TenKT_TT.Text == "")
             {
                 t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
-                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                LichSuBUS a = new LichSuBUS();
                 DataTable dt = a.GetmmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
-                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    table.Ten = dt.Rows[0][1].ToString();
-                    table.NgaySinh = dt.Rows[0][2].ToString();
-                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
-                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.NgayCap = dt.Rows[0][5].ToString();
-                    table.NoiCap = dt.Rows[0][6].ToString();
-                    table.NgayVao = dt.Rows[0][7].ToString();
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
+                    for (int p = 0; p<dt.Rows.Count;p++)
+                    {
+                    Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                    Lichsu.Ten = dt.Rows[p][1].ToString();
+                    Lichsu.NgaySinh = dt.Rows[p][2].ToString();
+                    Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                    Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                    Lichsu.NgayCap = dt.Rows[p][5].ToString();
+                    Lichsu.NoiCap = dt.Rows[p][6].ToString();
+                    Lichsu.NgayVao = dt.Rows[p][7].ToString();
+                    Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);
+                    dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.NgayCap, Lichsu.NoiCap, Lichsu.NgayVao, Lichsu.Sdt);
+                    
+                    }
                     MessageBox.Show("aaa");
                 }
             }
             if (Txt_MaKhachHang_TT.Text == "")
             {
                 t.Ten = txt_TenKT_TT.Text;
-                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                LichSuBUS a = new LichSuBUS();
                 DataTable dt = a.GetmmmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
-                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    table.Ten = dt.Rows[0][1].ToString();
-                    table.NgaySinh = dt.Rows[0][2].ToString();
-                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
-                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
+                    for (int p = 0; p < dt.Rows.Count; p++)
+                    {
+                        Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                        Lichsu.Ten = dt.Rows[p][1].ToString();
+                        Lichsu.NgaySinh = dt.Rows[p][2].ToString();
+                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                        Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                        Lichsu.NgayCap = dt.Rows[p][5].ToString();
+                        Lichsu.NoiCap = dt.Rows[p][6].ToString();
+                        Lichsu.NgayVao = dt.Rows[p][7].ToString();
+                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                        dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
+                        
+                    }
                     MessageBox.Show("BBB");
                 }
             }
@@ -443,18 +455,25 @@ namespace CRM
             {
                 t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
                 t.Ten = txt_TenKT_TT.Text;
-                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
+                LichSuBUS a = new LichSuBUS();
                 DataTable dt = a.GetmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
-                    table.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
-                    table.Ten = dt.Rows[0][1].ToString();
-                    table.NgaySinh = dt.Rows[0][2].ToString();
-                    table.GioiTinh = Convert.ToBoolean(dt.Rows[0][3].ToString());
-                    table.CMND = Convert.ToInt32(dt.Rows[0][4].ToString());
-                    table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
+                    for (int p = 0; p < dt.Rows.Count; p++)
+                    {
+                        Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                        Lichsu.Ten = dt.Rows[p][1].ToString();
+                        Lichsu.NgaySinh = dt.Rows[p][2].ToString();
+                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                        Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                        Lichsu.NgayCap = dt.Rows[p][5].ToString();
+                        Lichsu.NoiCap = dt.Rows[p][6].ToString();
+                        Lichsu.NgayVao = dt.Rows[p][7].ToString();
+                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.Sdt);
+                        dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
+                        
+                    }
                     MessageBox.Show("ccc");
                 }
             }
@@ -673,8 +692,9 @@ namespace CRM
         private void bt_Click(object sender, MouseEventArgs e)
         {
             string tn = ((Button)sender).Text;
+            string tp = ((Button)sender).Text;
             Thue p = new Thue(tn);
-            TraPhong pp = new TraPhong();
+            TraPhong pp = new TraPhong(tp);
             if (((Button)sender).BackColor == Color.Red)
             {
                 if (e.Button == MouseButtons.Right)
