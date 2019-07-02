@@ -14,16 +14,18 @@ using System.Data.SqlClient;
 namespace CRM
 {
     public partial class Home : Form
-    {            
-        
+    {
+
         //SqlConnection con = new SqlConnection();
         private Point _imageLocation = new Point(22, 0);
-        private Point _imageHitArea = new Point(13,2);
+        private Point _imageHitArea = new Point(13, 2);
         Image CloseImage;
 
         TaiKhoanEntities userlogin = new TaiKhoanEntities();
         QuanLyNhanVienEntities addlogin = new QuanLyNhanVienEntities();
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
+        ThanhToanEntities thanhtoan = new ThanhToanEntities();
+        PhongEntities room = new PhongEntities();
         TangBUS tang = new TangBUS();
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
         QuanLyNhanVienBUS qlnv = new QuanLyNhanVienBUS();
@@ -35,8 +37,8 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
-            
-           
+
+
             btn_Logout.Hide();
             btn_Home.Hide();
             //tabControl2.TabPages.Remove(TP_QlHoaDon);
@@ -53,20 +55,40 @@ namespace CRM
             //tabControl1.TabPages.Remove(TP_ttkhach);
             //tabControl1.TabPages.Remove(TP_ttnv);
             tabControl1.TabPages.Remove(tabPage1);
-            
+
         }
 
-        
+
 
         private void Home_Load(object sender, EventArgs e)
         {
+            {
+                ThanhToanEntities t = new ThanhToanEntities();
+                ThanhToanBUS tt = new ThanhToanBUS();
+                DataTable dt = tt.GetThanhToanBUS(t);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        thanhtoan.Id = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        thanhtoan.SoDien =Convert.ToInt32(dt.Rows[i][1].ToString());
+                        thanhtoan.SoNuoc =Convert.ToInt32(dt.Rows[i][2].ToString());
+                        thanhtoan.NgayThanhToan = (dt.Rows[i][3].ToString());
+                        thanhtoan.PhongId = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        thanhtoan.TienDichVu =Convert.ToInt32(dt.Rows[i][5].ToString());
+                        
+
+                        dataGridView1.Rows.Add(thanhtoan.Id,thanhtoan.SoDien,thanhtoan.SoNuoc,thanhtoan.NgayThanhToan,thanhtoan.PhongId,thanhtoan.TienDichVu);//, table.PhongId);
+                    }
+                }
+            }
             {
                 ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
                 ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
                 DataTable dt = ttktbus.GetTKBUS(t);
                 if (dt.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dt.Rows.Count;i++)
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         table.ID = Convert.ToInt32(dt.Rows[i][0].ToString());
                         table.Ten = dt.Rows[i][1].ToString();
@@ -78,7 +100,7 @@ namespace CRM
                         table.NgayVao = dt.Rows[i][7].ToString();
                         table.Sdt = Convert.ToInt32(dt.Rows[i][8].ToString());
 
-                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND,table.NgayCap,table.NoiCap,table.NgayVao, table.Sdt);//, table.PhongId);
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);//, table.PhongId);
                     }
                 }
             }
@@ -87,7 +109,7 @@ namespace CRM
                 DataTable dt = nv.GetTTNV();
                 if (dt.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dt.Rows.Count;i++)
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         addlogin.MaNV = Convert.ToInt32(dt.Rows[i][0].ToString());
                         addlogin.Ten = dt.Rows[i][1].ToString();
@@ -104,7 +126,7 @@ namespace CRM
                         addlogin.SDT = Convert.ToInt32(dt.Rows[i][12].ToString());
 
                         dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
-                        
+
                     }
                 }
             }
@@ -167,7 +189,7 @@ namespace CRM
             r.Offset(_tabWidth, _imageHitArea.Y);
             r.Width = 16;
             r.Height = 16;
-            
+
             if (r.Contains(p))
             {
                 if (MessageBox.Show("Bạn Có Muốn Tắt Tab Này?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -176,7 +198,7 @@ namespace CRM
                     tc.TabPages.Remove(tabP);
                 }
             }
-            
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -352,10 +374,10 @@ namespace CRM
 
         private void btn_XoaNV_Click(object sender, EventArgs e)
         {
- 
+
             int a = dataGridView3.CurrentCell.RowIndex;
 
-            int s =Convert.ToInt32(dataGridView3.Rows[a].Cells[0].Value.ToString());
+            int s = Convert.ToInt32(dataGridView3.Rows[a].Cells[0].Value.ToString());
             ttnv.XoaNV(s);
             dataGridView3.Rows.RemoveAt(a);
 
@@ -369,7 +391,7 @@ namespace CRM
         }
 
 
-        
+
         private void btn_TraCuuKT_Click(object sender, EventArgs e)
         {
             ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
@@ -395,7 +417,7 @@ namespace CRM
                     table.NgayVao = dt.Rows[0][7].ToString();
                     table.Sdt = Convert.ToInt32(dt.Rows[0][8].ToString());
 
-                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND,table.NgayCap,table.NoiCap,table.NgayVao, table.Sdt);
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);
                     MessageBox.Show("aaa");
                 }
             }
@@ -442,11 +464,11 @@ namespace CRM
             QuanLyNhanVienEntities nv = new QuanLyNhanVienEntities();
 
             nv.MaNV = Convert.ToInt32(txt_MaNV_TT.Text);
-            
+
             TimKiemNhanVienBUS tim = new TimKiemNhanVienBUS();
             DataTable dt = tim.GetTKNV(nv);
             dataGridView3.Rows.Clear();
-           if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 addlogin.MaNV = Convert.ToInt32(dt.Rows[0][0].ToString());
                 addlogin.Ten = dt.Rows[0][1].ToString();
@@ -458,14 +480,14 @@ namespace CRM
                 addlogin.NgayCap = dt.Rows[0][7].ToString();
                 addlogin.NoiCap = dt.Rows[0][8].ToString();
                 addlogin.Email = dt.Rows[0][9].ToString();
-                addlogin.BoPhan =  dt.Rows[0][10].ToString();
+                addlogin.BoPhan = dt.Rows[0][10].ToString();
                 addlogin.NgayVao = dt.Rows[0][11].ToString();
                 addlogin.SDT = Convert.ToInt32(dt.Rows[0][12].ToString());
 
                 //foreach (var item in )
                 //{
                 //System.Data.DataTable dataTable = new System.Data.DataTable();
-                dataGridView3.Rows.Add(addlogin.MaNV,addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
+                dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
                 //dataGridView3.DataSource = dt;
                 //}
 
@@ -476,7 +498,7 @@ namespace CRM
         {
 
             TaiKhoanEntities log = new TaiKhoanEntities();
-       
+
             log.Taikhoan = txt_TaiKhoan.Text;
             log.Matkhau = txt_MatKhau.Text;
 
@@ -497,12 +519,12 @@ namespace CRM
                         btn_Logout.Show();
                         btn_Home.Show();
 
-                        
+
                         tabControl2.TabPages.Add(TP_QlNgThue);
                         tabControl2.TabPages.Add(TP_QlPhong);
                         tabControl2.TabPages.Add(TP_QlHoaDon);
                         tabControl2.TabPages.Add(TP_QlNv);
-                        
+
 
                         tabControl1.TabPages.Add(TP_home);
                         tabControl1.TabPages.Remove(TP_tk);
@@ -517,23 +539,23 @@ namespace CRM
 
                         tabControl2.TabPages.Add(TP_QlPhong);
                         tabControl2.TabPages.Add(TP_QlHoaDon);
-                        
+
                         btn_Login.Hide();
                         btn_Logout.Show();
                         //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
                         MessageBox.Show("Welcome KhachHang " + userlogin.Taikhoan);
-                        
+
                         btn_Login.Hide();
                         btn_Logout.Show();
                         break;
 
-                    
+
                 }
 
-               // if (userlogin.Loai == 3)//la nhan vien}
-                    //MessageBox.Show("Welcome to NoWhere !!");
+                // if (userlogin.Loai == 3)//la nhan vien}
+                //MessageBox.Show("Welcome to NoWhere !!");
             }
             else
                 MessageBox.Show("Đăng nhập thất bại !!!");
@@ -544,13 +566,13 @@ namespace CRM
         {
 
             Form a = new Home();
-            
+
             this.Visible = false;
             a.ShowDialog();
-                //btn_Login.Show();
+            //btn_Login.Show();
         }
 
-        void createarraybutton(DataTable dtphong , int top, ref int t)
+        void createarraybutton(DataTable dtphong, int top, ref int t)
         {
 
             int left = 10;
@@ -564,8 +586,36 @@ namespace CRM
                 bt.Size = new Size(150, 120);
                 bt.Top = top;
                 bt.Left = left;
-
                 left += 180;
+
+                if (dtphong.Rows[i][5].ToString() == "Co Nguoi")
+                {
+                    bt.BackColor = Color.Red;
+                }
+                else
+                {
+                    bt.BackColor = DefaultBackColor;
+                }
+              
+                //string tn = ((Button)sender).Text;
+                //PhongEntities a = new PhongEntities();
+
+
+
+                //PhongBUS b = new PhongBUS();
+                //DataTable dt = b.CheckmauBUS(a);
+
+                //if (dt.Rows.Count > 0)
+                //{
+                //    room.HienTrang = dt.Rows[0][5].ToString();
+                //    room.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
+
+                //    if (room.HienTrang == "Co Nguoi")
+                //    {
+                //        ((Button)sender).BackColor = Color.Red;
+                //    }
+
+                //}
 
                 bt.MouseDown += new MouseEventHandler(bt_Click);
                 groupBox5.Controls.Add(bt);
@@ -573,9 +623,9 @@ namespace CRM
 
                 string txt = bt.Text;
                 Thue tr = new Thue(txt);
-                
+
             }
-            
+
         }
 
         private void lbx_MouseLeave(object sender, EventArgs e)
@@ -583,24 +633,24 @@ namespace CRM
             ((ListBox)sender).Controls.Remove(((ListBox)sender));
         }
 
-        private void lbx_DoubleClick(object sender, System.EventArgs e)  
+        private void lbx_DoubleClick(object sender, System.EventArgs e)
         {
             string item = "";
-            
+
             //foreach (int i in ((ListBox)sender).SelectedIndices)
             //{
             //    item += ((ListBox)sender).Items[i] + Environment.NewLine;
-             
+
             //}
 
             if (((ListBox)sender).SelectedIndex == 0)
             {
                 //MessageBox.Show(item , "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
-                MessageBox.Show("Bạn Rất Đẹp Trai","Thông Báo");
+                MessageBox.Show("Bạn Rất Đẹp Trai", "Thông Báo");
                 //((ListBox)sender).Controls.Remove(((ListBox)sender));
             }
             if (((ListBox)sender).SelectedIndex == 1)
-            { 
+            {
                 //MessageBox.Show(item, "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
                 MessageBox.Show("Bạn là chó", "Thông Báo");
                 //((ListBox)sender).Controls.Remove(((ListBox)sender));
@@ -608,7 +658,7 @@ namespace CRM
             if (((ListBox)sender).SelectedIndex == 2)
             {
                 //MessageBox.Show(item, "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes);
-                MessageBox.Show("Chào "+ item, "Thông Báo");
+                MessageBox.Show("Chào " + item, "Thông Báo");
                 //((ListBox)sender).Controls.Remove(((ListBox)sender));
             }
 
@@ -618,12 +668,20 @@ namespace CRM
             //MessageBox.Show(item);
             //((ListBox)sender).Controls.Remove(((ListBox)sender));
             //MessageBox.Show("hello");  
-        } 
+        }
 
         private void bt_Click(object sender, MouseEventArgs e)
         {
             string tn = ((Button)sender).Text;
             Thue p = new Thue(tn);
+            TraPhong pp = new TraPhong();
+            if (((Button)sender).BackColor == Color.Red)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    pp.ShowDialog();
+                }
+            }
             if (((Button)sender).BackColor == DefaultBackColor)
             {
                 if (e.Button == MouseButtons.Left)
@@ -655,10 +713,16 @@ namespace CRM
                     //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
                 }
             }
+            //if (((Button)sender).BackColor == Color.Red)
+            //{
+            //    if (e.Button == MouseButtons.Right)
+            //    {
 
-                //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
-            }
-
+            //    }
+            //}
+            //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
+        }
+    
             private void groupBox5_Paint(object sender, PaintEventArgs e)
         {
             DataTable dttang = new DataTable();
@@ -813,7 +877,7 @@ namespace CRM
             //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
         }
 
-        
+
 
 
 

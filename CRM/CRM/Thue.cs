@@ -18,6 +18,7 @@ namespace CRM
         PhongBUS phong = new PhongBUS();
         string tx;
         string ID;
+        string mm;
         public Thue(string txt)
         {
             tx = txt;
@@ -29,9 +30,11 @@ namespace CRM
 
         private void Thue_Load(object sender, EventArgs e)
         {
-            if (label3.Text.Length >5)
-                ID= string.Format("{0}", label3.Text.Substring(6));
-            label8.Text = ID;
+            mm = "Co Nguoi";
+            if (label3.Text.Length > 5)
+                ID = string.Format("{0}", label3.Text.Substring(6));
+            
+            
             //DataTable name = new DataTable();
             //name = phong.GetTenPhong();
             //for (int i = 0; i < name.Rows.Count; i++)
@@ -81,8 +84,10 @@ namespace CRM
             //string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
             //string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
             //bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
-
+            //((Button)sender).BackColor = Color.Red;
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
+            LichSuEntities d = new LichSuEntities();
+            PhongEntities ee = new PhongEntities();
             c.Ten = textBox1.Text;
             c.NgaySinh = dateTimePicker1.Text;
             if (checkBox1.Checked == true)
@@ -103,9 +108,38 @@ namespace CRM
             c.NoiCap = comboBox3.Text;
             c.NgayVao = dateTimePicker5.Text;
             c.Sdt = Convert.ToInt32(textBox10.Text);
+            c.ID = Convert.ToInt32(ID);
 
+            d.Ten = textBox1.Text;
+            d.NgaySinh = dateTimePicker1.Text;
+            if (checkBox1.Checked == true)
+            {
+                d.GioiTinh = true;
+            }
+            else
+                d.GioiTinh = false;
+            if (checkBox2.Checked == true)
+            {
+                d.GioiTinh = false;
+            }
+            else
+                d.GioiTinh = true;
+
+            d.CMND = Convert.ToInt32(textBox11.Text);
+            d.NgayCap = dateTimePicker4.Text;
+            d.NoiCap = comboBox3.Text;
+            d.NgayVao = dateTimePicker5.Text;
+            d.Sdt = Convert.ToInt32(textBox10.Text);
+            d.ID = Convert.ToInt32(ID);
+
+            ee.HienTrang = mm;
+            ee.Id = Convert.ToInt32(ID);
             ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
             DataTable dt = cbus.GetTKBUS(c);
+            LichSuBUS a = new LichSuBUS();
+            DataTable s = a.ThemLSBUS(d);
+            PhongBUS t = new PhongBUS();
+            DataTable tt = t.GetUpdate(ee);
 
             MessageBox.Show("Them Khach Thue Thanh Cong");
             ((Button)sender).BackColor = Color.Red;

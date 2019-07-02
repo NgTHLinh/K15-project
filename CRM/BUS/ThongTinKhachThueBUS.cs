@@ -24,6 +24,12 @@ namespace BUS
         public DataTable GetTKBUS(ThongTinKhachThueEntities add)
         {
             DataTable dt = null;
+            dt = userTTDAO.GetKT(add);
+            return dt;
+        }
+        public DataTable GetBUS(ThongTinKhachThueEntities add)
+        {
+            DataTable dt = null;
             dt = userTTDAO.GetTT(add);
             return dt;
         }

@@ -46,6 +46,7 @@
     <Compile Include="QuanLyNhanVienBUS.cs" />
     <Compile Include="TangBUS.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
+    <Compile Include="ThanhToanBUS.cs" />
     <Compile Include="ThongTinKhachThueBUS.cs" />
     <Compile Include="ThongTinNhanVienBUS.cs" />
     <Compile Include="TimKiemNhanVienBUS.cs" />

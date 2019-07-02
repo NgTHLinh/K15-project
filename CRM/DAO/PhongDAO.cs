@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Entities;
 using System.Data;
-using System.Linq;
-using System.Text;
-
 namespace DAO
 {
     public class PhongDAO : DataProvider
@@ -29,5 +25,17 @@ namespace DAO
             string sql = "select * from Phong";
             return getDataTable(sql);
         }
+        public DataTable UpdatePhong(PhongEntities up)
+        {
+            string sql = "Update Phong set HienTrang='"+up.HienTrang+"' where ID='"+up.Id+"'";
+            return getDataTable(sql);
+        }
+
+        public DataTable CheckPhong(PhongEntities ck)
+        {
+            string sql = "select * from Phong where HienTrang='"+ck.HienTrang+"'";
+            return getDataTable(sql);
+        }
+
     }
 }
