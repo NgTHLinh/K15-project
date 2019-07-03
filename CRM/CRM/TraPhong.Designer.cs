@@ -56,10 +56,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::CRM.Properties.Resources.CloseRed;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(581, 1);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(682, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(75, 68);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -68,132 +68,151 @@
             // 
             this.lb_TenPhong.AutoSize = true;
             this.lb_TenPhong.Font = new System.Drawing.Font("Impact", 30F, System.Drawing.FontStyle.Bold);
-            this.lb_TenPhong.Location = new System.Drawing.Point(12, 9);
+            this.lb_TenPhong.Location = new System.Drawing.Point(16, 11);
+            this.lb_TenPhong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_TenPhong.Name = "lb_TenPhong";
-            this.lb_TenPhong.Size = new System.Drawing.Size(0, 48);
+            this.lb_TenPhong.Size = new System.Drawing.Size(0, 63);
             this.lb_TenPhong.TabIndex = 2;
             // 
             // lb_titleNguoiThue
             // 
             this.lb_titleNguoiThue.AutoSize = true;
-            this.lb_titleNguoiThue.Location = new System.Drawing.Point(14, 73);
+            this.lb_titleNguoiThue.Location = new System.Drawing.Point(20, 90);
+            this.lb_titleNguoiThue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleNguoiThue.Name = "lb_titleNguoiThue";
-            this.lb_titleNguoiThue.Size = new System.Drawing.Size(65, 13);
+            this.lb_titleNguoiThue.Size = new System.Drawing.Size(85, 17);
             this.lb_titleNguoiThue.TabIndex = 3;
             this.lb_titleNguoiThue.Text = "Người thuê: ";
             // 
             // lb_contentNguoiThue
             // 
             this.lb_contentNguoiThue.AutoSize = true;
-            this.lb_contentNguoiThue.Location = new System.Drawing.Point(101, 73);
+            this.lb_contentNguoiThue.Location = new System.Drawing.Point(135, 90);
+            this.lb_contentNguoiThue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_contentNguoiThue.Name = "lb_contentNguoiThue";
-            this.lb_contentNguoiThue.Size = new System.Drawing.Size(0, 13);
+            this.lb_contentNguoiThue.Size = new System.Drawing.Size(0, 17);
             this.lb_contentNguoiThue.TabIndex = 4;
             // 
             // lb_contentCMND
             // 
             this.lb_contentCMND.AutoSize = true;
-            this.lb_contentCMND.Location = new System.Drawing.Point(79, 103);
+            this.lb_contentCMND.Location = new System.Drawing.Point(135, 125);
+            this.lb_contentCMND.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_contentCMND.Name = "lb_contentCMND";
-            this.lb_contentCMND.Size = new System.Drawing.Size(0, 13);
+            this.lb_contentCMND.Size = new System.Drawing.Size(0, 17);
             this.lb_contentCMND.TabIndex = 6;
             // 
             // lb_titleCMND
             // 
             this.lb_titleCMND.AutoSize = true;
-            this.lb_titleCMND.Location = new System.Drawing.Point(17, 103);
+            this.lb_titleCMND.Location = new System.Drawing.Point(20, 125);
+            this.lb_titleCMND.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleCMND.Name = "lb_titleCMND";
-            this.lb_titleCMND.Size = new System.Drawing.Size(45, 13);
+            this.lb_titleCMND.Size = new System.Drawing.Size(56, 17);
             this.lb_titleCMND.TabIndex = 5;
             this.lb_titleCMND.Text = "CMND: ";
             // 
             // lb_contentSDT
             // 
             this.lb_contentSDT.AutoSize = true;
-            this.lb_contentSDT.Location = new System.Drawing.Point(79, 132);
+            this.lb_contentSDT.Location = new System.Drawing.Point(135, 160);
+            this.lb_contentSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_contentSDT.Name = "lb_contentSDT";
-            this.lb_contentSDT.Size = new System.Drawing.Size(0, 13);
+            this.lb_contentSDT.Size = new System.Drawing.Size(0, 17);
             this.lb_contentSDT.TabIndex = 8;
             // 
             // lb_titleSDT
             // 
             this.lb_titleSDT.AutoSize = true;
-            this.lb_titleSDT.Location = new System.Drawing.Point(17, 132);
+            this.lb_titleSDT.Location = new System.Drawing.Point(20, 160);
+            this.lb_titleSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleSDT.Name = "lb_titleSDT";
-            this.lb_titleSDT.Size = new System.Drawing.Size(35, 13);
+            this.lb_titleSDT.Size = new System.Drawing.Size(44, 17);
             this.lb_titleSDT.TabIndex = 7;
             this.lb_titleSDT.Text = "SDT: ";
             // 
             // lb_contentNgayVao
             // 
             this.lb_contentNgayVao.AutoSize = true;
-            this.lb_contentNgayVao.Location = new System.Drawing.Point(79, 162);
+            this.lb_contentNgayVao.Location = new System.Drawing.Point(135, 195);
+            this.lb_contentNgayVao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_contentNgayVao.Name = "lb_contentNgayVao";
-            this.lb_contentNgayVao.Size = new System.Drawing.Size(0, 13);
+            this.lb_contentNgayVao.Size = new System.Drawing.Size(0, 17);
             this.lb_contentNgayVao.TabIndex = 10;
             // 
             // lb_titleNgayVao
             // 
             this.lb_titleNgayVao.AutoSize = true;
-            this.lb_titleNgayVao.Location = new System.Drawing.Point(17, 162);
+            this.lb_titleNgayVao.Location = new System.Drawing.Point(20, 195);
+            this.lb_titleNgayVao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleNgayVao.Name = "lb_titleNgayVao";
-            this.lb_titleNgayVao.Size = new System.Drawing.Size(59, 13);
+            this.lb_titleNgayVao.Size = new System.Drawing.Size(76, 17);
             this.lb_titleNgayVao.TabIndex = 9;
             this.lb_titleNgayVao.Text = "Ngày vào: ";
             // 
             // lb_titleDien
             // 
             this.lb_titleDien.AutoSize = true;
-            this.lb_titleDien.Location = new System.Drawing.Point(302, 73);
+            this.lb_titleDien.Location = new System.Drawing.Point(400, 90);
+            this.lb_titleDien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleDien.Name = "lb_titleDien";
-            this.lb_titleDien.Size = new System.Drawing.Size(84, 13);
+            this.lb_titleDien.Size = new System.Drawing.Size(110, 17);
             this.lb_titleDien.TabIndex = 11;
             this.lb_titleDien.Text = "Số điện hiện tại:";
             // 
             // lb_titleNuoc
             // 
             this.lb_titleNuoc.AutoSize = true;
-            this.lb_titleNuoc.Location = new System.Drawing.Point(302, 103);
+            this.lb_titleNuoc.Location = new System.Drawing.Point(400, 125);
+            this.lb_titleNuoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleNuoc.Name = "lb_titleNuoc";
-            this.lb_titleNuoc.Size = new System.Drawing.Size(87, 13);
+            this.lb_titleNuoc.Size = new System.Drawing.Size(114, 17);
             this.lb_titleNuoc.TabIndex = 12;
             this.lb_titleNuoc.Text = "Số nước hiện tại:";
             // 
             // lb_titleInternet
             // 
             this.lb_titleInternet.AutoSize = true;
-            this.lb_titleInternet.Location = new System.Drawing.Point(302, 132);
+            this.lb_titleInternet.Location = new System.Drawing.Point(400, 160);
+            this.lb_titleInternet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_titleInternet.Name = "lb_titleInternet";
-            this.lb_titleInternet.Size = new System.Drawing.Size(98, 13);
+            this.lb_titleInternet.Size = new System.Drawing.Size(131, 17);
             this.lb_titleInternet.TabIndex = 13;
             this.lb_titleInternet.Text = "Số internet hiện tại:";
             // 
             // txt_contentDien
             // 
-            this.txt_contentDien.Location = new System.Drawing.Point(406, 66);
+            this.txt_contentDien.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_contentDien.Location = new System.Drawing.Point(540, 85);
+            this.txt_contentDien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_contentDien.Name = "txt_contentDien";
-            this.txt_contentDien.Size = new System.Drawing.Size(100, 20);
+            this.txt_contentDien.Size = new System.Drawing.Size(132, 22);
             this.txt_contentDien.TabIndex = 14;
             // 
             // txt_contentNuoc
             // 
-            this.txt_contentNuoc.Location = new System.Drawing.Point(406, 96);
+            this.txt_contentNuoc.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_contentNuoc.Location = new System.Drawing.Point(540, 120);
+            this.txt_contentNuoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_contentNuoc.Name = "txt_contentNuoc";
-            this.txt_contentNuoc.Size = new System.Drawing.Size(100, 20);
+            this.txt_contentNuoc.Size = new System.Drawing.Size(132, 22);
             this.txt_contentNuoc.TabIndex = 15;
             // 
             // txt_contentInternet
             // 
-            this.txt_contentInternet.Location = new System.Drawing.Point(406, 125);
+            this.txt_contentInternet.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_contentInternet.Location = new System.Drawing.Point(540, 155);
+            this.txt_contentInternet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_contentInternet.Name = "txt_contentInternet";
-            this.txt_contentInternet.Size = new System.Drawing.Size(100, 20);
+            this.txt_contentInternet.Size = new System.Drawing.Size(132, 22);
             this.txt_contentInternet.TabIndex = 16;
             // 
             // btn_TraPhong
             // 
-            this.btn_TraPhong.Location = new System.Drawing.Point(527, 236);
+            this.btn_TraPhong.Location = new System.Drawing.Point(543, 234);
+            this.btn_TraPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_TraPhong.Name = "btn_TraPhong";
-            this.btn_TraPhong.Size = new System.Drawing.Size(100, 41);
+            this.btn_TraPhong.Size = new System.Drawing.Size(130, 50);
             this.btn_TraPhong.TabIndex = 17;
             this.btn_TraPhong.Text = "Trả phòng";
             this.btn_TraPhong.UseVisualStyleBackColor = true;
@@ -202,17 +221,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 162);
+            this.label1.Location = new System.Drawing.Point(400, 195);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "Tổng cộng";
             // 
             // btn_TinhTien
             // 
-            this.btn_TinhTien.Location = new System.Drawing.Point(406, 236);
+            this.btn_TinhTien.Location = new System.Drawing.Point(403, 234);
+            this.btn_TinhTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_TinhTien.Name = "btn_TinhTien";
-            this.btn_TinhTien.Size = new System.Drawing.Size(100, 41);
+            this.btn_TinhTien.Size = new System.Drawing.Size(130, 50);
             this.btn_TinhTien.TabIndex = 20;
             this.btn_TinhTien.Text = "Tính Tiền";
             this.btn_TinhTien.UseVisualStyleBackColor = true;
@@ -221,9 +242,10 @@
             // lb_TongCong
             // 
             this.lb_TongCong.AutoSize = true;
-            this.lb_TongCong.Location = new System.Drawing.Point(403, 162);
+            this.lb_TongCong.Location = new System.Drawing.Point(540, 195);
+            this.lb_TongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_TongCong.Name = "lb_TongCong";
-            this.lb_TongCong.Size = new System.Drawing.Size(13, 13);
+            this.lb_TongCong.Size = new System.Drawing.Size(16, 17);
             this.lb_TongCong.TabIndex = 21;
             this.lb_TongCong.Text = "0";
             // 
@@ -231,19 +253,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(23, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 48);
+            this.label3.Size = new System.Drawing.Size(27, 63);
             this.label3.TabIndex = 39;
             this.label3.Text = "\r\n";
             // 
             // TraPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(639, 289);
+            this.ClientSize = new System.Drawing.Size(769, 305);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_TongCong);
@@ -267,6 +288,7 @@
             this.Controls.Add(this.lb_TenPhong);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TraPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TraPhong";

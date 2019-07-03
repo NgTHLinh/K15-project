@@ -31,6 +31,10 @@ namespace CRM
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
         QuanLyNhanVienBUS qlnv = new QuanLyNhanVienBUS();
         ThongTinKhachThueBUS ttkt = new ThongTinKhachThueBUS();
+
+        string ten;
+        int SoDong;
+
         public Home()
         {
             //string conn = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
@@ -55,7 +59,7 @@ namespace CRM
             //tabControl1.TabPages.Remove(TP_home);
             //tabControl1.TabPages.Remove(TP_ttkhach);
             //tabControl1.TabPages.Remove(TP_ttnv);
-            tabControl1.TabPages.Remove(tabPage1);
+           
 
         }
 
@@ -135,20 +139,6 @@ namespace CRM
             tabControl1.DrawItem += tabControl1_DrawItem;
             CloseImage = CRM.Properties.Resources.Closebutton;
             tabControl1.Padding = new Point(15, 3);
-            //int w = Screen.PrimaryScreen.Bounds.Width;
-            //int h = Screen.PrimaryScreen.Bounds.Height;
-            //this.Location = new Point(0, 0);
-            //this.Size = new Size(w, h);
-
-
-            //TODO: This line of code loads data into the 'sTUDENTDataSet.login' table.You can move, or remove it, as needed.  
-            //    this.loginTableAdapter.Fill(this.sTUDENTDataSet.login);
-            //    SqlConnection con = new SqlConnection("Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True");
-            //    con.Open();
-
-            //{
-            //}
-
         }
 
         private void tabControl1_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e) // Vẽ hình nút X lên cái tabpage trong tabcontrol1
@@ -163,20 +153,11 @@ namespace CRM
                 Font f = this.Font;
                 Brush titleBrush = new SolidBrush(Color.Black);
                 e.Graphics.DrawString(title, f, titleBrush, new Point(r.X, r.Y));
-
-                //if(tabControl1.SelectedIndex >= 1)
-                //{
                 e.Graphics.DrawImage(img, new Point(r.X + this.tabControl1.GetTabRect(e.Index).Width - _imageLocation.X, _imageLocation.Y));
-                //}
+               
             }
             catch (Exception) { }
-            //Font closefont = new Font(e.Font.FontFamily, e.Font.Size, FontStyle.Bold);
-            //Font titlefont = new Font(e.Font.FontFamily, e.Font.Size, FontStyle.Italic);
-            //if (e.Index >= 0)
-            //{
-            //    e.Graphics.DrawString("X ", closefont, Brushes.Black, e.Bounds.Right - 12, e.Bounds.Top + 5);
-            //}
-            //e.Graphics.DrawString(this.tabControl1.TabPages[e.Index].Text, titlefont, Brushes.Black, e.Bounds.Left, e.Bounds.Top + 5);
+           
 
         }
 
@@ -375,12 +356,13 @@ namespace CRM
 
         private void btn_XoaNV_Click(object sender, EventArgs e)
         {
-
             int a = dataGridView3.CurrentCell.RowIndex;
 
             int s = Convert.ToInt32(dataGridView3.Rows[a].Cells[0].Value.ToString());
             ttnv.XoaNV(s);
             dataGridView3.Rows.RemoveAt(a);
+            
+            MessageBox.Show("Đã xóa" , "Thông Báo");
 
         }
         private void btn_XoaKT_Click(object sender, EventArgs e)
@@ -389,6 +371,7 @@ namespace CRM
             int s = Convert.ToInt32(dataGridView2.Rows[a].Cells[0].Value.ToString());
             ttkt.XoaKTBUS(s);
             dataGridView2.Rows.RemoveAt(a);
+            MessageBox.Show("Đã xóa", "Thông Báo");
         }
 
 
@@ -423,7 +406,8 @@ namespace CRM
                     dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.NgayCap, Lichsu.NoiCap, Lichsu.NgayVao, Lichsu.Sdt);
                     
                     }
-                    MessageBox.Show("aaa");
+                    SoDong = dt.Rows.Count;
+                    MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
                 }
             }
             if (Txt_MaKhachHang_TT.Text == "")
@@ -448,7 +432,8 @@ namespace CRM
                         dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
                         
                     }
-                    MessageBox.Show("BBB");
+                    SoDong = dt.Rows.Count;
+                    MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
                 }
             }
             if (Txt_MaKhachHang_TT.Text != "" & txt_TenKT_TT.Text != "")
@@ -474,7 +459,8 @@ namespace CRM
                         dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
                         
                     }
-                    MessageBox.Show("ccc");
+                    SoDong = dt.Rows.Count;
+                    MessageBox.Show("Tìm Thấy "+SoDong+" kết quả.","Thông Báo");
                 }
             }
         }
@@ -509,6 +495,8 @@ namespace CRM
                 dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
                 //dataGridView3.DataSource = dt;
                 //}
+                SoDong = dt.Rows.Count;
+                MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
 
             }
         }
@@ -520,6 +508,7 @@ namespace CRM
 
             log.Taikhoan = txt_TaiKhoan.Text;
             log.Matkhau = txt_MatKhau.Text;
+            
 
             TaiKhoanBUS logbus = new TaiKhoanBUS();
             DataTable dt = logbus.GetTK(log);
@@ -533,7 +522,7 @@ namespace CRM
                 switch (userlogin.Loai)
                 {
                     case "1":
-                        MessageBox.Show("Welcome Admin");
+                        MessageBox.Show("Welcome Admin " + userlogin.Taikhoan);
                         btn_Login.Hide();
                         btn_Logout.Show();
                         btn_Home.Show();
@@ -591,7 +580,118 @@ namespace CRM
             //btn_Login.Show();
         }
 
-        void createarraybutton(DataTable dtphong, int top, ref int t)
+        private void bt_Click5(object sender, MouseEventArgs e)
+        {
+            string tn = ((Button)sender).Text;
+            string tp = ((Button)sender).Text;
+            Thue p = new Thue(tn);
+            TraPhong pp = new TraPhong(tp);
+            if (((Button)sender).BackColor == Color.Red)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    pp.ShowDialog();
+                }
+            }
+            if (((Button)sender).BackColor == DefaultBackColor)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    p.ShowDialog();
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    ListBox lbx = new ListBox();
+                    lbx.Items.Add("Long");
+                    lbx.Items.Add("Khoa");
+                    lbx.Items.Add("Cô Linh ");
+                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
+                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
+
+                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
+
+                    lbx.MultiColumn = true;
+                    lbx.SelectionMode = SelectionMode.MultiExtended;
+                    groupBox5.Controls.Add(lbx);
+                }
+            }
+        }
+
+        private void bt_Click4(object sender, MouseEventArgs e)
+        {
+            string tn = ((Button)sender).Text;
+            string tp = ((Button)sender).Text;
+            Thue p = new Thue(tn);
+            TraPhong pp = new TraPhong(tp);
+            if (((Button)sender).BackColor == Color.Red)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    pp.ShowDialog();
+                }
+            }
+            if (((Button)sender).BackColor == DefaultBackColor)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    p.ShowDialog();
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    ListBox lbx = new ListBox();
+                    lbx.Items.Add("Long");
+                    lbx.Items.Add("Khoa");
+                    lbx.Items.Add("Cô Linh ");
+                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
+                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
+
+                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
+
+                    lbx.MultiColumn = true;
+                    lbx.SelectionMode = SelectionMode.MultiExtended;
+                    groupBox5.Controls.Add(lbx);
+                }
+            }
+        }
+
+        private void bt_Click7(object sender, MouseEventArgs e)
+        {
+            string tn = ((Button)sender).Text;
+            string tp = ((Button)sender).Text;
+            Thue p = new Thue(tn);
+            TraPhong pp = new TraPhong(tp);
+            if (((Button)sender).BackColor == Color.Red)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    pp.ShowDialog();
+                }
+            }
+            if (((Button)sender).BackColor == DefaultBackColor)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    p.ShowDialog();
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    ListBox lbx = new ListBox();
+                    lbx.Items.Add("Long");
+                    lbx.Items.Add("Khoa");
+                    lbx.Items.Add("Cô Linh ");
+                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
+                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
+
+                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
+
+                    lbx.MultiColumn = true;
+                    lbx.SelectionMode = SelectionMode.MultiExtended;
+                    groupBox5.Controls.Add(lbx);
+                }
+            }
+        }
+
+        void createarraybutton5(DataTable dtphong, int top, ref int t)
         {
 
             int left = 10;
@@ -615,36 +715,85 @@ namespace CRM
                 {
                     bt.BackColor = DefaultBackColor;
                 }
-              
-                //string tn = ((Button)sender).Text;
-                //PhongEntities a = new PhongEntities();
 
-
-
-                //PhongBUS b = new PhongBUS();
-                //DataTable dt = b.CheckmauBUS(a);
-
-                //if (dt.Rows.Count > 0)
-                //{
-                //    room.HienTrang = dt.Rows[0][5].ToString();
-                //    room.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
-
-                //    if (room.HienTrang == "Co Nguoi")
-                //    {
-                //        ((Button)sender).BackColor = Color.Red;
-                //    }
-
-                //}
-
-                bt.MouseDown += new MouseEventHandler(bt_Click);
+                bt.MouseDown += new MouseEventHandler(bt_Click5);
                 groupBox5.Controls.Add(bt);
+               
                 t++;
 
                 string txt = bt.Text;
                 Thue tr = new Thue(txt);
-
             }
+        }
 
+        void createarraybutton4(DataTable dtphong, int top, ref int t)
+        {
+
+            int left = 10;
+            for (int i = 0; i < dtphong.Rows.Count; i++)
+            {
+                Button bt = new Button();
+
+                bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
+                bt.Tag = string.Format("[{0}]", i);
+                bt.Text = string.Format("Phòng {0}", dtphong.Rows[i][0].ToString());
+                bt.Size = new Size(150, 120);
+                bt.Top = top;
+                bt.Left = left;
+                left += 180;
+
+                if (dtphong.Rows[i][5].ToString() == "Co Nguoi")
+                {
+                    bt.BackColor = Color.Red;
+                }
+                else
+                {
+                    bt.BackColor = DefaultBackColor;
+                }
+
+                bt.MouseDown += new MouseEventHandler(bt_Click4);
+                groupBox4.Controls.Add(bt);
+
+                t++;
+
+                string txt = bt.Text;
+               
+            }
+        }
+
+        void createarraybutton7(DataTable dtphong, int top, ref int t)
+        {
+
+            int left = 10;
+            for (int i = 0; i < dtphong.Rows.Count; i++)
+            {
+                Button bt = new Button();
+
+                bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
+                bt.Tag = string.Format("[{0}]", i);
+                bt.Text = string.Format("Phòng {0}", dtphong.Rows[i][0].ToString());
+                bt.Size = new Size(150, 120);
+                bt.Top = top;
+                bt.Left = left;
+                left += 180;
+
+                if (dtphong.Rows[i][5].ToString() == "Co Nguoi")
+                {
+                    bt.BackColor = Color.Red;
+                }
+                else
+                {
+                    bt.BackColor = DefaultBackColor;
+                }
+
+                bt.MouseDown += new MouseEventHandler(bt_Click7);
+                groupBox7.Controls.Add(bt);
+
+                t++;
+
+                string txt = bt.Text;
+               
+            }
         }
 
         private void lbx_MouseLeave(object sender, EventArgs e)
@@ -689,61 +838,7 @@ namespace CRM
             //MessageBox.Show("hello");  
         }
 
-        private void bt_Click(object sender, MouseEventArgs e)
-        {
-            string tn = ((Button)sender).Text;
-            string tp = ((Button)sender).Text;
-            Thue p = new Thue(tn);
-            TraPhong pp = new TraPhong(tp);
-            if (((Button)sender).BackColor == Color.Red)
-            {
-                if (e.Button == MouseButtons.Right)
-                {
-                    pp.ShowDialog();
-                }
-            }
-            if (((Button)sender).BackColor == DefaultBackColor)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    p.ShowDialog();
-                    //((Button)sender).BackColor = Color.Red;
-                }
-                if (e.Button == MouseButtons.Right)
-                {
-                    //ContextMenu cm = new ContextMenu();
-                    //cm.MenuItems.Add("Item 1" );
-                    //cm.MenuItems.Add("Item 2" );
-
-                    ListBox lbx = new ListBox();
-                    lbx.Items.Add("Long");
-                    lbx.Items.Add("Khoa");
-                    lbx.Items.Add("Cô Linh ");
-                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
-                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
-                    //lbx.TopIndex = lbx.SelectedIndex;
-
-                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
-
-                    lbx.MultiColumn = true;
-                    lbx.SelectionMode = SelectionMode.MultiExtended;
-                    groupBox5.Controls.Add(lbx);
-                    //((Button)sender).Controls.Add(lbx);
-                    //createlistbox();
-                    //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
-                }
-            }
-            //if (((Button)sender).BackColor == Color.Red)
-            //{
-            //    if (e.Button == MouseButtons.Right)
-            //    {
-
-            //    }
-            //}
-            //MessageBox.Show("ban vua nhan vào phòng " + ((Button)sender).Text);
-        }
-    
-            private void groupBox5_Paint(object sender, PaintEventArgs e)
+        private void groupBox5_Paint(object sender, PaintEventArgs e)
         {
             DataTable dttang = new DataTable();
             int top = 45;
@@ -767,12 +862,70 @@ namespace CRM
                 PhongBUS phongB = new PhongBUS();
                 DataTable dtphong = new DataTable();
                 dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
-                createarraybutton(dtphong,top, ref sobt);
+                createarraybutton5(dtphong,top, ref sobt);
                 top += 150;
             }
         }
 
-        
+        private void groupBox4_Paint(object sender, PaintEventArgs e)
+        {
+            DataTable dttang = new DataTable();
+            int top = 45;
+            int toplb = 20;
+
+            dttang = tang.GetTang();
+            for (int i = 0; i < dttang.Rows.Count; i++)
+            {
+                //tao label hien thi tang
+                Label lb = new Label();
+                lb.Name = string.Format("lb{0}", i);
+                lb.Text = string.Format("TẦNG {0}", dttang.Rows[i][0].ToString());
+
+                lb.Top = toplb;
+                lb.Left = 10;
+                groupBox4.Controls.Add(lb);
+                toplb += 150;
+                //   
+                int sobt = 0;
+                PhongEntities phongE = new PhongEntities();
+                PhongBUS phongB = new PhongBUS();
+                DataTable dtphong = new DataTable();
+                dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
+                createarraybutton4(dtphong, top, ref sobt);
+                top += 150;
+            }
+        }
+
+        private void groupBox7_Paint(object sender, PaintEventArgs e)
+        {
+            DataTable dttang = new DataTable();
+            int top = 45;
+            int toplb = 20;
+
+            dttang = tang.GetTang();
+            for (int i = 0; i < dttang.Rows.Count; i++)
+            {
+                //tao label hien thi tang
+                Label lb = new Label();
+                lb.Name = string.Format("lb{0}", i);
+                lb.Text = string.Format("TẦNG {0}", dttang.Rows[i][0].ToString());
+
+                lb.Top = toplb;
+                lb.Left = 10;
+                groupBox7.Controls.Add(lb);
+                toplb += 150;
+                //   
+                int sobt = 0;
+                PhongEntities phongE = new PhongEntities();
+                PhongBUS phongB = new PhongBUS();
+                DataTable dtphong = new DataTable();
+                dtphong = phongB.GetPhongTheoTang(Convert.ToInt32(dttang.Rows[i][0].ToString()));
+                createarraybutton7(dtphong, top, ref sobt);
+                top += 150;
+            }
+        }
+
+
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -877,44 +1030,14 @@ namespace CRM
             //TP_themnv.Refresh();
         }
 
-        private void listBox1_MouseHover(object sender, EventArgs e)
+        private void btn_TimHoaDon_Click(object sender, EventArgs e)
         {
-            
-            Point point = listBox1.PointToClient(Cursor.Position);
-            int index = listBox1.IndexFromPoint(point);
-            if (index < 0) return;
-            //Do any action with the item
-            listBox1.GetItemRectangle(index).Inflate(1, 2);
+
         }
 
-        private void listView1_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+        private void groupBox9_Enter(object sender, EventArgs e)
         {
-            e.Item.BackColor = Color.BlueViolet;
+
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //listBox1.IndexFromPoint(Point ).BackColorChanged = Color.Blue;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //private void listBox1_MouseHover(object sender, EventArgs e)
-        //{
-        //    //((ListBox)sender).SelectedIndex = 
-        //    //listBox1.BackColorChanged += DefaultBackColor;
-        //}
-
-
     }
 }

@@ -80,12 +80,6 @@ namespace CRM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //int mm = dataGridView3.CurrentCell.RowIndex;
-            //int m = Convert.ToInt32(dataGridView3.Rows[mm].Cells[0].Value.ToString());
-            //string a = dataGridView3.Rows[mm].Cells[1].Value.ToString();
-            //string b = (dataGridView3.Rows[mm].Cells[2].Value.ToString());
-            //bool c = Convert.ToBoolean(dataGridView3.Rows[mm].Cells[3].Value.ToString());
-            //((Button)sender).BackColor = Color.Red;
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             LichSuEntities d = new LichSuEntities();
             PhongEntities ee = new PhongEntities();
@@ -142,7 +136,7 @@ namespace CRM
             PhongBUS t = new PhongBUS();
             DataTable tt = t.GetUpdate(ee);
 
-            MessageBox.Show("Them Khach Thue Thanh Cong");
+            MessageBox.Show("Thuê "+label3.Text+" thành công.");
             //((Button)sender).BackColor = Color.Red;
             
             Close();

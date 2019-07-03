@@ -61,14 +61,10 @@ namespace CRM
                     table.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
                     
-                    lb_contentNguoiThue.Text = table.Ten;
-
+                    lb_contentNguoiThue.Text = string.Format("{0}", dt.Rows[p][1].ToString());
                     lb_contentCMND.Text =string.Format("{0}", dt.Rows[p][4].ToString());
                     lb_contentSDT.Text = string.Format("{0}", dt.Rows[p][8].ToString());
-                    //table.Sdt = Convert.ToInt32(w);
-                    //c.CMND = Convert.ToInt32(lb_contentCMND.Text);
-                    //c.Sdt = Convert.ToInt32(lb_contentSDT.Text);
-                    lb_contentNgayVao.Text = table.NgayVao;
+                    lb_contentNgayVao.Text = string.Format("{0}", dt.Rows[p][7].ToString());
                 }
             }
 
@@ -122,7 +118,8 @@ namespace CRM
             DataTable dt = cbus.GetTKBUS(c);
             PhongBUS t = new PhongBUS();
             DataTable tt = t.GetUpdate(ee);
-            MessageBox.Show("Tra phong thanh cong");
+            MessageBox.Show("Trả "+label3.Text+" thành công.");
+            Close();
         }
     }
 }
