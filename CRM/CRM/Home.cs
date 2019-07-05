@@ -48,6 +48,7 @@ namespace CRM
 
             btn_Logout.Hide();
             btn_Home.Hide();
+            btn_mail.Hide();
             tabControl2.TabPages.Remove(TP_QlHoaDon);
             tabControl2.TabPages.Remove(TP_QlNgThue);
             tabControl2.TabPages.Remove(TP_QlNv);
@@ -600,6 +601,7 @@ namespace CRM
                         btn_Login.Hide();
                         btn_Logout.Show();
                         btn_Home.Show();
+                        btn_mail.Show();
 
 
                         tabControl2.TabPages.Add(TP_QlNgThue);
@@ -626,6 +628,7 @@ namespace CRM
 
                         btn_Login.Hide();
                         btn_Logout.Show();
+                        btn_mail.Show();
                         //zzz.TabPages.Remove(tab2_p);
                         break;
                     case "3":
@@ -1105,6 +1108,12 @@ namespace CRM
                 tabControl1.TabPages.Add(TP_ThongKeDT); // add removed tab
                 tabControl1.SelectTab(TP_ThongKeDT);    // select by name
             }
+        }
+
+        private void btn_mail_Click(object sender, EventArgs e)
+        {
+            SendMail mail = new SendMail();
+            mail.ShowDialog();
         }
     }
 }
