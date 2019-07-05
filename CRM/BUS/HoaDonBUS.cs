@@ -16,6 +16,12 @@ namespace BUS
             HdDAO = new HoaDonDAO();
         }
 
+        public DataTable GetSumDTBUS()
+        {
+            DataTable dt = null;
+            dt = HdDAO.GetSumDTDAO();
+            return dt;
+        }
         public DataTable ThemHDBUS(HoaDonEntities h)
         {
             DataTable dt = null;

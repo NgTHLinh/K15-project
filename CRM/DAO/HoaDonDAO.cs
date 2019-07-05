@@ -19,6 +19,11 @@ namespace DAO
             string sql = "select * from HoaDon  ";
             return getDataTable(sql);
         }
+        public DataTable GetSumDTDAO()
+        {
+            string sql = "select SUM(TongCong) from HoaDon";
+            return getDataTable(sql);
+        }
         public DataTable GetHDmDAO(HoaDonEntities h)
         {
             string sql = "select * from HoaDon where ID='" + h.Id + "'";

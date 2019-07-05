@@ -198,6 +198,12 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TP_TongDoanhThu = new System.Windows.Forms.TabPage();
+            this.btn_TongDT = new System.Windows.Forms.Button();
+            this.TP_ThongKeDT = new System.Windows.Forms.TabPage();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl2.SuspendLayout();
             this.TP_Trangchu.SuspendLayout();
             this.TP_QlNgThue.SuspendLayout();
@@ -227,6 +233,9 @@
             this.tabControl1.SuspendLayout();
             this.TP_LichSuKhach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.TP_TongDoanhThu.SuspendLayout();
+            this.TP_ThongKeDT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList2
@@ -286,6 +295,7 @@
             this.tabControl2.Controls.Add(this.TP_QlPhong);
             this.tabControl2.Controls.Add(this.TP_QlHoaDon);
             this.tabControl2.Controls.Add(this.TP_QlNv);
+            this.tabControl2.Controls.Add(this.TP_TongDoanhThu);
             this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.ImageList = this.imageList1;
             this.tabControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -2088,6 +2098,7 @@
             this.tabControl1.Controls.Add(this.TP_tk);
             this.tabControl1.Controls.Add(this.TP_home);
             this.tabControl1.Controls.Add(this.TP_LichSuKhach);
+            this.tabControl1.Controls.Add(this.TP_ThongKeDT);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(3, 128);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -2177,6 +2188,64 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Sdt";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // TP_TongDoanhThu
+            // 
+            this.TP_TongDoanhThu.Controls.Add(this.btn_TongDT);
+            this.TP_TongDoanhThu.Location = new System.Drawing.Point(4, 32);
+            this.TP_TongDoanhThu.Name = "TP_TongDoanhThu";
+            this.TP_TongDoanhThu.Size = new System.Drawing.Size(1636, 86);
+            this.TP_TongDoanhThu.TabIndex = 5;
+            this.TP_TongDoanhThu.Text = "Tổng Doanh Thu";
+            this.TP_TongDoanhThu.UseVisualStyleBackColor = true;
+            // 
+            // btn_TongDT
+            // 
+            this.btn_TongDT.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_TongDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TongDT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_TongDT.ImageIndex = 7;
+            this.btn_TongDT.ImageList = this.imageList2;
+            this.btn_TongDT.Location = new System.Drawing.Point(0, 0);
+            this.btn_TongDT.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_TongDT.Name = "btn_TongDT";
+            this.btn_TongDT.Size = new System.Drawing.Size(80, 86);
+            this.btn_TongDT.TabIndex = 3;
+            this.btn_TongDT.Text = "Doanh thu";
+            this.btn_TongDT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_TongDT.UseVisualStyleBackColor = false;
+            this.btn_TongDT.Click += new System.EventHandler(this.btn_TongDT_Click);
+            // 
+            // TP_ThongKeDT
+            // 
+            this.TP_ThongKeDT.Controls.Add(this.dataGridView5);
+            this.TP_ThongKeDT.Location = new System.Drawing.Point(4, 25);
+            this.TP_ThongKeDT.Name = "TP_ThongKeDT";
+            this.TP_ThongKeDT.Size = new System.Drawing.Size(1636, 790);
+            this.TP_ThongKeDT.TabIndex = 11;
+            this.TP_ThongKeDT.Text = "Thống kê Doanh thu";
+            this.TP_ThongKeDT.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column30,
+            this.Column31});
+            this.dataGridView5.Location = new System.Drawing.Point(5, 14);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(910, 150);
+            this.dataGridView5.TabIndex = 0;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "DT_Tháng7/2019";
+            this.Column30.Name = "Column30";
+            // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "DT_Tháng8/2019";
+            this.Column31.Name = "Column31";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2232,6 +2301,9 @@
             this.tabControl1.ResumeLayout(false);
             this.TP_LichSuKhach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.TP_TongDoanhThu.ResumeLayout(false);
+            this.TP_ThongKeDT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2406,5 +2478,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.TabPage TP_TongDoanhThu;
+        private System.Windows.Forms.Button btn_TongDT;
+        private System.Windows.Forms.TabPage TP_ThongKeDT;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
     }
 }

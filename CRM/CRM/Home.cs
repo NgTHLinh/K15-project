@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Globalization;
 
 namespace CRM
 {
@@ -52,7 +52,9 @@ namespace CRM
             tabControl2.TabPages.Remove(TP_QlNgThue);
             tabControl2.TabPages.Remove(TP_QlNv);
             tabControl2.TabPages.Remove(TP_QlPhong);
+            tabControl2.TabPages.Remove(TP_TongDoanhThu);
 
+            tabControl1.TabPages.Remove(TP_ThongKeDT);
             tabControl1.TabPages.Remove(TP_ThemNgThue);
             tabControl1.TabPages.Remove(TP_ttphong);
             tabControl1.TabPages.Remove(TP_tthd);
@@ -69,6 +71,16 @@ namespace CRM
 
         private void Home_Load(object sender, EventArgs e)
         {
+            {
+                HoaDonEntities NVM = new HoaDonEntities();
+                HoaDonBUS ttv = new HoaDonBUS();
+                DataTable dt = ttv.GetSumDTBUS();
+                HD.TongCong = dt.Rows[0][0].ToString();
+                
+                //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                //String a = HD.TongCong.ToString("#,###", cul.NumberFormat) + " VND";
+                dataGridView5.Rows.Add(HD.TongCong+" VND");
+            }
             {
                 LichSuEntities ls = new LichSuEntities();
                 LichSuBUS lsb = new LichSuBUS();
@@ -594,7 +606,7 @@ namespace CRM
                         tabControl2.TabPages.Add(TP_QlPhong);
                         tabControl2.TabPages.Add(TP_QlHoaDon);
                         tabControl2.TabPages.Add(TP_QlNv);
-
+                        tabControl2.TabPages.Add(TP_TongDoanhThu);
 
                         tabControl1.TabPages.Add(TP_home);
                         tabControl1.TabPages.Remove(TP_tk);
@@ -607,6 +619,8 @@ namespace CRM
                         tabControl1.TabPages.Remove(TP_tk);
                         tabControl1.TabPages.Add(TP_home);
 
+                        tabControl2.TabPages.Add(TP_QlNgThue);
+                        tabControl2.TabPages.Add(TP_TongDoanhThu);
                         tabControl2.TabPages.Add(TP_QlPhong);
                         tabControl2.TabPages.Add(TP_QlHoaDon);
 
@@ -1077,6 +1091,19 @@ namespace CRM
             {
                 tabControl1.TabPages.Add(TP_LichSuKhach); // add removed tab
                 tabControl1.SelectTab(TP_LichSuKhach);    // select by name
+            }
+        }
+
+        private void btn_TongDT_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Contains(TP_ThongKeDT))//tab already present
+            {
+                tabControl1.SelectTab(TP_ThongKeDT);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(TP_ThongKeDT); // add removed tab
+                tabControl1.SelectTab(TP_ThongKeDT);    // select by name
             }
         }
     }

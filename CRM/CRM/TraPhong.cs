@@ -109,8 +109,8 @@ namespace CRM
 
                         int ee;
                         ee = (a * 10000) + (b * 10000) + (c * 350000);
-                        CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-                        lb_TongCong.Text = ee.ToString("#,###", cul.NumberFormat) + " VND";
+                        //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                        lb_TongCong.Text = ee.ToString()/*("#,###", cul.NumberFormat)*/ + " VND";
 
                         btn_TraPhong.Enabled = true;
                     }
