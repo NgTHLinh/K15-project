@@ -20,8 +20,12 @@ namespace CRM
         string tx;
         string ID;
         string mm;
-        public Thue(string txt)
+        Home home;
+        Button b;
+        public Thue(string txt,Home h,Button bb)
         {
+            b = bb;
+            home = h;
             tx = txt;
             InitializeComponent();
             label3.Text = tx;
@@ -139,8 +143,12 @@ namespace CRM
             MessageBox.Show("Thuê "+label3.Text+" thành công.");
             //((Button)sender).BackColor = Color.Red;
             
+            home.doimau(b);
             Close();
+           // Home kk = new Home();
 
+            //kk.Visible = true;
+           // kk.ShowDialog();
         }
     }
 }

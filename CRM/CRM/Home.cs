@@ -44,12 +44,12 @@ namespace CRM
             InitializeComponent();
 
 
-            btn_Logout.Hide();
-            btn_Home.Hide();
+            //btn_Logout.Hide();
+            //btn_Home.Hide();
             //tabControl2.TabPages.Remove(TP_QlHoaDon);
             //tabControl2.TabPages.Remove(TP_QlNgThue);
             //tabControl2.TabPages.Remove(TP_QlNv);
-            //tabControl2.TabPages.Remove(TP_QlPhong);  
+            //tabControl2.TabPages.Remove(TP_QlPhong);
 
             //tabControl1.TabPages.Remove(TP_ThemNgThue);
             //tabControl1.TabPages.Remove(TP_ttphong);
@@ -59,7 +59,7 @@ namespace CRM
             //tabControl1.TabPages.Remove(TP_home);
             //tabControl1.TabPages.Remove(TP_ttkhach);
             //tabControl1.TabPages.Remove(TP_ttnv);
-           
+
 
         }
 
@@ -579,13 +579,23 @@ namespace CRM
             a.ShowDialog();
             //btn_Login.Show();
         }
+        public void doimau(Button bt)
+        {
+            bt.BackColor = Color.Red;
+            
+        }
+        public void doimauu(Button bs)
+        {
+            bs.BackColor = DefaultBackColor;
+        }
 
         private void bt_Click5(object sender, MouseEventArgs e)
         {
             string tn = ((Button)sender).Text;
+            Button tnn = ((Button)sender);
             string tp = ((Button)sender).Text;
-            Thue p = new Thue(tn);
-            TraPhong pp = new TraPhong(tp);
+            Thue p = new Thue(tn,this,tnn);
+            TraPhong pp = new TraPhong(tp,this,tnn);
             if (((Button)sender).BackColor == Color.Red)
             {
                 if (e.Button == MouseButtons.Right)
@@ -599,21 +609,7 @@ namespace CRM
                 {
                     p.ShowDialog();
                 }
-                if (e.Button == MouseButtons.Right)
-                {
-                    ListBox lbx = new ListBox();
-                    lbx.Items.Add("Long");
-                    lbx.Items.Add("Khoa");
-                    lbx.Items.Add("Cô Linh ");
-                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
-                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
-
-                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
-
-                    lbx.MultiColumn = true;
-                    lbx.SelectionMode = SelectionMode.MultiExtended;
-                    groupBox5.Controls.Add(lbx);
-                }
+                
             }
         }
 
@@ -621,8 +617,9 @@ namespace CRM
         {
             string tn = ((Button)sender).Text;
             string tp = ((Button)sender).Text;
-            Thue p = new Thue(tn);
-            TraPhong pp = new TraPhong(tp);
+            Button tnn = ((Button)sender);
+            Thue p = new Thue(tn,this,tnn);
+            TraPhong pp = new TraPhong(tp,this,tnn);
             if (((Button)sender).BackColor == Color.Red)
             {
                 if (e.Button == MouseButtons.Right)
@@ -636,21 +633,7 @@ namespace CRM
                 {
                     p.ShowDialog();
                 }
-                if (e.Button == MouseButtons.Right)
-                {
-                    ListBox lbx = new ListBox();
-                    lbx.Items.Add("Long");
-                    lbx.Items.Add("Khoa");
-                    lbx.Items.Add("Cô Linh ");
-                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
-                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
-
-                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
-
-                    lbx.MultiColumn = true;
-                    lbx.SelectionMode = SelectionMode.MultiExtended;
-                    groupBox5.Controls.Add(lbx);
-                }
+                
             }
         }
 
@@ -658,8 +641,9 @@ namespace CRM
         {
             string tn = ((Button)sender).Text;
             string tp = ((Button)sender).Text;
-            Thue p = new Thue(tn);
-            TraPhong pp = new TraPhong(tp);
+            Button tnn = ((Button)sender);
+            Thue p = new Thue(tn,this,tnn);
+            TraPhong pp = new TraPhong(tp,this,tnn);
             if (((Button)sender).BackColor == Color.Red)
             {
                 if (e.Button == MouseButtons.Right)
@@ -673,21 +657,7 @@ namespace CRM
                 {
                     p.ShowDialog();
                 }
-                if (e.Button == MouseButtons.Right)
-                {
-                    ListBox lbx = new ListBox();
-                    lbx.Items.Add("Long");
-                    lbx.Items.Add("Khoa");
-                    lbx.Items.Add("Cô Linh ");
-                    lbx.DoubleClick += new EventHandler(lbx_DoubleClick);
-                    lbx.MouseLeave += new EventHandler(lbx_MouseLeave);
-
-                    lbx.Location = new System.Drawing.Point(MousePosition.X, MousePosition.Y);
-
-                    lbx.MultiColumn = true;
-                    lbx.SelectionMode = SelectionMode.MultiExtended;
-                    groupBox5.Controls.Add(lbx);
-                }
+                
             }
         }
 
@@ -698,6 +668,7 @@ namespace CRM
             for (int i = 0; i < dtphong.Rows.Count; i++)
             {
                 Button bt = new Button();
+
 
                 bt.Name = string.Format("btn{0}", dtphong.Rows[i][0].ToString());
                 bt.Tag = string.Format("[{0}]", i);
@@ -722,7 +693,7 @@ namespace CRM
                 t++;
 
                 string txt = bt.Text;
-                Thue tr = new Thue(txt);
+                Thue tr = new Thue(txt,this,bt);
             }
         }
 

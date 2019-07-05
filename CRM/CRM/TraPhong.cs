@@ -19,8 +19,12 @@ namespace CRM
         string ID;
         string mm;
         string k;
-        public TraPhong(string txt)
+        Home homee;
+        Button b1;
+        public TraPhong(string txt, Home h, Button b2)
         {
+            homee = h;
+            b1 = b2;
             tx = txt;
             InitializeComponent();
             
@@ -88,6 +92,8 @@ namespace CRM
             ee = (a * 10000) + (b * 10000) + (c * 10000);
             lb_TongCong.Text = ee.ToString() + " VND";
 
+            btn_TraPhong.Enabled = true;
+
         }
 
         
@@ -95,6 +101,20 @@ namespace CRM
         public void btn_TraPhong_Click(object sender, EventArgs e)
         {
             //string q, w, p;
+            
+            HoaDonEntities hd = new HoaDonEntities();
+            hd.Phong = ID;
+            hd.Ten = lb_contentNguoiThue.Text;
+            hd.Sdt = lb_contentSDT.Text;
+            hd.NgayVao = lb_contentNgayVao.Text;
+            hd.NgayTra = System.DateTime.Today.ToString();
+            hd.SoDien = txt_contentDien.Text;
+            hd.SoNuoc = txt_contentNuoc.Text;
+            hd.SoInternet = txt_contentInternet.Text;
+            hd.TongCong =lb_TongCong.Text;
+            HoaDonBUS hdbus = new HoaDonBUS();
+            DataTable dtt = hdbus.ThemHDBUS(hd);
+
             PhongEntities ee = new PhongEntities();
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             c.ID = Convert.ToInt32(ID);
@@ -119,7 +139,9 @@ namespace CRM
             PhongBUS t = new PhongBUS();
             DataTable tt = t.GetUpdate(ee);
             MessageBox.Show("Trả "+label3.Text+" thành công.");
+            homee.doimauu(b1);
             Close();
+
         }
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DichVuEntities.cs" />
+    <Compile Include="HoaDonEntities.cs" />
     <Compile Include="HopDongEntities.cs" />
     <Compile Include="HopDongPhatEntities.cs" />
     <Compile Include="LichSuEntities.cs" />
