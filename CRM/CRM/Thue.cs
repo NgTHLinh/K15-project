@@ -106,12 +106,10 @@ namespace CRM
             }
             else
             {
-                if (checkBox1.Checked || checkBox2.Checked == false)
+                if (checkBox1.Checked || checkBox2.Checked == true)
                 {
-                    MessageBox.Show("Hãy chọn giới tính");
-                }
-                else
-                { 
+                    
+
                     if (textBox11.Text == "")
                     {
                         MessageBox.Show("Xin nhặp CMND");
@@ -149,14 +147,14 @@ namespace CRM
                                     c.GioiTinh = true;
 
                                 c.CMND = Convert.ToInt32(textBox11.Text);
-                                c.NgayCap = dateTimePicker4.Text;
+                                c.NgayCap =Convert.ToString(dateTimePicker4.Text);
                                 c.NoiCap = comboBox3.Text;
-                                c.NgayVao = dateTimePicker5.Text;
+                                c.NgayVao =Convert.ToString(dateTimePicker5.Text);
                                 c.Sdt = Convert.ToInt32(textBox10.Text);
                                 c.ID = Convert.ToInt32(ID);
 
                                 d.Ten = textBox1.Text;
-                                d.NgaySinh = dateTimePicker1.Text;
+                                d.NgaySinh =Convert.ToString(dateTimePicker1.Text);
                                 if (checkBox1.Checked == true)
                                 {
                                     d.GioiTinh = true;
@@ -173,7 +171,7 @@ namespace CRM
                                 d.CMND = Convert.ToInt32(textBox11.Text);
                                 d.NgayCap = dateTimePicker4.Text;
                                 d.NoiCap = comboBox3.Text;
-                                d.NgayVao = dateTimePicker5.Text;
+                                d.NgayVao =Convert.ToString(dateTimePicker5.Text);
                                 d.Sdt = Convert.ToInt32(textBox10.Text);
                                 d.ID = Convert.ToInt32(ID);
 
@@ -190,10 +188,14 @@ namespace CRM
 
                                 home.doimau(b);
                                 Close();
-                                
+
                             }
                         }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Hãy chọn giới tính");
                 }
             }
         }

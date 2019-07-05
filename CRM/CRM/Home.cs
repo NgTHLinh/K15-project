@@ -26,6 +26,7 @@ namespace CRM
         ThongTinKhachThueEntities table = new ThongTinKhachThueEntities();
         ThanhToanEntities thanhtoan = new ThanhToanEntities();
         LichSuEntities Lichsu = new LichSuEntities();
+        HoaDonEntities HD = new HoaDonEntities();
         PhongEntities room = new PhongEntities();
         TangBUS tang = new TangBUS();
         ThongTinNhanVienBUS ttnv = new ThongTinNhanVienBUS();
@@ -42,24 +43,25 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
+            Splash sp = new Splash();
+            sp.ShowDialog();
 
+            btn_Logout.Hide();
+            btn_Home.Hide();
+            tabControl2.TabPages.Remove(TP_QlHoaDon);
+            tabControl2.TabPages.Remove(TP_QlNgThue);
+            tabControl2.TabPages.Remove(TP_QlNv);
+            tabControl2.TabPages.Remove(TP_QlPhong);
 
-            //btn_Logout.Hide();
-            //btn_Home.Hide();
-            //tabControl2.TabPages.Remove(TP_QlHoaDon);
-            //tabControl2.TabPages.Remove(TP_QlNgThue);
-            //tabControl2.TabPages.Remove(TP_QlNv);
-            //tabControl2.TabPages.Remove(TP_QlPhong);
-
-            //tabControl1.TabPages.Remove(TP_ThemNgThue);
-            //tabControl1.TabPages.Remove(TP_ttphong);
-            //tabControl1.TabPages.Remove(TP_tthd);
-            //tabControl1.TabPages.Remove(TP_thue);
-            //tabControl1.TabPages.Remove(TP_themnv);
-            //tabControl1.TabPages.Remove(TP_home);
-            //tabControl1.TabPages.Remove(TP_ttkhach);
-            //tabControl1.TabPages.Remove(TP_ttnv);
-
+            tabControl1.TabPages.Remove(TP_ThemNgThue);
+            tabControl1.TabPages.Remove(TP_ttphong);
+            tabControl1.TabPages.Remove(TP_tthd);
+            tabControl1.TabPages.Remove(TP_thue);
+            tabControl1.TabPages.Remove(TP_themnv);
+            tabControl1.TabPages.Remove(TP_home);
+            tabControl1.TabPages.Remove(TP_ttkhach);
+            tabControl1.TabPages.Remove(TP_ttnv);
+            tabControl1.TabPages.Remove(TP_LichSuKhach);
 
         }
 
@@ -68,29 +70,56 @@ namespace CRM
         private void Home_Load(object sender, EventArgs e)
         {
             {
-                ThanhToanEntities t = new ThanhToanEntities();
-                ThanhToanBUS tt = new ThanhToanBUS();
-                DataTable dt = tt.GetThanhToanBUS(t);
+                LichSuEntities ls = new LichSuEntities();
+                LichSuBUS lsb = new LichSuBUS();
+                DataTable dt = lsb.GetBUS(ls);
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        thanhtoan.Id = Convert.ToInt32(dt.Rows[i][0].ToString());
-                        thanhtoan.SoDien =Convert.ToInt32(dt.Rows[i][1].ToString());
-                        thanhtoan.SoNuoc =Convert.ToInt32(dt.Rows[i][2].ToString());
-                        thanhtoan.NgayThanhToan = (dt.Rows[i][3].ToString());
-                        thanhtoan.PhongId = Convert.ToInt32(dt.Rows[i][4].ToString());
-                        thanhtoan.TienDichVu =Convert.ToInt32(dt.Rows[i][5].ToString());
+                        Lichsu.ID = Convert.ToInt32(dt.Rows[i][0].ToString());
                         
+                        Lichsu.Ten = dt.Rows[i][1].ToString();
+                        Lichsu.NgaySinh = dt.Rows[i][2].ToString();
+                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        Lichsu.CMND = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        Lichsu.NgayCap = dt.Rows[i][5].ToString();
+                        Lichsu.NoiCap = dt.Rows[i][6].ToString();
+                        Lichsu.NgayVao = dt.Rows[i][7].ToString(); 
+                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[i][8].ToString());
 
-                        dataGridView1.Rows.Add(thanhtoan.Id,thanhtoan.SoDien,thanhtoan.SoNuoc,thanhtoan.NgayThanhToan,thanhtoan.PhongId,thanhtoan.TienDichVu);//, table.PhongId);
+                        dataGridView4.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh,Lichsu.CMND, Lichsu.NgayCap, Lichsu.NoiCap,Lichsu.NgayVao, Lichsu.Sdt);
                     }
                 }
             }
             {
-                LichSuEntities t = new LichSuEntities();
-                LichSuBUS ttktbus = new LichSuBUS();
-                DataTable dt = ttktbus.GetBUS(t);
+                HoaDonEntities t = new HoaDonEntities();
+                HoaDonBUS tt = new HoaDonBUS();
+                DataTable dt = tt.GetHDBUS();
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        HD.Id = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        HD.Phong = dt.Rows[i][1].ToString();
+                        HD.Ten = dt.Rows[i][2].ToString();
+                        HD.Sdt = dt.Rows[i][3].ToString();
+                        HD.NgayVao = dt.Rows[i][4].ToString();
+                        HD.NgayTra = dt.Rows[i][5].ToString();
+                        HD.SoDien =dt.Rows[i][6].ToString();
+                        HD.SoNuoc =dt.Rows[i][7].ToString();
+                        HD.SoInternet = dt.Rows[i][8].ToString();
+                        HD.TongCong= dt.Rows[i][9].ToString();
+
+
+                    dataGridView1.Rows.Add(HD.Id,HD.Phong,HD.Ten,HD.Sdt,HD.NgayVao,HD.NgayTra,HD.SoDien,HD.SoNuoc,HD.SoInternet,HD.TongCong);
+                    }
+                }
+            }
+            {
+                ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
+                ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
+                DataTable dt = ttktbus.GetTKKBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
@@ -365,20 +394,20 @@ namespace CRM
             MessageBox.Show("Đã xóa" , "Thông Báo");
 
         }
-        private void btn_XoaKT_Click(object sender, EventArgs e)
-        {
-            int a = dataGridView2.CurrentCell.RowIndex;
-            int s = Convert.ToInt32(dataGridView2.Rows[a].Cells[0].Value.ToString());
-            ttkt.XoaKTBUS(s);
-            dataGridView2.Rows.RemoveAt(a);
-            MessageBox.Show("Đã xóa", "Thông Báo");
-        }
+        //private void btn_XoaKT_Click(object sender, EventArgs e)
+        //{
+        //    //int a = dataGridView2.CurrentCell.RowIndex;
+        //    //int s = Convert.ToInt32(dataGridView2.Rows[a].Cells[0].Value.ToString());
+        //    //ttkt.XoaKTBUS(s);
+        //    //dataGridView2.Rows.RemoveAt(a);
+        //    //MessageBox.Show("Đã xóa", "Thông Báo");
+        //}
 
 
 
         private void btn_TraCuuKT_Click(object sender, EventArgs e)
         {
-            LichSuEntities t = new LichSuEntities();
+            ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
 
 
 
@@ -386,83 +415,116 @@ namespace CRM
 
             if (txt_TenKT_TT.Text == "")
             {
-                t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
-                LichSuBUS a = new LichSuBUS();
+                t.CMND = Convert.ToInt32(Txt_CMND_TT.Text);
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
                 DataTable dt = a.GetmmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int p = 0; p<dt.Rows.Count;p++)
                     {
-                    Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
-                    Lichsu.Ten = dt.Rows[p][1].ToString();
-                    Lichsu.NgaySinh = dt.Rows[p][2].ToString();
-                    Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
-                    Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
-                    Lichsu.NgayCap = dt.Rows[p][5].ToString();
-                    Lichsu.NoiCap = dt.Rows[p][6].ToString();
-                    Lichsu.NgayVao = dt.Rows[p][7].ToString();
-                    Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
+                    table.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                    table.Ten = dt.Rows[p][1].ToString();
+                    table.NgaySinh = dt.Rows[p][2].ToString();
+                    table.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                    table.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                    table.NgayCap = dt.Rows[p][5].ToString();
+                    table.NoiCap = dt.Rows[p][6].ToString();
+                    table.NgayVao = dt.Rows[p][7].ToString();
+                    table.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                    dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.NgayCap, Lichsu.NoiCap, Lichsu.NgayVao, Lichsu.Sdt);
+                    dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);
                     
                     }
                     SoDong = dt.Rows.Count;
                     MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
                 }
             }
-            if (Txt_MaKhachHang_TT.Text == "")
+            if (Txt_CMND_TT.Text == "")
             {
                 t.Ten = txt_TenKT_TT.Text;
-                LichSuBUS a = new LichSuBUS();
+                
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
                 DataTable dt = a.GetmmmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int p = 0; p < dt.Rows.Count; p++)
                     {
-                        Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
-                        Lichsu.Ten = dt.Rows[p][1].ToString();
-                        Lichsu.NgaySinh = dt.Rows[p][2].ToString();
-                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
-                        Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
-                        Lichsu.NgayCap = dt.Rows[p][5].ToString();
-                        Lichsu.NoiCap = dt.Rows[p][6].ToString();
-                        Lichsu.NgayVao = dt.Rows[p][7].ToString();
-                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
+                        table.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                        table.Ten = dt.Rows[p][1].ToString();
+                        table.NgaySinh = dt.Rows[p][2].ToString();
+                        table.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                        table.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                        table.NgayCap = dt.Rows[p][5].ToString();
+                        table.NoiCap = dt.Rows[p][6].ToString();
+                        table.NgayVao = dt.Rows[p][7].ToString();
+                        table.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                        dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
-                        
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);
+
                     }
                     SoDong = dt.Rows.Count;
                     MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
                 }
             }
-            if (Txt_MaKhachHang_TT.Text != "" & txt_TenKT_TT.Text != "")
+            if (Txt_CMND_TT.Text != "" & txt_TenKT_TT.Text != "")
             {
-                t.ID = Convert.ToInt32(Txt_MaKhachHang_TT.Text);
+                t.ID = Convert.ToInt32(Txt_CMND_TT.Text);
                 t.Ten = txt_TenKT_TT.Text;
-                LichSuBUS a = new LichSuBUS();
+                ThongTinKhachThueBUS a = new ThongTinKhachThueBUS();
                 DataTable dt = a.GetmBUS(t);
                 if (dt.Rows.Count > 0)
                 {
                     for (int p = 0; p < dt.Rows.Count; p++)
                     {
-                        Lichsu.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
-                        Lichsu.Ten = dt.Rows[p][1].ToString();
-                        Lichsu.NgaySinh = dt.Rows[p][2].ToString();
-                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
-                        Lichsu.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
-                        Lichsu.NgayCap = dt.Rows[p][5].ToString();
-                        Lichsu.NoiCap = dt.Rows[p][6].ToString();
-                        Lichsu.NgayVao = dt.Rows[p][7].ToString();
-                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
+                        table.ID = Convert.ToInt32(dt.Rows[p][0].ToString());
+                        table.Ten = dt.Rows[p][1].ToString();
+                        table.NgaySinh = dt.Rows[p][2].ToString();
+                        table.GioiTinh = Convert.ToBoolean(dt.Rows[p][3].ToString());
+                        table.CMND = Convert.ToInt32(dt.Rows[p][4].ToString());
+                        table.NgayCap = dt.Rows[p][5].ToString();
+                        table.NoiCap = dt.Rows[p][6].ToString();
+                        table.NgayVao = dt.Rows[p][7].ToString();
+                        table.Sdt = Convert.ToInt32(dt.Rows[p][8].ToString());
 
-                        dataGridView2.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.Sdt);
-                        
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);
+
                     }
                     SoDong = dt.Rows.Count;
-                    MessageBox.Show("Tìm Thấy "+SoDong+" kết quả.","Thông Báo");
+                    MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
                 }
             }
+        }
+        private void btn_TimHoaDon_Click(object sender, EventArgs e)
+        {
+            HoaDonEntities hd = new HoaDonEntities();
+            dataGridView1.Rows.Clear();
+            hd.Id =Convert.ToInt32(txt_MaHD.Text);
+            HoaDonBUS a = new HoaDonBUS();
+            DataTable dt = a.HDmBUS(hd);
+            if (dt.Rows.Count > 0)
+            {
+                for (int p = 0; p < dt.Rows.Count; p++)
+                {
+                    hd.Id = Convert.ToInt32(dt.Rows[p][0].ToString());
+                    hd.Phong = dt.Rows[p][1].ToString();
+                    hd.Ten = dt.Rows[p][2].ToString();
+                    hd.Sdt = dt.Rows[p][3].ToString();
+                    hd.NgayVao= dt.Rows[p][4].ToString();
+                    hd.NgayTra = dt.Rows[p][5].ToString();
+                    hd.SoDien = dt.Rows[p][6].ToString();
+                    hd.SoNuoc = dt.Rows[p][7].ToString();
+                    hd.SoInternet = dt.Rows[p][8].ToString();
+                    hd.TongCong = dt.Rows[p][9].ToString();
+
+                    dataGridView1.Rows.Add(hd.Id, hd.Phong, hd.Ten,hd.Sdt,hd.NgayVao,hd.NgayTra,hd.SoDien,hd.SoNuoc,hd.SoInternet,hd.TongCong);
+
+                }
+                SoDong = dt.Rows.Count;
+                MessageBox.Show("Tìm Thấy " + SoDong + " kết quả.", "Thông Báo");
+            }
+            //if (txt_MaHD.Text == "")
+            //    hd. = Convert.ToInt32(txt_MaHD.Text);
+
         }
         private void btn_TraCuuNV_Click(object sender, EventArgs e)
         {
@@ -1001,14 +1063,21 @@ namespace CRM
             //TP_themnv.Refresh();
         }
 
-        private void btn_TimHoaDon_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void btn_LichSuKhach_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox9_Enter(object sender, EventArgs e)
-        {
-
+            if (tabControl1.TabPages.Contains(TP_LichSuKhach))//tab already present
+            {
+                tabControl1.SelectTab(TP_LichSuKhach);  // select by name
+            }
+            else
+            {
+                tabControl1.TabPages.Add(TP_LichSuKhach); // add removed tab
+                tabControl1.SelectTab(TP_LichSuKhach);    // select by name
+            }
         }
     }
 }

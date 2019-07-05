@@ -46,7 +46,7 @@ namespace CRM
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             c.ID = Convert.ToInt32(ID);
             ThongTinKhachThueBUS ll = new ThongTinKhachThueBUS();
-            DataTable dt = ll.GetmmBUS(c);
+            DataTable dt = ll.Get(c);
             
             if (dt.Rows.Count > 0)
             {
@@ -129,7 +129,7 @@ namespace CRM
             hd.Ten = lb_contentNguoiThue.Text;
             hd.Sdt = lb_contentSDT.Text;
             hd.NgayVao = lb_contentNgayVao.Text;
-            hd.NgayTra = System.DateTime.Today.ToString();
+            hd.NgayTra =Convert.ToString(System.DateTime.Today.ToString());
             hd.SoDien = txt_contentDien.Text;
             hd.SoNuoc = txt_contentNuoc.Text;
             hd.SoInternet = txt_contentInternet.Text;

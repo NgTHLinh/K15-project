@@ -22,5 +22,17 @@ namespace BUS
             dt = HdDAO.LuuHoaDon(h);
             return dt;
         }
+        public DataTable HDmBUS(HoaDonEntities h)
+        {
+            DataTable dt = null;
+            dt = HdDAO.GetHDmDAO(h);
+            return dt;
+        }
+        public DataTable GetHDBUS()
+        {
+            DataTable dt = null;
+            dt = HdDAO.GetHDDAO();
+            return dt;
+        }
     }
 }

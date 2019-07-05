@@ -10,17 +10,18 @@ namespace DAO
             {
 
             }
-            //public DataTable GetTK(ThongTinKhachThueEntities user)
-            //{
-            //    string sql = "select * from ThongTinKhachThue  ";
+        public DataTable GetTK(ThongTinKhachThueEntities user)
+        {
+            string sql = "select * from ThongTinKhachThue where Ten!='' ";
 
-            //    return getDataTable(sql);
-            //}
-            public DataTable GetTT(ThongTinKhachThueEntities ttkt) 
+            return getDataTable(sql);
+        }
+        public DataTable GetTT(ThongTinKhachThueEntities ttkt) 
             {
                 string sql = "select * from ThongTinKhachThue";
                 return getDataTable(sql);
             }
+
         public DataTable GetKT(ThongTinKhachThueEntities add )
         {
             string sql = "update ThongTinKhachThue set Ten='" + add.Ten + "',NgaySinh='" + add.NgaySinh + "',GioiTinh='" + add.GioiTinh + "',Cmnd='"+add.CMND+"',NgayCap='"+add.NgayCap+"',NoiCap='"+add.NgayCap+"',NgayVao='"+add.NgayCap+"',Sdt='"+add.Sdt+"',PhongId='"+add.PhongId+"' where ID="+add.ID;
@@ -29,13 +30,20 @@ namespace DAO
         }
         public DataTable Getm (ThongTinKhachThueEntities l)
         {
-            string sql ="select * from ThongTinKhachThue where ID='"+l.ID+"' and Ten ='"+(l.Ten)+"'";
+            string sql ="select * from ThongTinKhachThue where Cmnd='"+l.ID+"' and Ten ='"+l.Ten+"'";
             return getDataTable(sql);
         
         }
-        public DataTable Getmm(ThongTinKhachThueEntities l)
+
+        public DataTable Get(ThongTinKhachThueEntities l)
         {
             string sql = "select * from ThongTinKhachThue where ID='" + l.ID + "'";
+            return getDataTable(sql);
+
+        }
+        public DataTable Getmm(ThongTinKhachThueEntities l)
+        {
+            string sql = "select * from ThongTinKhachThue where Cmnd='" + l.CMND + "'";
             return getDataTable(sql);
 
         }

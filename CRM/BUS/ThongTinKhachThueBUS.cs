@@ -27,6 +27,12 @@ namespace BUS
             dt = userTTDAO.GetKT(add);
             return dt;
         }
+        public DataTable GetTKKBUS(ThongTinKhachThueEntities add)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.GetTK(add);
+            return dt;
+        }
         public DataTable GetBUS(ThongTinKhachThueEntities add)
         {
             DataTable dt = null;
@@ -43,6 +49,12 @@ namespace BUS
         {
             DataTable dt = null;
             dt = userTTDAO.Getmm(l);
+            return dt;
+        }
+        public DataTable Get(ThongTinKhachThueEntities l)
+        {
+            DataTable dt = null;
+            dt = userTTDAO.Get(l);
             return dt;
         }
         public DataTable GetmmmBUS(ThongTinKhachThueEntities l)
