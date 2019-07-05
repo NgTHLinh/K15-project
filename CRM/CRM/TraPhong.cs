@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace CRM
 {
@@ -32,10 +33,7 @@ namespace CRM
 
             
         }
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
         private void TraPhong_Load(object sender, EventArgs e)
         {
             
@@ -75,25 +73,49 @@ namespace CRM
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void btn_TinhTien_Click(object sender, EventArgs e)
         {
             int a, b, c;
 
-            a = Convert.ToInt32(txt_contentDien.Text);
-            b = Convert.ToInt32(txt_contentNuoc.Text);
-            c = Convert.ToInt32(txt_contentInternet.Text);
+            if(txt_contentDien.Text == "")
+            {
+                MessageBox.Show("Xin nhặp số điện");
+                txt_contentDien.Focus();
+            }
+            else
+            {
+                if (txt_contentNuoc.Text == "")
+                {
+                    MessageBox.Show("Xin nhặp số nước");
+                    txt_contentNuoc.Focus();
+                }
+                else
+                {
+                    if (txt_contentInternet.Text == "")
+                    {
+                        MessageBox.Show("Xin nhặp số tháng dùng Internet");
+                        txt_contentInternet.Focus();
+                    }
+                    else
+                    {
+                        a = Convert.ToInt32(txt_contentDien.Text);
+                        b = Convert.ToInt32(txt_contentNuoc.Text);
+                        c = Convert.ToInt32(txt_contentInternet.Text);
 
-            //if (txt_Tongcong.Text == null)
-            //{
-            //    txt_Tongcong = 0 ;
-            //}
+                        int ee;
+                        ee = (a * 10000) + (b * 10000) + (c * 350000);
+                        CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                        lb_TongCong.Text = ee.ToString("#,###", cul.NumberFormat) + " VND";
 
-            int ee;
-            ee = (a * 10000) + (b * 10000) + (c * 10000);
-            lb_TongCong.Text = ee.ToString() + " VND";
-
-            btn_TraPhong.Enabled = true;
-
+                        btn_TraPhong.Enabled = true;
+                    }
+                }
+            }
         }
 
         

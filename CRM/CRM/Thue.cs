@@ -66,6 +66,16 @@ namespace CRM
             }
         }
 
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Chỉ dùng số");
+            }
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -87,68 +97,105 @@ namespace CRM
             ThongTinKhachThueEntities c = new ThongTinKhachThueEntities();
             LichSuEntities d = new LichSuEntities();
             PhongEntities ee = new PhongEntities();
-            c.Ten = textBox1.Text;
-            c.NgaySinh = dateTimePicker1.Text;
-            if (checkBox1.Checked == true)
+
+
+            if (textBox1.Text == "")
             {
-                c.GioiTinh = true;
+                MessageBox.Show("Xin nhặp tên");
+                textBox1.Focus();
             }
             else
-                c.GioiTinh = false;
-            if (checkBox2.Checked == true)
             {
-                c.GioiTinh = false;
+                if (checkBox1.Checked || checkBox2.Checked == false)
+                {
+                    MessageBox.Show("Hãy chọn giới tính");
+                }
+                else
+                { 
+                    if (textBox11.Text == "")
+                    {
+                        MessageBox.Show("Xin nhặp CMND");
+                        textBox11.Focus();
+                    }
+                    else
+                    {
+                        if (comboBox3.Text == "")
+                        {
+                            MessageBox.Show("Xin chọn nơi cấp");
+                            comboBox3.Focus();
+                        }
+                        else
+                        {
+                            if (textBox10.Text == "")
+                            {
+                                MessageBox.Show("Xin nhặp SĐT");
+                                textBox10.Focus();
+                            }
+                            else
+                            {
+                                c.Ten = textBox1.Text;
+                                c.NgaySinh = dateTimePicker1.Text;
+                                if (checkBox1.Checked == true)
+                                {
+                                    c.GioiTinh = true;
+                                }
+                                else
+                                    c.GioiTinh = false;
+                                if (checkBox2.Checked == true)
+                                {
+                                    c.GioiTinh = false;
+                                }
+                                else
+                                    c.GioiTinh = true;
+
+                                c.CMND = Convert.ToInt32(textBox11.Text);
+                                c.NgayCap = dateTimePicker4.Text;
+                                c.NoiCap = comboBox3.Text;
+                                c.NgayVao = dateTimePicker5.Text;
+                                c.Sdt = Convert.ToInt32(textBox10.Text);
+                                c.ID = Convert.ToInt32(ID);
+
+                                d.Ten = textBox1.Text;
+                                d.NgaySinh = dateTimePicker1.Text;
+                                if (checkBox1.Checked == true)
+                                {
+                                    d.GioiTinh = true;
+                                }
+                                else
+                                    d.GioiTinh = false;
+                                if (checkBox2.Checked == true)
+                                {
+                                    d.GioiTinh = false;
+                                }
+                                else
+                                    d.GioiTinh = true;
+
+                                d.CMND = Convert.ToInt32(textBox11.Text);
+                                d.NgayCap = dateTimePicker4.Text;
+                                d.NoiCap = comboBox3.Text;
+                                d.NgayVao = dateTimePicker5.Text;
+                                d.Sdt = Convert.ToInt32(textBox10.Text);
+                                d.ID = Convert.ToInt32(ID);
+
+                                ee.HienTrang = mm;
+                                ee.Id = Convert.ToInt32(ID);
+                                ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
+                                DataTable dt = cbus.GetTKBUS(c);
+                                LichSuBUS a = new LichSuBUS();
+                                DataTable s = a.ThemLSBUS(d);
+                                PhongBUS t = new PhongBUS();
+                                DataTable tt = t.GetUpdate(ee);
+
+                                MessageBox.Show("Thuê " + label3.Text + " thành công.");
+
+                                home.doimau(b);
+                                Close();
+                                
+                            }
+                        }
+                    }
+                }
             }
-            else
-                c.GioiTinh = true;
-
-            c.CMND = Convert.ToInt32(textBox11.Text);
-            c.NgayCap = dateTimePicker4.Text;
-            c.NoiCap = comboBox3.Text;
-            c.NgayVao = dateTimePicker5.Text;
-            c.Sdt = Convert.ToInt32(textBox10.Text);
-            c.ID = Convert.ToInt32(ID);
-
-            d.Ten = textBox1.Text;
-            d.NgaySinh = dateTimePicker1.Text;
-            if (checkBox1.Checked == true)
-            {
-                d.GioiTinh = true;
-            }
-            else
-                d.GioiTinh = false;
-            if (checkBox2.Checked == true)
-            {
-                d.GioiTinh = false;
-            }
-            else
-                d.GioiTinh = true;
-
-            d.CMND = Convert.ToInt32(textBox11.Text);
-            d.NgayCap = dateTimePicker4.Text;
-            d.NoiCap = comboBox3.Text;
-            d.NgayVao = dateTimePicker5.Text;
-            d.Sdt = Convert.ToInt32(textBox10.Text);
-            d.ID = Convert.ToInt32(ID);
-
-            ee.HienTrang = mm;
-            ee.Id = Convert.ToInt32(ID);
-            ThongTinKhachThueBUS cbus = new ThongTinKhachThueBUS();
-            DataTable dt = cbus.GetTKBUS(c);
-            LichSuBUS a = new LichSuBUS();
-            DataTable s = a.ThemLSBUS(d);
-            PhongBUS t = new PhongBUS();
-            DataTable tt = t.GetUpdate(ee);
-
-            MessageBox.Show("Thuê "+label3.Text+" thành công.");
-            //((Button)sender).BackColor = Color.Red;
-            
-            home.doimau(b);
-            Close();
-           // Home kk = new Home();
-
-            //kk.Visible = true;
-           // kk.ShowDialog();
         }
     }
 }
