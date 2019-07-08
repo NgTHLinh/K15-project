@@ -18,7 +18,7 @@ namespace CRM
             //Application.Run(new Home());
             //Application.Run(new Form1());
 
-            Form frm = new Home();
+            Form frm = new Splash();
             Application.Run(frm);
         }
     }

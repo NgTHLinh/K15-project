@@ -43,8 +43,9 @@ namespace CRM
             //con.ConnectionString = "Data Source=KRISHNA-PC\\SQLEXPRESS;Initial Catalog=STUDENT;Integrated Security=True";
             //con.ConnectionString = "Data Source=D:\\K15-project\\NCKH_KhoaLong.db";
             InitializeComponent();
-            Splash sp = new Splash();
-            sp.ShowDialog();
+            
+            //Splash sp = new Splash();
+            //sp.ShowDialog();
 
             btn_Logout.Hide();
             btn_Home.Hide();
@@ -77,10 +78,9 @@ namespace CRM
                 HoaDonBUS ttv = new HoaDonBUS();
                 DataTable dt = ttv.GetSumDTBUS();
                 HD.TongCong = dt.Rows[0][0].ToString();
-                
-                //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-                //String a = HD.TongCong.ToString("#,###", cul.NumberFormat) + " VND";
-                dataGridView5.Rows.Add(HD.TongCong+" VND");
+
+                decimal tong = Convert.ToDecimal(HD.TongCong);
+                dataGridView5.Rows.Add(String.Format("{0:n0}", tong) + " VND");
             }
             {
                 LichSuEntities ls = new LichSuEntities();
@@ -181,6 +181,129 @@ namespace CRM
             tabControl1.DrawItem += tabControl1_DrawItem;
             CloseImage = CRM.Properties.Resources.Closebutton;
             tabControl1.Padding = new Point(15, 3);
+        }
+        public void Loading()
+        {
+            dataGridView5.Rows.Clear();
+            dataGridView5.Refresh();
+
+            dataGridView4.Rows.Clear();
+            dataGridView4.Refresh();
+
+            dataGridView3.Rows.Clear();
+            dataGridView3.Refresh();
+
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh(); 
+
+            {
+                HoaDonEntities NVM = new HoaDonEntities();
+                HoaDonBUS ttv = new HoaDonBUS();
+                DataTable dt = ttv.GetSumDTBUS();
+                HD.TongCong = dt.Rows[0][0].ToString();
+
+                //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                //String a = HD.TongCong.ToString("#,###", cul.NumberFormat) + " VND";
+                dataGridView5.Rows.Add(HD.TongCong + " VND");
+            }
+            {
+                LichSuEntities ls = new LichSuEntities();
+                LichSuBUS lsb = new LichSuBUS();
+                DataTable dt = lsb.GetBUS(ls);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Lichsu.ID = Convert.ToInt32(dt.Rows[i][0].ToString());
+
+                        Lichsu.Ten = dt.Rows[i][1].ToString();
+                        Lichsu.NgaySinh = dt.Rows[i][2].ToString();
+                        Lichsu.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        Lichsu.CMND = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        Lichsu.NgayCap = dt.Rows[i][5].ToString();
+                        Lichsu.NoiCap = dt.Rows[i][6].ToString();
+                        Lichsu.NgayVao = dt.Rows[i][7].ToString();
+                        Lichsu.Sdt = Convert.ToInt32(dt.Rows[i][8].ToString());
+
+                        dataGridView4.Rows.Add(Lichsu.ID, Lichsu.Ten, Lichsu.NgaySinh, Lichsu.GioiTinh, Lichsu.CMND, Lichsu.NgayCap, Lichsu.NoiCap, Lichsu.NgayVao, Lichsu.Sdt);
+                    }
+                }
+            }
+            {
+                HoaDonEntities t = new HoaDonEntities();
+                HoaDonBUS tt = new HoaDonBUS();
+                DataTable dt = tt.GetHDBUS();
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        HD.Id = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        HD.Phong = dt.Rows[i][1].ToString();
+                        HD.Ten = dt.Rows[i][2].ToString();
+                        HD.Sdt = dt.Rows[i][3].ToString();
+                        HD.NgayVao = dt.Rows[i][4].ToString();
+                        HD.NgayTra = dt.Rows[i][5].ToString();
+                        HD.SoDien = dt.Rows[i][6].ToString();
+                        HD.SoNuoc = dt.Rows[i][7].ToString();
+                        HD.SoInternet = dt.Rows[i][8].ToString();
+                        HD.TongCong = dt.Rows[i][9].ToString();
+
+
+                        dataGridView1.Rows.Add(HD.Id, HD.Phong, HD.Ten, HD.Sdt, HD.NgayVao, HD.NgayTra, HD.SoDien, HD.SoNuoc, HD.SoInternet, HD.TongCong);
+                    }
+                }
+            }
+            {
+                ThongTinKhachThueEntities t = new ThongTinKhachThueEntities();
+                ThongTinKhachThueBUS ttktbus = new ThongTinKhachThueBUS();
+                DataTable dt = ttktbus.GetTKKBUS(t);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        table.ID = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        table.Ten = dt.Rows[i][1].ToString();
+                        table.NgaySinh = dt.Rows[i][2].ToString();
+                        table.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        table.CMND = Convert.ToInt32(dt.Rows[i][4].ToString());
+                        table.NgayCap = dt.Rows[i][5].ToString();
+                        table.NoiCap = dt.Rows[i][6].ToString();
+                        table.NgayVao = dt.Rows[i][7].ToString();
+                        table.Sdt = Convert.ToInt32(dt.Rows[i][8].ToString());
+
+                        dataGridView2.Rows.Add(table.ID, table.Ten, table.NgaySinh, table.GioiTinh, table.CMND, table.NgayCap, table.NoiCap, table.NgayVao, table.Sdt);//, table.PhongId);
+                    }
+                }
+            }
+            {
+                ThongTinNhanVienBUS nv = new ThongTinNhanVienBUS();
+                DataTable dt = nv.GetTTNV();
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        addlogin.MaNV = Convert.ToInt32(dt.Rows[i][0].ToString());
+                        addlogin.Ten = dt.Rows[i][1].ToString();
+                        addlogin.NgaySinh = dt.Rows[i][2].ToString();
+                        addlogin.GioiTinh = Convert.ToBoolean(dt.Rows[i][3].ToString());
+                        addlogin.ThuongTru = dt.Rows[i][4].ToString();
+                        addlogin.TamTru = dt.Rows[i][5].ToString();
+                        addlogin.Cmnd = Convert.ToInt32(dt.Rows[i][6].ToString());
+                        addlogin.NgayCap = dt.Rows[i][7].ToString();
+                        addlogin.NoiCap = dt.Rows[i][8].ToString();
+                        addlogin.Email = dt.Rows[i][9].ToString();
+                        addlogin.BoPhan = dt.Rows[i][10].ToString();
+                        addlogin.NgayVao = dt.Rows[i][11].ToString();
+                        addlogin.SDT = Convert.ToInt32(dt.Rows[i][12].ToString());
+
+                        dataGridView3.Rows.Add(addlogin.MaNV, addlogin.Ten, addlogin.NgaySinh, addlogin.GioiTinh, addlogin.ThuongTru, addlogin.TamTru, addlogin.Cmnd, addlogin.NgayCap, addlogin.NoiCap, addlogin.Email, addlogin.BoPhan, addlogin.NgayVao, addlogin.SDT);
+
+                    }
+                }
+            }
         }
 
         private void tabControl1_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e) // Vẽ hình nút X lên cái tabpage trong tabcontrol1
@@ -341,6 +464,7 @@ namespace CRM
                 tabControl1.TabPages.Add(TP_tthd); // add removed tab
                 tabControl1.SelectTab(TP_tthd);    // select by name
             }
+            Loading();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -354,6 +478,7 @@ namespace CRM
                 tabControl1.TabPages.Add(TP_ttkhach); // add removed tab
                 tabControl1.SelectTab(TP_ttkhach);    // select by name
             }
+            Loading();
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -656,6 +781,7 @@ namespace CRM
 
             this.Visible = false;
             a.ShowDialog();
+            
             //btn_Login.Show();
         }
         public void doimau(Button bt)
@@ -1041,41 +1167,124 @@ namespace CRM
         {
             QuanLyNhanVienEntities a = new QuanLyNhanVienEntities();
 
-
-            a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
-            a.Ten = txt_TenNV.Text;
-            a.NgaySinh = dateTime_NV.Text;
-
-            if (ck_NamNV.Checked == true)
+            if(txt_MaNV_Them.Text == "")
             {
-                a.GioiTinh = true;
+                MessageBox.Show("Xin nhặp mã cho nhân viên");
+                txt_MaNV_Them.Focus();
             }
             else
-                a.GioiTinh = false;
-            if (ck_NuNV.Checked == true)
             {
-                a.GioiTinh = false;
+                if(txt_TenNV.Text == "")
+                {
+                    MessageBox.Show("Xin nhặp tên nhân viên");
+                    txt_TenNV.Focus();
+                }
+                else
+                {
+                    if(ck_NamNV.Checked || ck_NuNV.Checked == true)
+                    {
+                       
+                        if (txt_ThuongTruNV.Text == "")
+                        {
+                            MessageBox.Show("Xin địa chỉ thường trú");
+                            txt_ThuongTruNV.Focus();
+                        }
+                        else
+                        {
+                            if (txt_TamTruNV.Text == "")
+                            {
+                                MessageBox.Show("Xin địa chỉ tạm trú");
+                                txt_TamTruNV.Focus();
+                            }
+                            else
+                            {
+                                if (txt_CmndNV.Text == "")
+                                {
+                                    MessageBox.Show("Xin nhặp CMND");
+                                    txt_CmndNV.Focus();
+                                }
+                                else
+                                {
+                                    if (comboBox_NoiCapNV.Text == "")
+                                    {
+                                        MessageBox.Show("Xin chọn nơi cấp");
+                                        comboBox_NoiCapNV.Focus();
+                                    }
+                                    else
+                                    {
+                                        if (txt_EmailNV.Text == "")
+                                        {
+                                            MessageBox.Show("Xin nhặp email của nhân viên");
+                                            txt_EmailNV.Focus();
+                                        }
+                                        else
+                                        {
+                                            if (comboBox_BoPhanNV.Text == "")
+                                            {
+                                                MessageBox.Show("Xin chọn bộ phận");
+                                                comboBox_BoPhanNV.Focus();
+                                            }
+                                            else
+                                            {
+                                                if (txt_SdtNV.Text == "")
+                                                {
+                                                    MessageBox.Show("Xin nhặp số điện thoại");
+                                                    txt_SdtNV.Focus();
+                                                }
+                                                else
+                                                {
+                                                    a.MaNV = Convert.ToInt32(txt_MaNV_Them.Text);
+                                                    a.Ten = txt_TenNV.Text;
+                                                    a.NgaySinh = dateTime_NV.Text;
+
+                                                    if (ck_NamNV.Checked == true)
+                                                    {
+                                                        a.GioiTinh = true;
+                                                    }
+                                                    else
+                                                        a.GioiTinh = false;
+                                                    if (ck_NuNV.Checked == true)
+                                                    {
+                                                        a.GioiTinh = false;
+                                                    }
+                                                    else
+                                                        a.GioiTinh = true;
+                                                    ////a.GioiTinh = ;
+                                                    a.ThuongTru = txt_ThuongTruNV.Text;
+                                                    a.TamTru = txt_TamTruNV.Text;
+                                                    a.Cmnd = Convert.ToInt32(txt_CmndNV.Text);
+                                                    a.NgayCap = dateTime_NgayCapNV.Text;
+                                                    a.NoiCap = comboBox_NoiCapNV.Text;
+                                                    a.Email = txt_EmailNV.Text;
+                                                    a.BoPhan = comboBox_BoPhanNV.Text;
+                                                    a.NgayVao = dateTime_NgayVaoNV.Text;
+                                                    a.SDT = Convert.ToInt32(txt_SdtNV.Text);
+
+                                                    QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
+                                                    DataTable dt = abus.GetThemNVBUS(a);
+
+                                                    MessageBox.Show("Them Thanh Cong");
+                                                    txt_MaNV_Them.Text = txt_TenNV.Text = txt_ThuongTruNV.Text = txt_TamTruNV.Text = txt_CmndNV.Text = comboBox_NoiCapNV.Text = txt_EmailNV.Text = comboBox_BoPhanNV.Text = txt_SdtNV.Text = null;
+                                                    ck_NamNV.Checked = ck_NuNV.Checked = false;
+                                                    dateTime_NV.Value = dateTime_NgayCapNV.Value = dateTime_NgayVaoNV.Value = System.DateTime.Today;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xin chọn giới tính");
+                    }
+                }
             }
-            else
-                a.GioiTinh = true;
-            ////a.GioiTinh = ;
-            a.ThuongTru = txt_ThuongTruNV.Text;
-            a.TamTru = txt_TamTruNV.Text;
-            a.Cmnd = Convert.ToInt32(txt_CmndNV.Text);
-            a.NgayCap = dateTime_NgayCapNV.Text;
-            a.NoiCap = comboBox_NoiCapNV.Text;
-            a.Email = txt_EmailNV.Text;
-            a.BoPhan = comboBox_BoPhanNV.Text;
-            a.NgayVao = dateTime_NgayVaoNV.Text;
-            a.SDT = Convert.ToInt32(txt_SdtNV.Text);
 
-            QuanLyNhanVienBUS abus = new QuanLyNhanVienBUS();
-            DataTable dt = abus.GetThemNVBUS(a);
 
-            MessageBox.Show("Them Thanh Cong");
-            txt_MaNV_Them.Text = txt_TenNV.Text = txt_ThuongTruNV.Text = txt_TamTruNV.Text = txt_CmndNV.Text = comboBox_NoiCapNV.Text = txt_EmailNV.Text = comboBox_BoPhanNV.Text = txt_SdtNV.Text= null;
-            ck_NamNV.Checked = ck_NuNV.Checked = false;
-            dateTime_NV.Value = dateTime_NgayCapNV.Value = dateTime_NgayVaoNV.Value = System.DateTime.Today;
+
+           
 
             //TP_themnv.Refresh();
         }
@@ -1095,6 +1304,7 @@ namespace CRM
                 tabControl1.TabPages.Add(TP_LichSuKhach); // add removed tab
                 tabControl1.SelectTab(TP_LichSuKhach);    // select by name
             }
+            Loading();
         }
 
         private void btn_TongDT_Click(object sender, EventArgs e)
@@ -1108,6 +1318,7 @@ namespace CRM
                 tabControl1.TabPages.Add(TP_ThongKeDT); // add removed tab
                 tabControl1.SelectTab(TP_ThongKeDT);    // select by name
             }
+            Loading();
         }
 
         private void btn_mail_Click(object sender, EventArgs e)

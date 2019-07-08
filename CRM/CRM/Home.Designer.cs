@@ -45,6 +45,7 @@
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.TP_Trangchu = new System.Windows.Forms.TabPage();
+            this.btn_mail = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
@@ -214,7 +215,6 @@
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_mail = new System.Windows.Forms.Button();
             this.tabControl2.SuspendLayout();
             this.TP_Trangchu.SuspendLayout();
             this.TP_QlNgThue.SuspendLayout();
@@ -335,6 +335,23 @@
             this.TP_Trangchu.TabIndex = 0;
             this.TP_Trangchu.Text = "Trang Chủ";
             // 
+            // btn_mail
+            // 
+            this.btn_mail.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_mail.ImageIndex = 21;
+            this.btn_mail.ImageList = this.imageList2;
+            this.btn_mail.Location = new System.Drawing.Point(334, 2);
+            this.btn_mail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_mail.Name = "btn_mail";
+            this.btn_mail.Size = new System.Drawing.Size(112, 105);
+            this.btn_mail.TabIndex = 3;
+            this.btn_mail.Text = "Send mail";
+            this.btn_mail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_mail.UseVisualStyleBackColor = false;
+            this.btn_mail.Click += new System.EventHandler(this.btn_mail_Click);
+            // 
             // btn_Logout
             // 
             this.btn_Logout.Dock = System.Windows.Forms.DockStyle.Left;
@@ -396,7 +413,7 @@
             this.TP_QlNgThue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_QlNgThue.Name = "TP_QlNgThue";
             this.TP_QlNgThue.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_QlNgThue.Size = new System.Drawing.Size(2184, 109);
+            this.TP_QlNgThue.Size = new System.Drawing.Size(2593, 109);
             this.TP_QlNgThue.TabIndex = 1;
             this.TP_QlNgThue.Text = "QL Người thuê";
             // 
@@ -445,7 +462,7 @@
             this.TP_QlPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_QlPhong.Name = "TP_QlPhong";
             this.TP_QlPhong.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_QlPhong.Size = new System.Drawing.Size(2184, 109);
+            this.TP_QlPhong.Size = new System.Drawing.Size(2593, 109);
             this.TP_QlPhong.TabIndex = 2;
             this.TP_QlPhong.Text = "QL Phòng";
             // 
@@ -509,7 +526,7 @@
             this.TP_QlHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_QlHoaDon.Name = "TP_QlHoaDon";
             this.TP_QlHoaDon.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_QlHoaDon.Size = new System.Drawing.Size(2184, 109);
+            this.TP_QlHoaDon.Size = new System.Drawing.Size(2593, 109);
             this.TP_QlHoaDon.TabIndex = 3;
             this.TP_QlHoaDon.Text = "QL Hóa đơn";
             // 
@@ -557,7 +574,7 @@
             this.TP_QlNv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_QlNv.Name = "TP_QlNv";
             this.TP_QlNv.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_QlNv.Size = new System.Drawing.Size(2184, 109);
+            this.TP_QlNv.Size = new System.Drawing.Size(2593, 109);
             this.TP_QlNv.TabIndex = 4;
             this.TP_QlNv.Text = "QL Nhân viên";
             // 
@@ -615,9 +632,9 @@
             // 
             this.TP_TongDoanhThu.Controls.Add(this.btn_TongDT);
             this.TP_TongDoanhThu.Location = new System.Drawing.Point(4, 37);
-            this.TP_TongDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TP_TongDoanhThu.Margin = new System.Windows.Forms.Padding(4);
             this.TP_TongDoanhThu.Name = "TP_TongDoanhThu";
-            this.TP_TongDoanhThu.Size = new System.Drawing.Size(2184, 109);
+            this.TP_TongDoanhThu.Size = new System.Drawing.Size(2593, 109);
             this.TP_TongDoanhThu.TabIndex = 5;
             this.TP_TongDoanhThu.Text = "Tổng Doanh Thu";
             this.TP_TongDoanhThu.UseVisualStyleBackColor = true;
@@ -648,7 +665,7 @@
             this.TP_home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_home.Name = "TP_home";
             this.TP_home.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_home.Size = new System.Drawing.Size(2184, 976);
+            this.TP_home.Size = new System.Drawing.Size(2593, 1175);
             this.TP_home.TabIndex = 9;
             this.TP_home.Text = "Home";
             // 
@@ -741,7 +758,7 @@
             this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangNhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_DangNhap.Location = new System.Drawing.Point(724, 202);
-            this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(5);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(225, 28);
             this.btn_DangNhap.TabIndex = 9;
@@ -798,7 +815,7 @@
             this.TP_ttnv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_ttnv.Name = "TP_ttnv";
             this.TP_ttnv.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_ttnv.Size = new System.Drawing.Size(2184, 976);
+            this.TP_ttnv.Size = new System.Drawing.Size(2593, 1175);
             this.TP_ttnv.TabIndex = 7;
             this.TP_ttnv.Text = "TT NV";
             this.TP_ttnv.UseVisualStyleBackColor = true;
@@ -840,7 +857,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView3.Location = new System.Drawing.Point(5, 129);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(1760, 630);
@@ -924,17 +941,17 @@
             this.groupBox10.Controls.Add(this.label80);
             this.groupBox10.Controls.Add(this.txt_MaNV_TT);
             this.groupBox10.Location = new System.Drawing.Point(4, 2);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox10.Size = new System.Drawing.Size(2173, 123);
             this.groupBox10.TabIndex = 14;
             this.groupBox10.TabStop = false;
             // 
             // btn_CapNhatNV
             // 
-            this.btn_CapNhatNV.Location = new System.Drawing.Point(1100, 60);
-            this.btn_CapNhatNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_CapNhatNV.Location = new System.Drawing.Point(1045, 60);
+            this.btn_CapNhatNV.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CapNhatNV.Name = "btn_CapNhatNV";
             this.btn_CapNhatNV.Size = new System.Drawing.Size(100, 55);
             this.btn_CapNhatNV.TabIndex = 15;
@@ -944,8 +961,8 @@
             // 
             // btn_XoaNV
             // 
-            this.btn_XoaNV.Location = new System.Drawing.Point(767, 60);
-            this.btn_XoaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_XoaNV.Location = new System.Drawing.Point(712, 60);
+            this.btn_XoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btn_XoaNV.Name = "btn_XoaNV";
             this.btn_XoaNV.Size = new System.Drawing.Size(100, 55);
             this.btn_XoaNV.TabIndex = 14;
@@ -956,8 +973,8 @@
             // btn_TraCuuNV
             // 
             this.btn_TraCuuNV.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_TraCuuNV.Location = new System.Drawing.Point(944, 60);
-            this.btn_TraCuuNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TraCuuNV.Location = new System.Drawing.Point(889, 60);
+            this.btn_TraCuuNV.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TraCuuNV.Name = "btn_TraCuuNV";
             this.btn_TraCuuNV.Size = new System.Drawing.Size(100, 55);
             this.btn_TraCuuNV.TabIndex = 13;
@@ -983,7 +1000,7 @@
             "Nam",
             "Nữ"});
             this.comboBox2.Location = new System.Drawing.Point(2040, 21);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(108, 24);
             this.comboBox2.TabIndex = 12;
@@ -1002,7 +1019,7 @@
             // txt_MaNV_TT
             // 
             this.txt_MaNV_TT.Location = new System.Drawing.Point(181, 26);
-            this.txt_MaNV_TT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_MaNV_TT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaNV_TT.Name = "txt_MaNV_TT";
             this.txt_MaNV_TT.Size = new System.Drawing.Size(168, 22);
             this.txt_MaNV_TT.TabIndex = 10;
@@ -1015,7 +1032,7 @@
             this.TP_ttkhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_ttkhach.Name = "TP_ttkhach";
             this.TP_ttkhach.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_ttkhach.Size = new System.Drawing.Size(2184, 976);
+            this.TP_ttkhach.Size = new System.Drawing.Size(2593, 1175);
             this.TP_ttkhach.TabIndex = 6;
             this.TP_ttkhach.Text = "TT Khách";
             this.TP_ttkhach.UseVisualStyleBackColor = true;
@@ -1053,7 +1070,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.Location = new System.Drawing.Point(5, 129);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1760, 630);
@@ -1114,9 +1131,9 @@
             this.groupBox9.Controls.Add(this.label78);
             this.groupBox9.Controls.Add(this.label77);
             this.groupBox9.Location = new System.Drawing.Point(4, 2);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(2173, 123);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
@@ -1124,7 +1141,7 @@
             // txt_TenKT_TT
             // 
             this.txt_TenKT_TT.Location = new System.Drawing.Point(428, 27);
-            this.txt_TenKT_TT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TenKT_TT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenKT_TT.Name = "txt_TenKT_TT";
             this.txt_TenKT_TT.Size = new System.Drawing.Size(168, 22);
             this.txt_TenKT_TT.TabIndex = 7;
@@ -1133,7 +1150,7 @@
             // 
             this.btn_TraCuuKT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btn_TraCuuKT.Location = new System.Drawing.Point(735, 59);
-            this.btn_TraCuuKT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TraCuuKT.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TraCuuKT.Name = "btn_TraCuuKT";
             this.btn_TraCuuKT.Size = new System.Drawing.Size(100, 54);
             this.btn_TraCuuKT.TabIndex = 6;
@@ -1144,7 +1161,7 @@
             // Txt_CMND_TT
             // 
             this.Txt_CMND_TT.Location = new System.Drawing.Point(171, 27);
-            this.Txt_CMND_TT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_CMND_TT.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_CMND_TT.Name = "Txt_CMND_TT";
             this.Txt_CMND_TT.Size = new System.Drawing.Size(168, 22);
             this.Txt_CMND_TT.TabIndex = 3;
@@ -1177,7 +1194,7 @@
             this.TP_ttphong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_ttphong.Name = "TP_ttphong";
             this.TP_ttphong.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_ttphong.Size = new System.Drawing.Size(2184, 976);
+            this.TP_ttphong.Size = new System.Drawing.Size(2593, 1175);
             this.TP_ttphong.TabIndex = 5;
             this.TP_ttphong.Text = "TT phòng";
             this.TP_ttphong.UseVisualStyleBackColor = true;
@@ -1255,7 +1272,7 @@
             this.TP_themnv.Location = new System.Drawing.Point(4, 28);
             this.TP_themnv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_themnv.Name = "TP_themnv";
-            this.TP_themnv.Size = new System.Drawing.Size(2184, 976);
+            this.TP_themnv.Size = new System.Drawing.Size(2593, 1175);
             this.TP_themnv.TabIndex = 4;
             this.TP_themnv.Text = "Thêm NV";
             this.TP_themnv.UseVisualStyleBackColor = true;
@@ -1314,7 +1331,7 @@
             // 
             this.ck_NuNV.AutoSize = true;
             this.ck_NuNV.Location = new System.Drawing.Point(205, 130);
-            this.ck_NuNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ck_NuNV.Margin = new System.Windows.Forms.Padding(4);
             this.ck_NuNV.Name = "ck_NuNV";
             this.ck_NuNV.Size = new System.Drawing.Size(48, 21);
             this.ck_NuNV.TabIndex = 34;
@@ -1326,7 +1343,7 @@
             // 
             this.ck_NamNV.AutoSize = true;
             this.ck_NamNV.Location = new System.Drawing.Point(117, 130);
-            this.ck_NamNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ck_NamNV.Margin = new System.Windows.Forms.Padding(4);
             this.ck_NamNV.Name = "ck_NamNV";
             this.ck_NamNV.Size = new System.Drawing.Size(59, 21);
             this.ck_NamNV.TabIndex = 33;
@@ -1700,7 +1717,7 @@
             this.TP_thue.Location = new System.Drawing.Point(4, 28);
             this.TP_thue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_thue.Name = "TP_thue";
-            this.TP_thue.Size = new System.Drawing.Size(2184, 976);
+            this.TP_thue.Size = new System.Drawing.Size(2593, 1175);
             this.TP_thue.TabIndex = 3;
             this.TP_thue.Text = "Thuê";
             this.TP_thue.UseVisualStyleBackColor = true;
@@ -1778,7 +1795,7 @@
             this.TP_tthd.Location = new System.Drawing.Point(4, 28);
             this.TP_tthd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_tthd.Name = "TP_tthd";
-            this.TP_tthd.Size = new System.Drawing.Size(2184, 976);
+            this.TP_tthd.Size = new System.Drawing.Size(2593, 1175);
             this.TP_tthd.TabIndex = 2;
             this.TP_tthd.Text = "Thông tin hóa đơn";
             this.TP_tthd.UseVisualStyleBackColor = true;
@@ -1985,7 +2002,7 @@
             this.TP_ThemNgThue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TP_ThemNgThue.Name = "TP_ThemNgThue";
             this.TP_ThemNgThue.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TP_ThemNgThue.Size = new System.Drawing.Size(2184, 976);
+            this.TP_ThemNgThue.Size = new System.Drawing.Size(2593, 1175);
             this.TP_ThemNgThue.TabIndex = 1;
             this.TP_ThemNgThue.Text = "Thêm người thuê";
             // 
@@ -2189,9 +2206,9 @@
             // 
             this.TP_LichSuKhach.Controls.Add(this.dataGridView4);
             this.TP_LichSuKhach.Location = new System.Drawing.Point(4, 28);
-            this.TP_LichSuKhach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TP_LichSuKhach.Margin = new System.Windows.Forms.Padding(4);
             this.TP_LichSuKhach.Name = "TP_LichSuKhach";
-            this.TP_LichSuKhach.Size = new System.Drawing.Size(2184, 976);
+            this.TP_LichSuKhach.Size = new System.Drawing.Size(2593, 1175);
             this.TP_LichSuKhach.TabIndex = 10;
             this.TP_LichSuKhach.Text = "Lịch sử khách thuê";
             this.TP_LichSuKhach.UseVisualStyleBackColor = true;
@@ -2284,9 +2301,9 @@
             // 
             this.TP_ThongKeDT.Controls.Add(this.dataGridView5);
             this.TP_ThongKeDT.Location = new System.Drawing.Point(4, 28);
-            this.TP_ThongKeDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TP_ThongKeDT.Margin = new System.Windows.Forms.Padding(4);
             this.TP_ThongKeDT.Name = "TP_ThongKeDT";
-            this.TP_ThongKeDT.Size = new System.Drawing.Size(2184, 976);
+            this.TP_ThongKeDT.Size = new System.Drawing.Size(2593, 1175);
             this.TP_ThongKeDT.TabIndex = 11;
             this.TP_ThongKeDT.Text = "Thống kê Doanh thu";
             this.TP_ThongKeDT.UseVisualStyleBackColor = true;
@@ -2314,7 +2331,7 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView5.Location = new System.Drawing.Point(7, 17);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(1213, 185);
             this.dataGridView5.TabIndex = 0;
@@ -2328,23 +2345,6 @@
             // 
             this.Column31.HeaderText = "DT_Tháng8/2019";
             this.Column31.Name = "Column31";
-            // 
-            // btn_mail
-            // 
-            this.btn_mail.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_mail.ImageIndex = 21;
-            this.btn_mail.ImageList = this.imageList2;
-            this.btn_mail.Location = new System.Drawing.Point(334, 2);
-            this.btn_mail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_mail.Name = "btn_mail";
-            this.btn_mail.Size = new System.Drawing.Size(112, 105);
-            this.btn_mail.TabIndex = 3;
-            this.btn_mail.Text = "Send mail";
-            this.btn_mail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_mail.UseVisualStyleBackColor = false;
-            this.btn_mail.Click += new System.EventHandler(this.btn_mail_Click);
             // 
             // Home
             // 
